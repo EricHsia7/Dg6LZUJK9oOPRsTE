@@ -1,0 +1,60 @@
+<body>
+
+<title>載入中</title>
+
+<script src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/js/jquery/3.4.1/jquery.min.js"></script>
+
+
+</body>
+
+<head>
+
+<meta charset="UTF-8">
+
+<style>
+
+div.redssa {position:fixed;opacity:1.0;border-radius: 0px;background:#ffffff;border:1px solid #f2f2f2;box-shadow:3px 3px 9px #000000;width:100%;height:100%;z-index:100;right: 0px;top: 0;}
+
+</style>
+
+</head>
+<body>
+
+<div class="redssa"> <font face="monospace" size="30px">
+<center><a href="javascript:redssopen()" id="redssopenbt"><img src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/redss1.JPG" alt="img" title="img" width="auto" height="100%"></a><z id="redsstxt1" style="position:fixed;opacity:0.6;z-index:100;right: auto;top: 30%;"> 點<br>一<br>下<br>打<br>開</z>
+<a href="javascript:redssopens2()" id="redssopenbt2"><img src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/redss2.JPG" alt="img" title="img" width="auto" height="100%"></a> <z id="redsstxt2" style="position:fixed;opacity:0.6;z-index:100;right: auto;top: 30%;"> 點<br>一<br>下<br>看<br>內<br>容<br>物 </z>
+<a href="javascript:redssopens3()" id="redssopenbt3"><img src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/K8ryZGB6wnbv7oliUPSf.JPG" alt="img" title="img" width="auto" height="100%"></a></center>
+</div>
+<script>
+$(function () {
+    var timeout=setTimeout(function () {
+        $('title').html('紅包');
+        $('#redssopenbt').fadeIn(222);
+        $('#redsstxt1').fadeIn(888);
+    }, 1300);
+})
+</script>
+
+<script>
+function redssopen() {
+        $('#redssopenbt').fadeOut(222);
+        $('#redsstxt1').fadeOut(222);
+        $('#redssopenbt2').fadeIn(222);
+        $('#redsstxt2').fadeIn(888);
+
+}
+</script>
+<script>
+function redssopens2() {
+        $('#redssopenbt2').fadeOut(222);
+        $('#redssopenbt3').fadeIn(222);
+        $('#redsstxt2').fadeOut(222);
+}
+</script>
+<script>
+$('#redssopenbt').fadeOut(0);
+$('#redssopenbt2').fadeOut(0);
+$('#redssopenbt3').fadeOut(0);
+$('#redsstxt2').fadeOut(0);
+$('#redsstxt1').fadeOut(0);
+</script>

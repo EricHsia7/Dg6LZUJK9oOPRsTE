@@ -1,0 +1,244 @@
+<html>
+<body>
+<title>計時器</title>
+<head>
+<link href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/6X4PEL39-SEYTM8LA-MQ2QJOBE.PNG" rel="apple-touch-icon" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/6X4PEL39-SEYTM8LA-MQ2QJOBE-ico.ico" rel="icon" /> 
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/6X4PEL39-SEYTM8LA-MQ2QJOBE-ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/6X4PEL39-SEYTM8LA-MQ2QJOBE-ico.ico" rel="shortcut icon" />
+<script src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/js/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/js/rolldate/v1/rolldate.min.js"></script>
+<meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<font face="Hiragino Maru Gothic ProN">
+<style>
+.button {
+    background-color: #009fbf;
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    margin: 30px 2px;
+    cursor: pointer;
+    width:90%;
+}
+
+.button1 {width: 140px;}
+
+.mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+.text-mode:after {
+  content: "light";
+}
+  .msgborder {
+    background-color: #ffffff;
+    color: #333333;
+   border:1px solid #333333; 
+}
+
+@media (prefers-color-scheme: dark) {
+  .mode {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  .text-mode:after {
+    content: "dark";
+  }
+  .msgborder {
+    background-color: #333333;
+    color: #ffffff;
+   border:1px solid #ffffff; 
+}
+}
+</style>
+</head>
+<body class="mode" ontouchmove="javascript:window.event.preventDefault();">
+<font face="Hiragino Maru Gothic ProN" size="180px">
+<center>
+<br> <center> <font face="Hiragino Maru Gothic ProN" id="txt" class="mode" style="position: fixed;width:auto;height:auto;left:50%;top:50%;transform:translate(-50%,-50%);font-size:90px;"> 
+<span id="Check_Txt"><span id="Check_i">計時器</span></span></font>
+
+<script type="text/javascript">
+var seconds2 ;
+var hms ;
+var a ;
+    var p1a= '' ;
+    var p2a= ':' ;
+    var p3a= ':' ;
+    var p4a= '' ;
+    var size ;
+    var vuesi ;
+    var str= location.hash ;
+    str=str.replace('#','');
+    var SetMinute = str ;
+    function Check_Time() {
+        SetMinute -= 1;
+        var Check_i = document.getElementById("Check_i");
+
+        var Cal_Hour = Math.floor(SetMinute / 3600);
+        var Cal_Minute = Math.floor(Math.floor(SetMinute % 3600) / 60);
+        var Cal_Second = SetMinute % 60;
+        vuesi = p1a + Cal_Hour + p2a + Cal_Minute + p3a + Cal_Second + p4a ;
+        Check_i.innerHTML = vuesi ;
+size = (Math.round(((document.body.clientWidth-10)/vuesi.length))) ;
+$('#txt').animate({fontSize: size + 'px' },333);
+if (SetMinute<"0.5") 
+{
+var Check_i = document.getElementById("Check_i");
+Check_i.innerHTML = '時間到!';
+ni +=2 ;
+clearInterval(ref);
+}
+else
+{
+}
+    }
+
+    var ni = 2 ;
+    var nis = 2 ;
+    var startx, starty;
+    function getAngle(angx, angy) {
+        return Math.atan2(angy, angx) * 180 / Math.PI;
+    };
+
+    function getDirection(startx, starty, endx, endy) {
+        var angx = endx - startx;
+        var angy = endy - starty;
+        var result = 0;
+
+        if (Math.abs(angx) < 2 && Math.abs(angy) < 2) {
+            return result;
+        }
+ 
+        var angle = getAngle(angx, angy);
+        if (angle >= -135 && angle <= -45) {
+            result = 1;
+        } else if (angle > 45 && angle < 135) {
+            result = 2;
+        } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
+            result = 3;
+        } else if (angle >= -45 && angle <= 45) {
+            result = 4;
+        }
+ 
+        return result;
+    }
+    document.addEventListener("touchstart", function(e) {
+        startx = e.touches[0].pageX;
+        starty = e.touches[0].pageY;
+    }, false);
+    document.addEventListener("touchend", function(e) {
+        var endx, endy;
+        endx = e.changedTouches[0].pageX;
+        endy = e.changedTouches[0].pageY;
+        var direction = getDirection(startx, starty, endx, endy);
+        switch (direction) {
+            case 0:
+                break;
+            case 1:
+  if (ni >"1") {
+               ref = setInterval(function(){
+               Check_Time();
+           },1000);
+msg1();
+   ni -=2 ;
+   } 
+else {
+                clearInterval(ref);
+    msg2();
+    ni +=2 ;
+}
+                break;
+            case 2:
+  if (nis >"1") {
+msg3();
+   nis -=2 ;
+   } 
+else {
+timersset();
+    nis +=2 ;
+}
+                break;
+            case 3:
+    p1a= '還剩下' ;
+    p2a= '小時' ;
+    p3a= '分鐘' ;
+    p4a= '秒' ;
+                msg4();
+                break;
+            case 4:
+    p1a= '' ;
+    p2a= ':' ;
+    p3a= ':' ;
+    p4a= '' ;
+                msg5()
+                break;
+            default:
+        }
+    }, false);
+function msg1() {
+document.getElementById('msg').innerHTML= '已開始計時' ;
+msgin();
+}
+function msg2() {
+document.getElementById('msg').innerHTML= '已暫停計時' ;
+msgin();
+}
+function msg3() {
+msgin2();
+}
+function msg4() {
+document.getElementById('msg').innerHTML= '已切換為中文' ;
+msgin();
+}
+function msg5() {
+document.getElementById('msg').innerHTML= '已切換為冒號' ;
+msgin();
+}
+function msgin() {
+$('#msgdiv').animate({bottom:-1},222).delay(1000).animate({bottom:-65},222);
+}
+function msgin2() {
+$('#msgdiv2').animate({bottom:-1},222);
+}
+function timersset() {
+hms = document.getElementById('put997').value ;
+a = hms.split(':'); // split it at the colons
+seconds2 = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+SetMinute= seconds2 ;
+$('#msgdiv2').animate({bottom:-65},222);
+}
+
+</script>
+<div class="msgborder" id="msgdiv" style="position: fixed;width:280px;height:60px;right:50%;bottom:-65px; border-top-right-radius: 12px; 
+border-top-left-radius: 12px;transform:translate(50%,0%);"><span id="msg" style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:20px;"></span></div>
+<div class="msgborder" id="msgdiv2" style="position: fixed;width:280px;height:60px;right:50%;bottom:-65px; border-top-right-radius: 12px; 
+border-top-left-radius: 12px;transform:translate(50%,0%);"><span id="msg2" style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:20px;"><input id="put997" class="msgborder"></span></div>
+</font>
+
+<script>
+var lang = {
+				title: '設定時間',
+				cancel: '取消',
+				confirm: '確認',
+				hour: '時',
+				min: '分',
+				sec: '秒'
+			};
+			new Rolldate({
+				el: '#put997',
+				format: 'hh:mm:ss',
+                         lang: lang
+			});
+</script>
+
+</body>

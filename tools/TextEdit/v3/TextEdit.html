@@ -1,0 +1,192 @@
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/TextEdit-icon-v1.ico" rel="icon" /> 
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/TextEdit-icon-v1.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/TextEdit-icon-v1.ico" rel="shortcut icon" />
+<script src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/js/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/js/html2canvas/v1/html2canvas.min.js"></script>
+<meta charset="UTF-8">
+<title>文字編輯</title>
+<style>
+.button {
+    background-color: #009fbf;
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    margin: 30px 2px;
+    cursor: pointer;
+    width:90%;
+}
+#top1 {width: 100%;height: 7%; -webkit-backdrop-filter: blur(15px);background: rgba(51, 51, 51, 0.8); color: #ffffff;font-size: 50px;position:fixed;z-index:3;right: 0;top: 0;}
+.mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.modes {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.text-mode:after {
+  content: "light";
+}
+#textl {width:auto;height:5%; -webkit-backdrop-filter: blur(2px);background: rgba(51, 51, 51, 0.8); color: #ffffff; font-size: 25px;position:fixed;z-index:3;left: 50%;bottom: 3%; border-radius:25px;padding:0px 8px; transform:translate(-50%,-0%);}
+
+#msgd {width:auto;height:5%; -webkit-backdrop-filter: blur(2px);background: rgba(51, 51, 51, 0.8); color: #ffffff;font-size: 25px;position:fixed;z-index:3;left: 50%;top: -6%; border-radius:25px;padding:0px 8px; transform:translate(-50%,-0%);}
+.hhbh {text-decoration: none;color:#ffffff;}
+
+.ttxt {font-size:23px;color:#ffffff;}
+
+@media (prefers-color-scheme: dark) {
+  .mode {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  .text-mode:after {
+    content: "dark";
+  }
+#top1 {width: 100%;height: 7%; -webkit-backdrop-filter: blur(15px);background: rgba(255, 255, 255, 0.9); color: #333333;font-size: 50px;position:fixed;z-index:3;right: 0;top: 0;}
+#textl {width:auto;height:5%; -webkit-backdrop-filter: blur(2px);background: rgba(255, 255, 255, 0.8); color: #333333;font-size: 25px;position:fixed;z-index:3;left: 50%;bottom: 3%; border-radius:25px;padding:0px 8px; transform:translate(-50%,-0%);}
+
+#msgd {width:auto;height:5%; -webkit-backdrop-filter: blur(2px);background: rgba(255, 255, 255, 0.8); color: #333333;font-size: 25px;position:fixed;z-index:3;left: 50%;bottom: -6%; border-radius:25px;padding:0px 8px; transform:translate(-50%,-0%);}
+.hhbh {text-decoration: none;color:#333333;}
+.ttxt {font-size:23px;color:#333333;}
+
+.modes {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.ttxt {font-size:23px;color:#333333;}
+
+}
+
+</style>
+<body class="mode">
+<font face="Hiragino Maru Gothic ProN">
+<div class="mode" style="width:90%;height:auto;border:none;font-size:25px;border-radius: 25px;position:fixed;bottom:3px;left:0px;z-index:-4;padding:30px; word-break: break-all;" id="inners2">
+<span id="inners4"></span>
+<div class="modes" style="width:100%;height:28px;border:none;font-size:23px;border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; position: absolute;bottom:0px;left:0px;z-index:-2;"><span id="inners3" style="position: absolute;left:20px;top: 50%; border-radius:25px; transform:translate(-0%,-50%);" class="ttxt"></span></div></div>
+
+<textarea class="mode" style="width:100%;height:93%; border:none;font-size:25px;border-radius: 0px;position:fixed;bottom:0px;left:0px;z-index:0;" id="inner" placeholder="內容"></textarea>
+<div id="top1">
+<span id="time" class="ttxt"></span>
+<a href="javascript:share()" id="sharebutton" style="text-decoration: none;width:auto;height:auto; right:3px;top:50%; position: absolute; transform:translate(-0%,-50%);"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1NTEuMTMgNTUxLjEzIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNTUxLjEzIDU1MS4xMyIgd2lkdGg9IjUxMnB4Ij48Zz48cGF0aCBkPSJtNDY1LjAxNiAxNzIuMjI4aC01MS42Njh2MzQuNDQ2aDM0LjQ0NnYzMTAuMDExaC0zNDQuNDU3di0zMTAuMDExaDM0LjQ0NnYtMzQuNDQ2aC01MS42NjljLTkuNTIgMC0xNy4yMjMgNy43MDMtMTcuMjIzIDE3LjIyM3YzNDQuNDU2YzAgOS41MiA3LjcwMyAxNy4yMjMgMTcuMjIzIDE3LjIyM2gzNzguOTAyYzkuNTIgMCAxNy4yMjMtNy43MDMgMTcuMjIzLTE3LjIyM3YtMzQ0LjQ1NmMwLTkuNTItNy43MDMtMTcuMjIzLTE3LjIyMy0xNy4yMjN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBmaWxsPSIjRTJBRjEzIi8+PHBhdGggZD0ibTI1OC4zNDIgNjUuOTMxdjI0NC4wOGgzNC40NDZ2LTI0NC4wOGw3My45MzcgNzMuOTM3IDI0LjM1NC0yNC4zNTQtMTE1LjUxNC0xMTUuNTE0LTExNS41MTQgMTE1LjUxNCAyNC4zNTQgMjQuMzU0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgZmlsbD0iI0UyQUYxMyIvPjwvZz4gPC9zdmc+Cg==" height="85%" width="auto"></a>
+<a href="javascript:de()" id="de" style="text-decoration: none;width:auto;height:auto;right:60px;top:50%;transform:translate(-0%,-50%); position: absolute;"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSItNDAgMCA0MjcgNDI3LjAwMTMxIiB3aWR0aD0iNTEycHgiPjxnPjxwYXRoIGQ9Im0yMzIuMzk4NDM4IDE1NC43MDMxMjVjLTUuNTIzNDM4IDAtMTAgNC40NzY1NjMtMTAgMTB2MTg5YzAgNS41MTk1MzEgNC40NzY1NjIgMTAgMTAgMTAgNS41MjM0MzcgMCAxMC00LjQ4MDQ2OSAxMC0xMHYtMTg5YzAtNS41MjM0MzctNC40NzY1NjMtMTAtMTAtMTB6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgZmlsbD0iI0UyQUYxMyIvPjxwYXRoIGQ9Im0xMTQuMzk4NDM4IDE1NC43MDMxMjVjLTUuNTIzNDM4IDAtMTAgNC40NzY1NjMtMTAgMTB2MTg5YzAgNS41MTk1MzEgNC40NzY1NjIgMTAgMTAgMTAgNS41MjM0MzcgMCAxMC00LjQ4MDQ2OSAxMC0xMHYtMTg5YzAtNS41MjM0MzctNC40NzY1NjMtMTAtMTAtMTB6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgZmlsbD0iI0UyQUYxMyIvPjxwYXRoIGQ9Im0yOC4zOTg0MzggMTI3LjEyMTA5NHYyNDYuMzc4OTA2YzAgMTQuNTYyNSA1LjMzOTg0MyAyOC4yMzgyODEgMTQuNjY3OTY4IDM4LjA1MDc4MSA5LjI4NTE1NiA5LjgzOTg0NCAyMi4yMDcwMzIgMTUuNDI1NzgxIDM1LjczMDQ2OSAxNS40NDkyMTloMTg5LjIwMzEyNWMxMy41MjczNDQtLjAyMzQzOCAyNi40NDkyMTktNS42MDkzNzUgMzUuNzMwNDY5LTE1LjQ0OTIxOSA5LjMyODEyNS05LjgxMjUgMTQuNjY3OTY5LTIzLjQ4ODI4MSAxNC42Njc5NjktMzguMDUwNzgxdi0yNDYuMzc4OTA2YzE4LjU0Mjk2OC00LjkyMTg3NSAzMC41NTg1OTMtMjIuODM1OTM4IDI4LjA3ODEyNC00MS44NjMyODItMi40ODQzNzQtMTkuMDIzNDM3LTE4LjY5MTQwNi0zMy4yNTM5MDYtMzcuODc4OTA2LTMzLjI1NzgxMmgtNTEuMTk5MjE4di0xMi41Yy4wNTg1OTMtMTAuNTExNzE5LTQuMDk3NjU3LTIwLjYwNTQ2OS0xMS41MzkwNjMtMjguMDMxMjUtNy40NDE0MDYtNy40MjE4NzUtMTcuNTUwNzgxLTExLjU1NDY4NzUtMjguMDYyNS0xMS40Njg3NWgtODguNzk2ODc1Yy0xMC41MTE3MTktLjA4NTkzNzUtMjAuNjIxMDk0IDQuMDQ2ODc1LTI4LjA2MjUgMTEuNDY4NzUtNy40NDE0MDYgNy40MjU3ODEtMTEuNTk3NjU2IDE3LjUxOTUzMS0xMS41MzkwNjIgMjguMDMxMjV2MTIuNWgtNTEuMTk5MjE5Yy0xOS4xODc1LjAwMzkwNi0zNS4zOTQ1MzEgMTQuMjM0Mzc1LTM3Ljg3ODkwNyAzMy4yNTc4MTItMi40ODA0NjggMTkuMDI3MzQ0IDkuNTM1MTU3IDM2Ljk0MTQwNyAyOC4wNzgxMjYgNDEuODYzMjgyem0yMzkuNjAxNTYyIDI3OS44Nzg5MDZoLTE4OS4yMDMxMjVjLTE3LjA5NzY1NiAwLTMwLjM5ODQzNy0xNC42ODc1LTMwLjM5ODQzNy0zMy41di0yNDUuNWgyNTB2MjQ1LjVjMCAxOC44MTI1LTEzLjMwMDc4MiAzMy41LTMwLjM5ODQzOCAzMy41em0tMTU4LjYwMTU2Mi0zNjcuNWMtLjA2NjQwNy01LjIwNzAzMSAxLjk4MDQ2OC0xMC4yMTg3NSA1LjY3NTc4MS0xMy44OTQ1MzEgMy42OTE0MDYtMy42NzU3ODEgOC43MTQ4NDMtNS42OTUzMTMgMTMuOTI1NzgxLTUuNjA1NDY5aDg4Ljc5Njg3NWM1LjIxMDkzNy0uMDg5ODQ0IDEwLjIzNDM3NSAxLjkyOTY4OCAxMy45MjU3ODEgNS42MDU0NjkgMy42OTUzMTMgMy42NzE4NzUgNS43NDIxODggOC42ODc1IDUuNjc1NzgyIDEzLjg5NDUzMXYxMi41aC0xMjh6bS03MS4xOTkyMTkgMzIuNWgyNzAuMzk4NDM3YzkuOTQxNDA2IDAgMTggOC4wNTg1OTQgMTggMThzLTguMDU4NTk0IDE4LTE4IDE4aC0yNzAuMzk4NDM3Yy05Ljk0MTQwNyAwLTE4LTguMDU4NTk0LTE4LTE4czguMDU4NTkzLTE4IDE4LTE4em0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIGZpbGw9IiNFMkFGMTMiLz48cGF0aCBkPSJtMTczLjM5ODQzOCAxNTQuNzAzMTI1Yy01LjUyMzQzOCAwLTEwIDQuNDc2NTYzLTEwIDEwdjE4OWMwIDUuNTE5NTMxIDQuNDc2NTYyIDEwIDEwIDEwIDUuNTIzNDM3IDAgMTAtNC40ODA0NjkgMTAtMTB2LTE4OWMwLTUuNTIzNDM3LTQuNDc2NTYzLTEwLTEwLTEwem0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIGZpbGw9IiNFMkFGMTMiLz48L2c+IDwvc3ZnPgo=" height="85%" width="auto"></a>
+</div>
+<div id="bg" style="width: 100%;height: 100%; -webkit-backdrop-filter: blur(15px);background: rgba(51, 51, 51, 0.45); color: #333333;font-size: 50px;position:fixed;z-index:5;right: 0;top: 0;display:none;"></div>
+<div id="dediv" style="width: 80%;height: 40%; -webkit-backdrop-filter: blur(15px);background: rgba(255, 255, 255, 0.8); color: #333333;font-size: 25px;position:fixed;z-index:6;left: 50%;top: 50%; transform:translate(-50%,-50%); border-radius: 25px; display:none;"><center>刪除內容<br>⚠️此動作無法還原！</center><a href="javascript:deno()" style="width: 50%;height: 15%;color: #333333;font-size: 25px;position: absolute;z-index:10;left: 0px;bottom: 0px;border-bottom-left-radius: 25px; background: #f2f2f2;"><center style="position: absolute;width:auto;height:auto;left:50%;top:50%;transform:translate(-50%,-50%);">取消</center></a><a href="javascript:deyes()" style="width: 50%;height: 15%;color: #333333;font-size: 25px;position: absolute;z-index:10;right: 0px;bottom: 0px;border-bottom-right-radius: 25px; background:#f2f2f2;"><center style="position: absolute;width:auto;height:auto;left:50%;top:50%;transform:translate(-50%,-50%);">確認</center></a> </div>
+
+<div id="sharediv" style="width: 80%;height: 40%; -webkit-backdrop-filter: blur(15px);background: rgba(255, 255, 255, 0.8); color: #333333;font-size: 25px;position:fixed;z-index:6;left: 50%;top: 50%; transform:translate(-50%,-50%); border-radius: 25px; display:none;"><center>分享內容<br><a href="javascript:copy2()" style="text-decoration: none;color:#333333;border-radius: 9px;background:rgba(51,51,51,0);border:1px solid #333333;font-size:30px;width:auto;height:80px;">複製內容</a><br><a href="javascript:imgexport()" style="text-decoration: none;color:#333333;border-radius: 9px;background:rgba(51,51,51,0);border:1px solid #333333;font-size:30px;width:auto;height:80px;">輸出圖片</a></center><a href="javascript:shareno()" style="width: 100%;height: 15%;color: #333333;font-size: 25px;position: absolute;z-index:10;left: 0px;bottom: 0px;border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; background: #f2f2f2;"><center style="position: absolute;width:auto;height:auto;left:50%;top:50%;transform:translate(-50%,-50%);">取消</center></a></div>
+<div id="textl"><center>共<span id="ll"></span>個字元</center></div>
+<div id="msgd"><center id="msg"></center></div>
+
+
+</font>
+<script type="text/javascript">
+function share() {
+$('#sharediv').fadeIn(333);
+$('#bg').fadeIn(333);
+}
+function de() {
+$('#dediv').fadeIn(333);
+$('#bg').fadeIn(333);
+}
+function deno() {
+$('#dediv').fadeOut(333);
+$('#bg').fadeOut(333);
+}
+function deyes() {
+$('#dediv').fadeOut(333);
+$('#bg').fadeOut(333);
+document.getElementById("inner").value= '' ;
+document.getElementById("msg").innerHTML= '已刪除內容' ;
+$('#msgd').animate({top: 9 + '%' },333).delay(1111).animate({top: -6 + '%' },333);
+}
+function shareno() {
+$('#sharediv').fadeOut(333);
+$('#bg').fadeOut(333);
+}
+function copy2() {
+var copyinner=document.getElementById("inner");
+copyinner.select();
+document.execCommand("Copy");
+setTimeout("document.activeElement.blur(); ",800);
+document.getElementById("msg").innerHTML= '已複製內容' ;
+$('#msgd').animate({top: 9 + '%' },333).delay(1111).animate({top: -6 + '%' },333);
+shareno();
+}
+
+var ll ;
+function lll() {
+ll = document.getElementById("inner").value ;
+document.getElementById("ll").innerHTML= ll.length ;
+$('#de').animate({right: $('#sharebutton').width() + 3 },111);
+document.getElementById("inners4").innerText= document.getElementById("inner").value ;
+}
+setInterval(lll, 300);
+</script>		
+<script>
+var ni = 2 ;
+$('#inner').click(function(){
+  if (ni >"1") {
+$('#textl').animate({bottom: 53 + '%' },333);
+$('html,body').animate({scrollTop: $('#top1').height() + 2 }, 333);
+document.getElementById("msg").innerHTML= '<a href="javascript:keyclose()" class="hhbh">關閉鍵盤</a>' ;
+$('#msgd').animate({top: 9 + '%' },333).delay(1).animate({opacity: 0.3 },555);
+   ni -=2 ;
+   } 
+else {
+$('html,body').animate({scrollTop: 0 }, 333);
+document.getElementById("msg").innerHTML= '已關閉鍵盤' ;
+keyclose();
+    ni +=2 ;
+}
+});
+
+function keyclose() {
+document.activeElement.blur();
+$('#msgd').animate({opacity: 1 },1).animate({top: -6 + '%' },333);
+$('#textl').animate({bottom: 3 + '%' },333);
+}
+function imgexport() {
+$('#sharediv').fadeOut(333);
+$('#bg').fadeOut(333);
+document.getElementById("msg").innerHTML= '已輸出圖片' ;
+$('#msgd').animate({top: 9 + '%' },333).delay(1111).animate({top: -6 + '%' },333);
+            var container = document.getElementById("inners2");
+            html2canvas(container, { allowTaint: true, backgroundColor: null }).then(function (canvas) {
+                var link = document.createElement("a");
+                document.body.appendChild(link);
+                link.download = "image.png";
+                link.href = canvas.toDataURL();
+                link.target = '_blank';
+                link.click();
+            });
+}
+var times ;
+document.getElementById("inner").onkeyup=function(){
+var today=new Date()
+var h=today.getHours()
+var m=today.getMinutes()
+var s=today.getSeconds()
+m=checkTime(m)
+s=checkTime(s)
+times = today.getFullYear() + '/' + (today.getMonth()+1) + '/' + today.getDate() + ' ' + h+":"+m+":"+s ;
+ document.getElementById("time").innerText= times ;
+ document.getElementById("inners3").innerText= times ;
+}
+
+function checkTime(i)
+{
+if (i<10) 
+  {i="0" + i}
+  return i
+}
+
+</script>
+</body>

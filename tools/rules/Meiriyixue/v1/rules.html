@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<script src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/js/jquery/3.4.1/jquery.min.js"></script>
+<title>每日一學-規則</title>
+<style>
+.tdiv {
+width: 75%;
+height: 300;
+background-color: #ffffff;
+color: #000000;
+border-radius: 25px;
+text-align: center;
+opacity:1.0;
+box-shadow:3px 3px 9px #8c8c8c;
+margin-bottom:50px;
+font-size:30px;
+padding:12px;
+}
+.button {
+    background-color: #ffffff;
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    cursor: pointer;
+    width:90%;
+    box-shadow:3px 3px 9px #8c8c8c;
+}
+.reading-bar {
+height:8px;
+background:#d9d9d9;
+width:auto;
+position:fixed;
+left:0px;
+top: 0px;
+z-index:100;
+font-size:6px;
+color:#ffffff;
+} 
+</style>
+<body>
+<font face="Hiragino Maru Gothic ProN">
+<div style="width: 100%;height: 65;background-color: #ffffff;color: #000000;font-size: 50px;opacity:1.0; position:fixed;z-index:100;right: 0;top: 0; text-align: center;" id="top1">每日一學-規則</div>
+<div style="width: 100%;height: 65;background-color: #ffffff;color: #000000;font-size: 50px;opacity:1.0; position:fixed;z-index:100;right: 0;top: 0; text-align: center; box-shadow:0px 3px 20px #8c8c8c;" id="top2">每日一學-規則</div>
+<center>
+<div class="tdiv" style="margin-top:100px;" id="tdiv0" > 
+<font size="45">注意<br> </font>
+1.以下規則適用於所有相關每日一學的社群。<br>
+2.必須確實遵守以下規則。<br>
+3.如果違反以下規則，將進行適當處置。
+</div>
+<div class="tdiv" style="margin-top:100px;" id="tdiv1" > 
+<font size="45">1.無關內容之留言<br> </font>
+假設今天發了一則貼文，但有人在底下留言不相干的內容，該留言將遭移除。如果已經移除該內容，又再次發佈，將暫時停止發言權。
+</div>
+<div class="tdiv" id="tdiv2" >
+<font size="45">2.惡意留言<br> </font>
+如果您的留言帶有惡意批評，或帶有諷刺意圖，將刪除該留言。如果已經移除該內容，又再次發佈，將暫時停止發言權。
+</div>
+<div class="tdiv" id="tdiv3" >
+<font size="45">3.社團維護中<br> </font>
+如果您在維護期間留言，將禁止發言到維護完畢。
+</div>
+<div class="tdiv" id="tdiv4" >
+<font size="45">4.惡意貼文<br> </font> 
+如果該貼文中包含了惡意圖片，文字，連結，檔案……等，將刪除該貼文，並禁止發言3天，如果3天後又發佈相關貼文，將視為屢勤不聽，禁止發言7天。
+</div>
+<div class="tdiv" id="tdiv5" >
+<font size="45">5.農場或廣告貼文<br></font>
+如果您發佈或轉發農場或廣告貼文，將刪除該貼文，並禁止發言24小時，如果24小時後，又發佈相關貼文，將視為屢勸不聽，禁止發言3天。
+</div>
+<button type="button" id="BackTop" class="button" title="Back to top" style="width:120px;height: 120px; padding: 0px 0px; position:fixed;z-index:100;right: 5;bottom: 5px; opacity:0.68; border-radius: 35px;"><img src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/Back-to-top-arrow.PNG" alt="Back to top arrow" title="img" width="100" height="auto" ></button>
+<div class="reading-bar" id="reading-bar"></div>
+</div>
+<script>
+$(function(){
+	$('#BackTop').click(function(){ 
+		$('html,body').animate({scrollTop:0}, 888);
+             $('#BackTop').animate({opacity:0.3},222);
+             $('#BackTop').delay(888).animate({opacity:0.68},222);
+	});
+	$(window).scroll(function() {
+		if ( $(this).scrollTop() > -10000 ){
+			$('#BackTop').fadeIn(222);
+		} else {
+			$('#BackTop').stop().fadeOut(222);
+		}
+	}).scroll();
+});
+</script>
+<script>
+$(function(){	
+	$(window).scroll(function() {
+		if ( $(this).scrollTop() > 1 ){
+                   $('#top2').fadeIn(222);
+		} else {
+                   $('#top2').fadeOut(222);
+		}
+	}).scroll();
+});
+</script>
+<script>
+var content_offtop = $('body,html').offset().top ;
+var content_height = $('body,html').innerHeight();
+$(window).scroll(function () {
+ if (($(this).scrollTop() > content_offtop)) {
+ if (($(this).scrollTop() - content_offtop ) <= content_height) {
+ this.reading_p = Math.round(($(this).scrollTop() - content_offtop) / content_height * 100);
+ } else {
+ this.reading_p = 100;
+ }
+ } else {
+ this.reading_p = 0;
+ }
+$('#reading-bar').stop().animate({width: this.reading_p + '%' },222);
+});
+</script>
+</body>

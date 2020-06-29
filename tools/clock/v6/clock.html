@@ -1,0 +1,176 @@
+<html>
+<body>
+<title>時鐘</title>
+<head>
+<link href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/G8DBEFOY-ZQO0CVSY-W9HK3E8K.PNG" rel="apple-touch-icon" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/G8DBEFOY-ZQO0CVSY-W9HK3E8K-ico.ico" rel="icon" /> 
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/G8DBEFOY-ZQO0CVSY-W9HK3E8K-ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/G8DBEFOY-ZQO0CVSY-W9HK3E8K-ico.ico" rel="shortcut icon" />
+<script src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/js/jquery/3.4.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+
+<style>
+.mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+.text-mode:after {
+  content: "light";
+}
+  .msgborder {
+    background-color: #ffffff;
+    color: #333333;
+   border:1px solid #333333; 
+}
+
+@media (prefers-color-scheme: dark) {
+  .mode {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  .text-mode:after {
+    content: "dark";
+  }
+  .msgborder {
+    background-color: #333333;
+    color: #ffffff;
+   border:1px solid #ffffff; 
+}
+}
+</style>
+<script>
+function startTime()
+{
+var today=new Date()
+var h=today.getHours()
+var m=today.getMinutes()
+var s=today.getSeconds()
+// add a zero in front of numbers<10
+m=checkTime(m)
+s=checkTime(s)
+document.getElementById('txt1').innerHTML= h ;
+document.getElementById('txt2').innerHTML= m ;
+document.getElementById('txt3').innerHTML= s ;
+t=setTimeout('startTime()',500)
+}
+
+function checkTime(i)
+{
+if (i<10) 
+  {i="0" + i}
+  return i
+}
+    var size = 90 ;
+    var ni = 2 ;
+    var startx, starty;
+    function getAngle(angx, angy) {
+        return Math.atan2(angy, angx) * 180 / Math.PI;
+    };
+
+    function getDirection(startx, starty, endx, endy) {
+        var angx = endx - startx;
+        var angy = endy - starty;
+        var result = 0;
+
+        if (Math.abs(angx) < 2 && Math.abs(angy) < 2) {
+            return result;
+        }
+ 
+        var angle = getAngle(angx, angy);
+        if (angle >= -135 && angle <= -45) {
+            result = 1;
+        } else if (angle > 45 && angle < 135) {
+            result = 2;
+        } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
+            result = 3;
+        } else if (angle >= -45 && angle <= 45) {
+            result = 4;
+        }
+ 
+        return result;
+    }
+    document.addEventListener("touchstart", function(e) {
+        startx = e.touches[0].pageX;
+        starty = e.touches[0].pageY;
+    }, false);
+    document.addEventListener("touchend", function(e) {
+        var endx, endy;
+        endx = e.changedTouches[0].pageX;
+        endy = e.changedTouches[0].pageY;
+        var direction = getDirection(startx, starty, endx, endy);
+        switch (direction) {
+            case 0:
+                break;
+            case 1:
+                $('#txt').animate({fontSize: (size+5) + 'px' },333);
+                size +=5;
+                msg1();
+                break;
+            case 2:
+                $('#txt').animate({fontSize: (size-5) + 'px' },333);
+                size -=5;
+                msg2();
+                break;
+            case 3:
+                size = (Math.round(((document.body.clientWidth-10)/8))) ;
+                $('#txt').animate({fontSize: size + 'px' },333);
+                msg3();
+                break;
+            case 4:
+  if (ni >"1") {
+ref = setInterval(function(){
+    loopout();
+},1100);
+msg4();
+   ni -=2 ;
+   } 
+else {
+   clearInterval(ref);
+   $('#txtp,#txtp2').animate({opacity:1.0},550);
+    msg5();
+    ni +=2 ;
+}
+                break;
+            default:
+        }
+    }, false);
+function loopout() {
+$('#txtp,#txtp2').animate({opacity:0.5},550).animate({opacity:1.0},550);
+}
+function msg1() {
+document.getElementById('msg').innerHTML= '已放大文字' ;
+msgin();
+}
+function msg2() {
+document.getElementById('msg').innerHTML= '已縮小文字' ;
+msgin();
+}
+function msg3() {
+document.getElementById('msg').innerHTML= '已自動調整文字' ;
+msgin();
+}
+function msg4() {
+document.getElementById('msg').innerHTML= '已開啟閃爍' ;
+msgin();
+}
+function msg5() {
+document.getElementById('msg').innerHTML= '已關閉閃爍' ;
+msgin();
+}
+function msgin() {
+$('#msgdiv').animate({bottom:-1},222).delay(1000).animate({bottom:-65},222);
+}
+</script>
+<body class="mode" onload="startTime()"><div class="mode" style="position: fixed;width:80%;height:80%;left:50%;top:50%;transform:translate(-50%,-50%); border-radius: 25px;">
+<font face="Hiragino Maru Gothic ProN" id="txt" class="mode" style="position: fixed;width:auto;height:auto;left:50%;top:50%;transform:translate(-50%,-50%);font-size:90px;">
+<span id="txt1"></span><span id="txtp">:</span><span id="txt2"></span><span id="txtp2">:</span><span id="txt3"></span></font></div>
+<div class="msgborder" id="msgdiv" style="position: fixed;width:280px;height:60px;right:50%;bottom:-65px; border-top-right-radius: 12px; 
+border-top-left-radius: 12px;transform:translate(50%,0%);"><span id="msg" style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:20px;"></span></div>
+</body>
+<br> 
+</font>
+</body>
+</html>

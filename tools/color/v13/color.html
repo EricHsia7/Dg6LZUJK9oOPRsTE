@@ -1,0 +1,62 @@
+<html>
+<body>
+<title>HEX顏色顯示</title>
+<head>
+<link href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/WGXGHJFD-MCV5XPTF-3RXMMAZX.PNG" rel="apple-touch-icon" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/WGXGHJFD-MCV5XPTF-3RXMMAZX-ico.ico" rel="icon" /> 
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/WGXGHJFD-MCV5XPTF-3RXMMAZX-ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/WGXGHJFD-MCV5XPTF-3RXMMAZX-ico.ico" rel="shortcut icon" />
+<script src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/js/jquery/3.4.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<font face="Hiragino Maru Gothic ProN">
+<style>
+.button {
+    background-color: #009fbf;
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    margin: 30px 2px;
+    cursor: pointer;
+    width:90%;
+}
+
+.mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+.text-mode:after {
+  content: "light";
+}
+@media (prefers-color-scheme: dark) {
+  .mode {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  .text-mode:after {
+    content: "dark";
+  }
+}
+</style>
+</head>
+<body ontouchmove="javascript:window.event.preventDefault();" style="background-color:#ffffff;" id="body">
+<div class="mode" style="position: fixed;width:100%;height:95px;left:0px;top:0px;"><center>
+<input type="text" class="mode" face="Hiragino Maru Gothic ProN" id="txt" placeholder="不需加#，例如333333。" style="height:90px;width:45%;font-size:35px;"></input></center>
+</div>
+
+<script type="text/javascript">
+var txt=document.getElementById("txt");
+txt.onkeyup=function(){
+$('#body').css({'background-color': '#' + txt.value }); 
+}
+</script>
+
+</body>
