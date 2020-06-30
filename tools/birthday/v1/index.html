@@ -1,0 +1,86 @@
+<html>
+<body>
+<title>生日</title>
+<head>
+<link href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/WGXGHJFD-MCV5XPTF-3RXMMAZX.PNG" rel="apple-touch-icon" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/WGXGHJFD-MCV5XPTF-3RXMMAZX-ico.ico" rel="icon" /> 
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/WGXGHJFD-MCV5XPTF-3RXMMAZX-ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/img/WGXGHJFD-MCV5XPTF-3RXMMAZX-ico.ico" rel="shortcut icon" />
+<script src="https://xol0abb7ytrz9mg00parfw-on.drv.tw/Web/js/jquery/3.4.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<font face="Hiragino Maru Gothic ProN">
+<style>
+.button {
+    background-color: #009fbf;
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    margin: 30px 2px;
+    cursor: pointer;
+    width:90%;
+}
+
+.button1 {width: 140px;}
+
+.mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+.text-mode:after {
+  content: "light";
+}
+  .msgborder {
+    background-color: #ffffff;
+    color: #333333;
+   border:1px solid #333333; 
+}
+
+@media (prefers-color-scheme: dark) {
+  .mode {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  .text-mode:after {
+    content: "dark";
+  }
+  .msgborder {
+    background-color: #333333;
+    color: #ffffff;
+   border:1px solid #ffffff; 
+}
+}
+</style>
+</head>
+<body class="mode" ontouchmove="javascript:window.event.preventDefault();">
+<font face="Hiragino Maru Gothic ProN">
+<center>
+<br> <center> <font face="Hiragino Maru Gothic ProN" id="txt" class="mode" style="position: fixed;width:auto;height:auto;left:50%;top:50%;transform:translate(-50%,-50%);font-size:90px; break-word: keep-all;"> 
+<span id="txt"></span></font>
+
+<script type="text/javascript">
+var size ;
+var vue2txts= 'birthday' ;
+
+var today=new Date()
+function settxtss() {
+vue2txts= '每日一學' + (today.getFullYear() - 2019) + '歲了' ;
+size = (Math.round(((((document.body.clientWidth+document.body.clientHeight)/2))/(vue2txts.length+5)))) ;
+$('#txt').animate({fontSize: size + 'px' },333);
+var txtvues2= document.getElementById("txt");
+txtvues2.innerHTML = vue2txts ;
+}
+ref = setInterval(function(){
+               settxtss();
+           },500);
+</script>
+</font>
+</body>
