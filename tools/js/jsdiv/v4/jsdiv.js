@@ -1,0 +1,1 @@
+document.getElementById('se2').innerHTML= '<style> #jsdiv {display:none;} #txt1 {display:none;} </style>' ;
