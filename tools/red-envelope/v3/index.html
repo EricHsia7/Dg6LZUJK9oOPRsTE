@@ -86,7 +86,7 @@ $('#redssopenbt2').fadeOut(0);
 $('#redssopenbt3').fadeOut(0);
 $('#redsstxt2').fadeOut(0);
 $('#redsstxt1').fadeOut(0);
-var str= location.hash ;
-str=str.replace('#','');
-document.getElementById('redssopenbt3').innerHTML=  '<div class="inner" >' + str + '</div>'
+var getUrlString = location.href;
+var url = new URL(getUrlString);
+document.getElementById('redssopenbt3').innerHTML=  '<div class="inner" >' + url.searchParams.get('i') + '</div>'
 </script>
