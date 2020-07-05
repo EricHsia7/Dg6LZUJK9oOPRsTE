@@ -1,0 +1,87 @@
+<meta charset="UTF-8">
+<title>每日一學 - 遊戲</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+.mode {
+  background-color: #f2f2f2;
+  color: #333333;
+}
+.text-mode:after {
+  content: "light";
+}
+.div {
+width:128px;
+height:128px;
+float: left;
+background:#d9d9d9;
+margin:20px;
+border-radius:25px;
+}
+}
+
+@media (prefers-color-scheme: dark) {
+  .mode {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  .text-mode:after {
+    content: "dark";
+  }
+.div {
+width:128px;
+height:128px;
+float: left;
+background:#222222;
+margin:20px;
+border-radius:25px;
+}
+}
+
+.icon {
+float: left;
+margin:20px;
+border-radius:25px;
+height:128px;
+}
+.o {
+position: absolute;
+left:50%;
+top:0%;
+transform:translate(-50%,-0%);
+width:95%;
+}
+</style>
+<body class="mode">
+<div class="o" id="i">
+<img src="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/img/co48-icon.png" class="icon">
+<img src="https://erichsia7.github.io/YACWDIgVTyKcs0fn/game/ios-Icon.png" class="icon">
+<img src="https://erichsia7.github.io/mpncfbdzlZvIThYo/game/ios-icon.png" class="icon">
+</div>
+<div class="o" id="l">
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+</div>
+<script>
+$(window).ready(function() {
+$('#l').fadeOut(888);
+});
+</script>
+</body>
