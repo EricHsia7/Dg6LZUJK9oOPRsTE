@@ -1,0 +1,382 @@
+<html>
+  <head>
+    <title>RightFont Installer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1.0, user-scalable=0" />
+    <style>
+body {
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  overflow: hidden;
+  user-select: none;
+  text-align: center;
+  -webkit-user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  touch-action: manipulation;
+  background-color: #fbfbfb;
+  pointer-events: none;
+}
+
+.section {
+  padding: 0.8em 2.2em;
+  margin: 0 auto;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.4em;
+  margin: 0;
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+  line-height: 1.15em;
+  font-weight: 700;
+  touch-action: manipulation;
+}
+
+p {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 0.6em 0;
+  letter-spacing: 0.1px;
+  line-height: 1.5em;
+  color: #333;
+  touch-action: manipulation;
+}
+
+.steps {
+  font-size: 1.1em;
+  display: flex;
+  margin-top: 2.5em;
+  flex-direction: column;
+  position: relative;
+}
+
+.steps-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #d6d6d6;
+  left: 11px;
+  top: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.step-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.step-label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.steps .step {
+  display: flex;
+  align-items: center;
+  margin: 7px 0;
+  z-index: 2;
+  flex-shrink: 0;
+  background-color: #fbfbfb;
+  padding: 2px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease, padding 0.26s ease, transform 0.3s ease;
+}
+
+.step-first {
+  margin-top: 0 !important;
+}
+
+.step-last {
+  margin-bottom: 0 !important;
+}
+
+.step-green-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #0bdf6f;
+  border-radius: 50%;
+}
+
+.highlight {
+  color: #007AFF !important;
+}
+
+.arrow-right {
+  width: 24px;
+  flex-shrink: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.arrow-right svg {
+  fill: #a7a7a7;
+}
+
+#step1 {
+  transform: translate(-40px, 0);
+}
+
+#step2 {
+  transform: translate(-30px, 0);
+}
+
+#step3 {
+  transform: translate(-20px, 0);
+}
+
+#step4 {
+  transform: translate(-10px, 0);
+}
+
+/* Portrait and Landscape */
+@media only screen and (orientation: landscape) { 
+  .section {
+    padding: 0.2em 5em;
+    margin: 0 auto;
+  }
+  
+  p {
+    font-size: 1.1em;
+  }
+
+  .steps {
+    font-size: 0.9em;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 0;
+    margin-top: 0.6em;
+  }
+}
+
+@media only screen 
+and (min-device-width : 766px) 
+and (max-device-width : 1024px) {
+  .section {
+    padding: 1.2em 2.7em;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 1.35em;
+  }
+
+  .steps {
+    font-size: 1.2em;
+  }
+  
+  h1 {
+    font-size: 2.2em;
+    margin-bottom: 0;
+    margin-top: 0.6em;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #fff;
+    background-color: #000;
+  }
+
+  .arrow-right svg {
+    fill: #666;
+  }
+
+  .steps .step {
+    background-color: #000;
+  }
+
+  p {
+    color: #a6a6a6;
+  }
+}
+</style>
+  </head>
+  <body>
+    <div class="section align-left">
+      <h1 id="title">Installing Font</h1>
+      <p id="notes">Please tap <strong class="highlight">Allow</strong> to create the font profile.</p>
+      <div class="steps">
+        <div id="stepsLine" class="steps-line"></div>
+        <div id="step1" class="step step-first">
+          <div id="step-icon-1" class="step-icon"></div>
+          <div class="step-label">
+            <span id="step-label-1-0">1. Tap General</span> 
+            <span class="arrow-right">
+              <svg width="10" height="12" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.31553 18.0469C1.60557 18.0469 1.84189 17.9395 2.03525 17.7568L10.0382 9.92578C10.2638 9.71094 10.3819 9.45312 10.3819 9.16309C10.3819 8.87305 10.2638 8.59375 10.0489 8.38965L2.046 0.569336C1.85264 0.375977 1.60557 0.268555 1.31553 0.268555C0.746191 0.268555 0.295019 0.719727 0.295019 1.28906C0.295019 1.56836 0.413183 1.82617 0.5958 2.01953L7.90049 9.16309L0.5958 16.2959C0.413183 16.4893 0.295019 16.7471 0.295019 17.0264C0.295019 17.6064 0.746191 18.0469 1.31553 18.0469Z" />
+              </svg>
+            </span>
+            <span id="step-label-1-1">Profiles</span> 
+          </div>
+        </div>
+        <div id="step2" class="step">
+          <div id="step-icon-2" class="step-icon"></div>
+          <div id="step-label-2" class="step-label">2. Tap the profile</div>
+        </div>
+        <div id="step3" class="step">
+          <div id="step-icon-3" class="step-icon"></div>
+          <div id="step-label-3" class="step-label">3. Tap Install</div>
+        </div>
+        <div id="step4" class="step step-last">
+          <div id="step-icon-4" class="step-icon"></div>
+          <div id="step-label-4" class="step-label">Done. Enjoy your font!</div>
+        </div>
+      </div>
+    </div>
+    <script>
+var language = getUrlParameter('language');
+
+if (language === "sc") {
+  renderChineseContent();
+} else if (language === "tc") {
+  renderTraditionalChineseContent();
+} else if (language === "ja") {
+  renderJapaneseContent();
+}
+
+window.onfocus = function (e) {
+  var fontName = getUrlParameter('font');
+  var title = "One last thing";
+  var notes = "Open Settings app on your device to finish profile install.";
+
+  if (language === "sc") {
+    title = "仅差一步";
+    notes = "请前往“设置” App, 完成字体描述文件的安装";
+  } else if (language === "tc") {
+    title = "僅差一步";
+    notes = "請前往「設定」App, 完成字體描述檔的安裝";
+  } else if (language === "ja") {
+     title = "最後の一歩";
+     notes = "プロファイルをインストールするには、”設定”　Appを開きます"　;
+   }
+
+  document.getElementById("title").innerText = title;
+  document.getElementById("notes").innerText = notes;
+  document.getElementById("stepsLine").style.opacity = '1';
+  var steps = document.getElementsByClassName("step");
+
+  for (var index = 0; index < steps.length; index++) {
+    var element = steps[index];
+    element.style.transform = 'translate(0, 0)';
+    element.style.opacity = '1';
+    element.style.padding = '5px 0';
+  }
+};
+
+var fileName = getUrlParameter('profile');
+var dlink = document.createElement('a');
+dlink.href = '/fonts/' + fileName;
+dlink.click();
+
+renderSVGIcons();
+
+function renderChineseContent() {
+  document.title = "RightFont 字体安装器";
+
+  var titleElement = document.getElementById("title");
+  titleElement.style.fontStyle = "bold";
+  titleElement.innerText = "正在安装字体";
+  document.getElementById("notes").innerHTML = '轻点 <strong class="highlight">允许</strong> 以便系统为当前字体创建描述文件';
+
+  document.getElementById("step-label-1-0").innerText = "1. 依次轻点通用";
+  document.getElementById("step-label-1-1").innerText = "描述文件";
+  document.getElementById("step-label-2").innerText = "2. 找到并轻点刚下载的描述文件";
+  document.getElementById("step-label-3").innerText = "3. 轻点右上角的“安装”进行操作";
+  document.getElementById("step-label-4").innerText = "字体完成安装, 尽情享用";
+}
+
+function renderTraditionalChineseContent() {
+  document.title = "APP安裝程式";
+
+  var titleElement = document.getElementById("title");
+  titleElement.style.fontStyle = "bold";
+  titleElement.innerText = "正在安裝APP";
+  document.getElementById("notes").innerHTML = '輕點 <strong class="highlight">允許</strong> 以便系統為您安裝描述檔';
+
+  document.getElementById("step-label-1-0").innerText = "1. 依次輕點一般";
+  document.getElementById("step-label-1-1").innerText = "描述檔";
+  document.getElementById("step-label-2").innerText = "2. 找到並輕點剛下載的描述檔";
+  document.getElementById("step-label-3").innerText = "3. 輕點右上角的「安装」進行操作";
+  document.getElementById("step-label-4").innerText = "APP安裝完成, 盡情享用";
+}
+
+function renderJapaneseContent() {
+  document.title = "RightFont インストールプログラム";
+
+  var titleElement = document.getElementById("title");
+  titleElement.style.fontStyle = "bold";
+  titleElement.innerText = "進行中";
+  document.getElementById("notes").innerHTML = 'フォントプロファイルを作成するには、<strong class="highlight">許可</strong> してください';
+
+  document.getElementById("step-label-1-0").innerText = "1. 一般をタップ";
+  document.getElementById("step-label-1-1").innerText = "プロファイル";
+  document.getElementById("step-label-2").innerText = "2. プロファイルを見つけてタップ";
+  document.getElementById("step-label-3").innerText = "3. 右上のインストールをタップ";
+  document.getElementById("step-label-4").innerText = "インストールが完了";
+}
+
+document.addEventListener('gesturestart', function (e) {
+  e.preventDefault()
+})
+
+function getUrlParameter(sParam) {
+  var sPageURL = window.location.search.substring(1),
+    sURLVariables = sPageURL.split('&'),
+    sParameterName,
+    i;
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split('=');
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+    }
+  }
+}
+
+function renderSVGIcons() {
+  var icon1 = '<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M23.7589 0.5H6.75894C3.44523 0.5 0.758942 3.18629 0.758942 6.5V23.5C0.758942 26.8137 3.44523 29.5 6.75894 29.5H23.7589C27.0727 29.5 29.7589 26.8137 29.7589 23.5V6.5C29.7589 3.18629 27.0727 0.5 23.7589 0.5Z" fill="#8E8E93" /><path d="M15.2589 24.9875C15.5255 24.9875 15.7818 24.9567 16.0587 24.9362L16.6432 26.0641C16.756 26.2897 16.9816 26.4128 17.2687 26.3718C17.525 26.3205 17.6993 26.1359 17.7403 25.8591L17.9147 24.6183C18.4274 24.485 18.9298 24.2902 19.4117 24.0749L20.3346 24.9055C20.5294 25.09 20.7755 25.131 21.0319 24.9875C21.2574 24.8644 21.3497 24.6183 21.2985 24.3517L21.0421 23.1213C21.4728 22.8239 21.8932 22.4855 22.2726 22.1061L23.4108 22.5881C23.6671 22.6906 23.9132 22.6393 24.108 22.4035C24.2823 22.2189 24.3028 21.9523 24.149 21.7267L23.4825 20.6603C23.7902 20.2297 24.0362 19.7683 24.2721 19.2761L25.5333 19.3376C25.7999 19.3478 26.0152 19.2043 26.1075 18.9479C26.1896 18.6916 26.1178 18.4455 25.9025 18.2814L24.9181 17.5021C25.0514 17.01 25.1539 16.4767 25.2052 15.923L26.3844 15.5539C26.651 15.4616 26.8048 15.2668 26.8048 14.9899C26.8048 14.7233 26.651 14.5285 26.3844 14.4362L25.2052 14.0568C25.1539 13.5031 25.0514 12.9904 24.9181 12.488L25.9025 11.6984C26.1075 11.5446 26.1896 11.3088 26.1075 11.0524C26.0152 10.7961 25.7999 10.6525 25.5333 10.6628L24.2721 10.7141C24.0362 10.2219 23.7902 9.76044 23.4825 9.32977L24.149 8.26337C24.2926 8.04804 24.2721 7.78143 24.108 7.59686C23.9132 7.36102 23.6671 7.2995 23.4108 7.41229L22.2726 7.87372C21.8932 7.51483 21.4728 7.1662 21.0421 6.86884L21.2985 5.64862C21.3497 5.37177 21.2574 5.12567 21.0319 5.00263C20.7755 4.86933 20.5294 4.88983 20.3346 5.09491L19.4117 5.90497C18.9298 5.68964 18.4274 5.51532 17.9147 5.37177L17.7403 4.13104C17.6993 3.86444 17.5148 3.66962 17.2584 3.6286C16.9816 3.58759 16.756 3.70038 16.6432 3.92597L16.0587 5.0539C15.7818 5.03339 15.5255 5.01288 15.2589 5.01288C14.982 5.01288 14.736 5.03339 14.4591 5.0539L13.8644 3.92597C13.7516 3.70038 13.526 3.58759 13.2491 3.6286C12.9928 3.66962 12.8082 3.86444 12.7775 4.13104L12.5929 5.36151C12.0802 5.51532 11.588 5.68964 11.0958 5.90497L10.173 5.09491C9.97814 4.88983 9.73205 4.86933 9.4757 5.00263C9.25011 5.12567 9.15783 5.37177 9.2091 5.64862L9.46544 6.86884C9.04503 7.1662 8.61437 7.51483 8.23497 7.87372L7.09679 7.41229C6.84044 7.2995 6.6046 7.36102 6.40978 7.59686C6.23546 7.78143 6.21496 8.04804 6.35851 8.25311L7.02501 9.32977C6.72765 9.76044 6.4713 10.2219 6.23546 10.7141L4.98449 10.6628C4.71789 10.6525 4.4923 10.7961 4.40001 11.0524C4.31798 11.3088 4.38976 11.5446 4.60509 11.6984L5.58947 12.488C5.45617 12.9904 5.35363 13.5031 5.32287 14.0568L4.12316 14.4362C3.85656 14.5183 3.713 14.7131 3.713 14.9899C3.713 15.2668 3.85656 15.4616 4.12316 15.5539L5.32287 15.9333C5.35363 16.4767 5.45617 17.01 5.58947 17.5021L4.60509 18.2814C4.40001 18.4455 4.32824 18.6916 4.40001 18.9479C4.4923 19.2043 4.71789 19.3478 4.98449 19.3376L6.23546 19.2761C6.4713 19.7683 6.72765 20.2297 7.02501 20.6603L6.35851 21.7267C6.21496 21.9523 6.23546 22.2189 6.40978 22.4035C6.6046 22.6393 6.84044 22.6906 7.09679 22.5881L8.23497 22.1061C8.61437 22.4855 9.04503 22.8239 9.46544 23.1213L9.2091 24.3517C9.15783 24.6183 9.25011 24.8644 9.4757 24.9875C9.73205 25.131 9.97814 25.09 10.173 24.9055L11.0958 24.0749C11.588 24.2902 12.0802 24.485 12.5929 24.6183L12.7775 25.8591C12.8082 26.1359 12.9928 26.3205 13.2491 26.3718C13.526 26.4128 13.7516 26.2897 13.8644 26.0641L14.4591 24.9362C14.7257 24.9567 14.982 24.9875 15.2589 24.9875ZM15.6689 14.1922L11.5777 7.41229C12.6852 6.86884 13.9259 6.57147 15.2589 6.57147C19.7296 6.57147 23.2364 9.96552 23.5646 14.3439L15.6689 14.1922ZM6.93273 15.0002C6.93273 12.1496 8.28624 9.63739 10.3985 8.11981L14.4333 14.9203L10.337 21.8395C8.25548 20.3117 6.93273 17.8303 6.93273 15.0002ZM15.2589 23.4289C13.8951 23.4289 12.6236 23.111 11.506 22.5573L15.6909 15.4498L23.5543 15.6769C23.2262 20.0349 19.7296 23.4289 15.2589 23.4289Z" fill="white" /></g></svg>'
+
+  var icon2 ='<svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M23 0.5H6C2.68629 0.5 0 3.18629 0 6.5V23.5C0 26.8137 2.68629 29.5 6 29.5H23C26.3137 29.5 29 26.8137 29 23.5V6.5C29 3.18629 26.3137 0.5 23 0.5Z" fill="#2E2E30" /><path d="M7.26831 20.8955L8.20355 17.8276H12.1892L13.1245 20.8955H15.633L11.6473 8.96466H8.88531L4.88214 20.8955H7.26831ZM10.2576 11.2459L11.7172 16.0707H8.69302L10.1527 11.2459H10.2576Z" fill="white" /><path d="M19.3193 21.0353C20.6916 21.0353 21.4695 20.3973 21.8366 19.7155H21.9415V20.8955H24.1179V14.6635C24.1179 12.3123 22.4222 11.4732 20.3419 11.4732C17.7984 11.4732 16.7146 12.6969 16.6097 14.2177H18.7861C18.8998 13.6408 19.3455 13.23 20.2895 13.23C21.2335 13.23 21.8366 13.6758 21.8366 14.611V15.4414H19.5728C17.4226 15.4414 16.2688 16.5427 16.2688 18.2034C16.2688 19.9515 17.51 21.0353 19.3193 21.0353ZM20.071 19.3397C19.2843 19.3397 18.5589 18.9201 18.5589 18.0548C18.5589 17.3468 19.0396 16.8311 20.0622 16.8311H21.8366V17.7926C21.8366 18.6929 21.0412 19.3397 20.071 19.3397Z" fill="white" /></g></svg>'
+
+  var icon3 = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 0H6C2.68629 0 0 2.68629 0 6V23C0 26.3137 2.68629 29 6 29H23C26.3137 29 29 26.3137 29 23V6C29 2.68629 26.3137 0 23 0Z" fill="#3378F6" /><path d="M11.4689 17.542L7.54998 6.75974C7.29578 6.0501 7.56057 5.4252 8.20666 5.19219C8.81038 4.98036 9.43528 5.27692 9.70007 5.97596L12.3374 13.2312C12.4751 13.6125 12.7293 13.729 12.9835 13.6337C13.2059 13.5595 13.333 13.2947 13.1953 12.9134L12.4115 10.7634C12.295 10.4456 12.4221 10.202 12.7928 10.0749C13.6295 9.76774 14.4557 10.0643 14.8582 11.1658L15.2289 12.172C15.3666 12.5533 15.6313 12.6804 15.875 12.5851C16.0974 12.5004 16.2245 12.2462 16.0868 11.8649L15.6843 10.7739C15.5678 10.435 15.6843 10.2126 16.0762 10.0749C16.9235 9.75715 17.792 10.1808 18.1521 11.1658L18.3428 11.6848C18.4805 12.0661 18.7453 12.1826 18.9889 12.0979C19.2113 12.0132 19.3384 11.759 19.2007 11.3777L18.9041 10.5727C18.83 10.3715 18.9041 10.2232 19.116 10.1384C20.0374 9.81011 21.2131 10.5515 21.8168 12.2144L22.4841 14.0467C24.0834 18.4316 22.6641 21.8951 18.6499 23.3673C15.5572 24.49 12.7398 23.8545 9.7848 20.4123L6.22603 16.271C5.69646 15.6778 5.81296 14.9682 6.23663 14.5975C6.67088 14.2162 7.32756 14.195 7.84654 14.7352L10.8016 17.8279C11.0028 18.0398 11.1511 18.0927 11.31 18.0292C11.4583 17.9762 11.5642 17.7962 11.4689 17.542Z" fill="white" /></svg>'
+  
+  var icon4 = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 0H6C2.68629 0 0 2.68629 0 6V23C0 26.3137 2.68629 29 6 29H23C26.3137 29 29 26.3137 29 23V6C29 2.68629 26.3137 0 23 0Z" fill="#35C759" /><path d="M9.64743 12.4543C10.7971 12.4543 11.7344 11.3378 11.7344 9.95929C11.7344 8.57806 10.7971 7.45874 9.64743 7.45874C8.49778 7.45874 7.56042 8.5753 7.56042 9.95929C7.56317 11.3378 8.49778 12.4543 9.64743 12.4543Z" fill="white" /><path d="M19.3546 12.4543C20.5071 12.4543 21.4389 11.3378 21.4389 9.95929C21.4389 8.57806 20.5071 7.45874 19.3546 7.45874C18.205 7.45874 17.2676 8.5753 17.2676 9.95929C17.2676 11.3378 18.205 12.4543 19.3546 12.4543Z" fill="white" /><path d="M22.1805 15.3988C21.8773 15.2168 21.5051 15.2802 21.2239 15.4732C20.8599 15.7241 20.3609 16.2644 19.9557 16.6504C18.6902 17.858 16.6942 18.7319 14.4997 18.7319C12.3106 18.7319 10.3146 17.858 9.04641 16.6504C8.64114 16.2644 8.14214 15.7241 7.77822 15.4732C7.49425 15.2775 7.12482 15.2168 6.8188 15.3988C6.37769 15.6634 6.52932 16.2755 6.65614 16.7C6.94562 17.665 8.05391 19.1344 9.67224 20.2096C11.1555 21.1939 13.361 21.5412 14.4969 21.5412C15.6355 21.5412 17.8411 21.1911 19.3243 20.2096C20.9427 19.1344 22.0509 17.665 22.3404 16.7C22.4728 16.2755 22.6216 15.6607 22.1805 15.3988Z" fill="white" /></svg>';
+  
+  document.getElementById("step-icon-1").innerHTML = icon1;
+  document.getElementById("step-icon-2").innerHTML = icon2;
+  document.getElementById("step-icon-3").innerHTML = icon3;
+  document.getElementById("step-icon-4").innerHTML = icon4;
+}
+</script>
+  </body>
+</html>
