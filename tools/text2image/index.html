@@ -1,10 +1,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
 <script src="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/js/html2canvas/v1/html2canvas.min.js"></script>
 <meta charset="UTF-8">
-<span id="text" style="font-family: 'Noto Sans TC', sans-serif;font-size:80px;">pp</span>
+<font style="font-family: 'Noto Sans TC', sans-serif;">
+<span id="text" style="font-size:80px;">pp</span>
+</font>
 <script>
 var getUrlString = location.href;
 var url = new URL(getUrlString);
 document.getElementById('text').innerHTML= url.searchParams.get('text') ;
-document.getElementById('text').style.cssText = 'font-size:font-family: 'Noto Sans TC', sans-serif;' + url.searchParams.get('size') + 'px ;' ;
+document.getElementById('text').style.cssText = 'font-size:' + url.searchParams.get('size') + 'px ;' ;
 </script>
