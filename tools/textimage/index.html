@@ -16,12 +16,7 @@ document.getElementById('img').innerHTML= '<a href="javascript:ttt()"><img src="
 function ttt() {
             var container = document.getElementById("inner");
             html2canvas(container, { allowTaint: true, backgroundColor: null }).then(function (canvas) {
-                var link = document.createElement("a");
-                document.body.appendChild(link);
-                link.download = "image.png";
-                link.href = canvas.toDataURL();
-                link.target = '_blank';
-                link.click();
+                window.open(canvas.toDataURL());
             });
 }
 </script>
