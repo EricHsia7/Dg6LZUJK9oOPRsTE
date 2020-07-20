@@ -16,6 +16,7 @@ var container = document.getElementById("text");
                 document.body.appendChild(link);
                 link.download = "image.png";
                 link.href = canvas.toDataURL();
+                link.target = '_blank';
+                link.click();
             });
-window.open(canvas.toDataURL());
 </script>
