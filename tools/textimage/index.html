@@ -2,7 +2,7 @@
 <script src="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/js/html2canvas/v1/html2canvas.min.js"></script>
 <meta charset="UTF-8">
 <title>問候圖產生器</title>
-<font style="font-family: 'Noto Sans TC', sans-serif;width:99%;height:80%;position:fixed;top:0px;left:50%;transform:translate(-50%,-0%);" id="inner">
+<font style="font-family: 'Noto Sans TC', sans-serif;width:99%;height:80%;position:fixed;top:0px;left:50%;transform:translate(-50%,-0%);overflow: hidden;" id="inner">
 <span id="text" style="font-size:80px;">null</span>
 <span id="img" style="position:absolute;top:0px;left:0px;z-index:1;"></span>
 </font>
@@ -21,7 +21,7 @@ list[9] = '身體健康';
 function starttodo() {
 document.getElementById('text').innerHTML= list[parseInt(Math.random()*(9))] ;
 document.getElementById('text').style.cssText = 'font-size:' + '150' + 'px ;' + 'color:#' + 'ffffff' + ';position:absolute;top:30px;left:30px;z-index:2;' ;
-document.getElementById('img').innerHTML= '<a href="javascript:starttodo()"><img src="img/' + parseInt(Math.random()*(10)) + '.JPG"height="100%" width="100%" id="iimg" style="overflow: hidden"></a>' ;
+document.getElementById('img').innerHTML= '<a href="javascript:starttodo()"><img src="img/' + parseInt(Math.random()*(10)) + '.JPG"height="auto" width="100%" id="iimg" style="overflow: hidden;"></a>' ;
 }
 function ttt() {
             var container = document.getElementById("inner");
