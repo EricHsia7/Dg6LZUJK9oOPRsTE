@@ -12,6 +12,6 @@ var url = new URL(getUrlString);
 document.getElementById('text').innerHTML= url.searchParams.get('text') ;
 document.getElementById('text').style.cssText = 'font-size:' + url.searchParams.get('size') + 'px ;' + 'color:#' + url.searchParams.get('color') + ';position:fixed;top:30px;left:30px;z-index:2;' ;
 
-document.getElementById('img').innerHTML= '<img src="img/' + parseInt(Math.random()*(5)) + '.JPG"height="40" width="50">' ;
+document.getElementById('img').innerHTML= '<img src="img/' + parseInt(Math.random()*(5)) + '.JPG"height="auto" width="80%">' ;
 
 </script>
