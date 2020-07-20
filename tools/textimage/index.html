@@ -2,7 +2,7 @@
 <script src="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/js/html2canvas/v1/html2canvas.min.js"></script>
 <meta charset="UTF-8">
 <title>text2image</title>
-<font style="font-family: 'Noto Sans TC', sans-serif;width:100%;height:100%;position:fixed;top:0px;left:0px;" id="inner">
+<font style="font-family: 'Noto Sans TC', sans-serif;width:80%;height:100%;position:fixed;top:0px;left:0px;" id="inner">
 <span id="text" style="font-size:80px;">null</span>
 <span id="img" style="position:absolute;top:0px;left:0px;z-index:1;"></span>
 </font>
@@ -12,7 +12,7 @@ var url = new URL(getUrlString);
 document.getElementById('text').innerHTML= url.searchParams.get('text') ;
 document.getElementById('text').style.cssText = 'font-size:' + url.searchParams.get('size') + 'px ;' + 'color:#' + url.searchParams.get('color') + ';position:absolute;top:30px;left:30px;z-index:2;' ;
 
-document.getElementById('img').innerHTML= '<a href="javascript:ttt()"><img src="img/' + parseInt(Math.random()*(10)) + '.JPG"height="auto" width="80%"></a>' ;
+document.getElementById('img').innerHTML= '<a href="javascript:ttt()"><img src="img/' + parseInt(Math.random()*(10)) + '.JPG"height="auto" width="100%"></a>' ;
 function ttt() {
             var container = document.getElementById("inner");
             html2canvas(container, { allowTaint: true, backgroundColor: null }).then(function (canvas) {
