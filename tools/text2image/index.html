@@ -9,4 +9,14 @@ var getUrlString = location.href;
 var url = new URL(getUrlString);
 document.getElementById('text').innerHTML= url.searchParams.get('text') ;
 document.getElementById('text').style.cssText = 'font-size:' + url.searchParams.get('size') + 'px ;' + 'color:#' + url.searchParams.get('color') + ';' ;
+
+var container = document.getElementById("text");
+            html2canvas(container, { allowTaint: true, backgroundColor: null }).then(function (canvas) {
+                var link = document.createElement("a");
+                document.body.appendChild(link);
+                link.download = "image.png";
+                link.href = canvas.toDataURL();
+                link.target = '_blank';
+                link.click();
+            });
 </script>
