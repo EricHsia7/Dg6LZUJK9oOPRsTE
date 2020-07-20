@@ -21,7 +21,7 @@ list[9] = '身體健康';
 var getUrlString = location.href;
 var url = new URL(getUrlString);
 document.getElementById('text').innerHTML= list[parseInt(Math.random()*(9))] ;
-document.getElementById('text').style.cssText = 'font-size:' + url.searchParams.get('size') + 'px ;' + 'color:#' + url.searchParams.get('color') + ';position:absolute;top:30px;left:30px;z-index:2;' ;
+document.getElementById('text').style.cssText = 'font-size:' + '150' + 'px ;' + 'color:#' + 'ffffff' + ';position:absolute;top:30px;left:30px;z-index:2;' ;
 document.getElementById('img').innerHTML= '<a href="javascript:window.location.reload()"><img src="img/' + parseInt(Math.random()*(10)) + '.JPG"height="100%" width="100%" id="iimg" style="overflow: hidden"></a>' ;
 function ttt() {
             var container = document.getElementById("inner");
