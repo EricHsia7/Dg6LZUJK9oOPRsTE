@@ -7,9 +7,20 @@
 <span id="img" style="position:absolute;top:0px;left:0px;z-index:1;"></span>
 </font>
 <script>
+const list = [];
+list[0] = '早安';
+list[1] = '認同請分享';
+list[2] = '午安';
+list[3] = '晚安';
+list[4] = '吃飽沒';
+list[5] = '天天健康';
+list[6] = '天天平安';
+list[7] = '天天開心';
+list[8] = '天天心情好';
+list[9] = '身體健康';
 var getUrlString = location.href;
 var url = new URL(getUrlString);
-document.getElementById('text').innerHTML= url.searchParams.get('text') ;
+document.getElementById('text').innerHTML= list[parseInt(Math.random()*(10))] ;
 document.getElementById('text').style.cssText = 'font-size:' + url.searchParams.get('size') + 'px ;' + 'color:#' + url.searchParams.get('color') + ';position:absolute;top:30px;left:30px;z-index:2;' ;
 document.getElementById('img').innerHTML= '<a href="javascript:ttt()"><img src="img/' + parseInt(Math.random()*(10)) + '.JPG"height="100%" width="100%" id="iimg" style="overflow: hidden"></a>' ;
 function ttt() {
