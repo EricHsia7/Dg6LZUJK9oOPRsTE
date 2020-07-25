@@ -1,0 +1,1 @@
+function pageqrcode(dom) {var url = location.href ;var imageurl = https://chart.apis.google.com/chart?cht=qr&chl=' + url + '&chs=300x300'var d = document.getElementById(dom) ;d.innerHTML = '<img src="' + imageurl + '" style="width:100%;">' ;}
