@@ -6,8 +6,8 @@ var LNG = {
 			"table": 0
 		},
 		{
-			"name": "正體字 中文",
-			"code": "zh-HK",
+			"name": "繁體字 中文",
+			"code": "zh-TW",
 			"table": 1
 		}
 	],
