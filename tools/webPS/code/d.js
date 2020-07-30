@@ -3,12 +3,12 @@ var LNG = {
 		{
 			"name": "简化字 中文",
 			"code": "zh-CN",
-			"table": 0
+			"table": 1
 		},
 		{
 			"name": "繁體字 中文",
 			"code": "zh-TW",
-			"table": 1
+			"table": 0
 		}
 	],
 	"tables": [
