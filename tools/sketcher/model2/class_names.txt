@@ -11,7 +11,7 @@
 太陽
 頭盔
 橋
-Alarm_clock
+鬧鐘
 鼓
 書
 掃帚
@@ -26,7 +26,7 @@ Alarm_clock
 表
 甜甜圈
 雨傘
-smiley_face
+笑臉
 枕頭
 床
 鋸
