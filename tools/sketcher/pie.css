@@ -67,6 +67,7 @@
   font-size: 13px;
   box-shadow: 1px 1px 0 #fff,
               2px 2px 0 #fff;
+  border:1px solid #b9bfc9;
 }
 .legend li {
   width: 150px;
