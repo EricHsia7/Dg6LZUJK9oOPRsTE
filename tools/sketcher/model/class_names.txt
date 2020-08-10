@@ -77,7 +77,7 @@ candle
 dog
 cannon
 camel
-cup
+杯子
 castle
 boomerang
 carrot
