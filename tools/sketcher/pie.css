@@ -16,6 +16,7 @@
   position: relative;
   margin: 0 30px 30px 0;
   border-radius:15px;
+  border:1px solid #b9bfc9;
 }
 .pie::before {
   content: "";
