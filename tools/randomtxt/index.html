@@ -149,7 +149,6 @@ randoms();
 msg1();
                 break;
             case 3:
-copy();
 msg3();
                 break;
             case 4:
@@ -164,8 +163,9 @@ document.getElementById('msg').innerHTML= '已產生亂碼' ;
 msgin();
 }
 function msg3() {
-document.getElementById('msg').innerHTML= '<input id="put9979" class="msgborder">' ;
+document.getElementById('msg').innerHTML= '<input id="put9979" class="msgborder" value="' + txt '" >' ;
 msgin();
+copy();
 }
 function msg2() {
 document.getElementById('msg').innerHTML= '已減少最大值 ' + l ;
