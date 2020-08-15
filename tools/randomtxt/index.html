@@ -149,7 +149,7 @@ randoms();
 msg1();
                 break;
             case 3:
-l+=1;
+copy();
 msg3();
                 break;
             case 4:
@@ -192,6 +192,12 @@ $('#msgdiv').animate({bottom:-65},222);
 function randoms() {
 setTimeout("ii = 0 ;txt = '' ;var interval = setInterval(randomtxt,1);",1);
 setTimeout("vue2txts= txt ;",1000);
+}
+    function copy() {
+var copys=document.getElementById("txt");
+copys.select();
+document.execCommand("Copy");
+setTimeout("document.activeElement.blur(); ",800);
 }
 </script>
 <div class="msgborder" id="msgdiv" style="position: fixed;width:280px;height:60px;right:50%;bottom:-65px; border-top-right-radius: 12px; 
