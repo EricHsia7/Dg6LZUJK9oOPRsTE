@@ -164,7 +164,7 @@ msgin();
 }
 function msg3() {
 document.getElementById('msg').innerHTML= '<input id="put9979" class="msgborder" value="' + txt + '" >' ;
-msgin();
+msgin5();
 copy();
 }
 function msg2() {
@@ -174,7 +174,10 @@ msgin();
 function msgin() {
 $('#msgdiv').animate({bottom:-1},222).delay(1000).animate({bottom:-65},222);
 }
-
+    
+function msgin5() {
+$('#msgdiv').animate({bottom:-1},222).delay(2000).animate({bottom:-65},222);
+}
 function msg4() {
 document.getElementById('msg').innerHTML= '<input id="put997" class="msgborder">' ;
 msgin2();
