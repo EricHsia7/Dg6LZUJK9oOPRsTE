@@ -152,8 +152,7 @@ msg1();
 msg3();
                 break;
             case 4:
-l-=1;
-msg2();
+msgout5();
                 break;
             default:
         }
@@ -167,16 +166,15 @@ document.getElementById('msg').innerHTML= '<input id="put9979" class="msgborder"
 msgin5();
 copy();
 }
-function msg2() {
-document.getElementById('msg').innerHTML= '已減少最大值 ' + l ;
-msgin();
-}
 function msgin() {
 $('#msgdiv').animate({bottom:-1},222).delay(1000).animate({bottom:-65},222);
 }
     
 function msgin5() {
-$('#msgdiv').animate({bottom:-1},222).delay(2000).animate({bottom:-65},222);
+$('#msgdiv').animate({bottom:-1},222);
+}
+function msgout5() {
+$('#msgdiv').animate({bottom:-65},222)
 }
 function msg4() {
 document.getElementById('msg').innerHTML= '<input id="put997" class="msgborder">' ;
@@ -196,12 +194,6 @@ $('#msgdiv').animate({bottom:-65},222);
 function randoms() {
 setTimeout("ii = 0 ;txt = '' ;var interval = setInterval(randomtxt,1);",1);
 setTimeout("vue2txts= txt ;",1000);
-}
-    function copy() {
-var copys=document.getElementById("put9979");
-copys.select();
-document.execCommand("Copy");
-setTimeout("document.activeElement.blur(); ",800);
 }
 </script>
 <div class="msgborder" id="msgdiv" style="position: fixed;width:280px;height:60px;right:50%;bottom:-65px; border-top-right-radius: 12px; 
