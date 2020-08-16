@@ -28,7 +28,7 @@
       <br>
       背景
       <br>
-      rgba(<input type="text" id="cbg" rows="1" class="c"placeholder="輸入顏色">)
+      rgba(<input type="text" id="c6" rows="1" class="c"placeholder="輸入顏色">)
       <br>
       <br>
       <a href="javascript:create()" style="height: 45px;background-color: #009fbf;border: none;color: #ffffff;border-radius:12px;text-align: center;text-decoration: none;font-size: 20px;cursor: pointer;opacity:1.0;padding:5px 5px;marign-top:20px;" >製作文字</a><br><br>
@@ -58,7 +58,7 @@
   </div>
   <script>
     function create() {
-      url = 'https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/ParticleText/v1?text=' + document.getElementById('text').value + '&c1=rgba(' + document.getElementById('c1').value + ')&c2=rgba(' + document.getElementById('c2').value + ')&c3=rgba(' + document.getElementById('c3').value + ')&c4=rgba(' + document.getElementById('c4').value + ')&c5=rgba(' + document.getElementById('c5').value + ')&bg=rgba(' + document.getElementById('cbg').value + ')' ;
+      url = 'https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/ParticleText/v1?text=' + document.getElementById('text').value + '&c1=rgba(' + document.getElementById('c1').value + ')&c2=rgba(' + document.getElementById('c2').value + ')&c3=rgba(' + document.getElementById('c3').value + ')&c4=rgba(' + document.getElementById('c4').value + ')&c5=rgba(' + document.getElementById('c5').value + ')&c6=rgba(' + document.getElementById('c6').value + ')' ;
       uri = encodeURI(url) ;
       document.getElementById('copytxt').value= uri ;
       $('.bg2').fadeIn(888);
