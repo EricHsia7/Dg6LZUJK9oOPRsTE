@@ -154,7 +154,8 @@ var getUrlString = location.href;
 var url = new URL(getUrlString);
  var z1=document.getElementById("headline");
 z1.innerText= url.searchParams.get('text') ;
-
+document.body.style.background = url.searchParams.get('bg') ;
+	
 var canvas = document.querySelector("#canvas"),
     ctx = canvas.getContext("2d"),
     link = document.createElement('link');
