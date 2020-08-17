@@ -21,17 +21,20 @@
       
     <div style="position: absolute;left:50%;top:40%; transform:translate(-50%,-50%); width:100%;height:100%;">
       
-      <div style="position: absolute;left:0%;top:0%;width:33%;height:100%;background:rga(0, 0, 0, 0);">       
+      <div style="position: absolute;left:0%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">       
 <a href="javascript:hometabof1()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop1"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#333333;font-size:18px;" id="opopa">台北</span></a>     
 </div>    
-      <div style="position: absolute;left:50%;top:0%;width:33%;height:100%;background:rga(0, 0, 0, 0);transform:translate(-50%,-0%);">
+      <div style="position: absolute;left:25%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">
 <a href="javascript:hometabof2()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop2"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#808080;font-size:18px;" id="opopb">高雄</span></a>  
       </div>
-<div style="position: absolute;right:0%;top:0%;width:33%;height:100%;background:rga(0, 0, 0, 0);">
+<div style="position: absolute;left:50%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">
 <a href="javascript:hometabof3()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop3"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#808080;font-size:18px;" id="opopc">桃機</span></a>  
       </div>
-
-      <div style="width:calc(33% + (1% / 3));height:3px;position: absolute;left:0%;bottom:5px;background:rgba(0, 0, 0, 0);border-radius: 5px;" id="opopline">
+<div style="position: absolute;left:75%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">
+<a href="javascript:hometabof4()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop4"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#808080;font-size:18px;" id="opopd">淡海</span></a>  
+      </div>
+      
+      <div style="width:25%;height:3px;position: absolute;left:0%;bottom:5px;background:rgba(0, 0, 0, 0);border-radius: 5px;" id="opopline">
      <div style="width:50px;height:3px;background:#333333;border-radius: 5px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);" id="colorbar"></div>
       
       </div>
@@ -51,6 +54,11 @@
 <div class="mapdiv" id="ty" style="left:100%; display:none;">
 <img src="tymap.jpg" style="width:500%;position:absolute;top:0px;left:0px;" id="tymap">
 </div>
+  
+  <div class="mapdiv" id="tr" style="left:100%; display:none;">
+<img src="trmap.jpg" style="width:500%;position:absolute;top:0px;left:0px;" id="trmap">
+</div>
+  
 </div>
 <div class="bottomdiv">
 <a href="javascript:reduce()" style="width:72px;height:72px;background:#ffffff;border-right: 1px solid #ccc;position:fixed;left:0px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="reduce.svg" style="width:30px;"></span></a>
@@ -63,14 +71,14 @@ function reduce() {
 if (p >100) {
 p -= 100 ;
 }
-$('#map,#krtmap,#tymap').animate({width: p + '%' },555);
+$('#map,#krtmap,#tymap,#trmap').animate({width: p + '%' },555);
 }
 
 function add() {
 if (p < 1000) {
 p += 100 ;
 }
-$('#map,#krtmap,#tymap').animate({width: p + '%' },555);
+$('#map,#krtmap,#tymap,#trmap').animate({width: p + '%' },555);
 }
 
 function hometabof1() {
@@ -79,36 +87,55 @@ function hometabof1() {
     $("#opopa").css("color","#333333");
     $("#opopb").css("color","#808080");
     $("#opopc").css("color","#808080");
+    $("#opopd").css("color","#808080");
     $('#tp').fadeIn(1).animate({left: 0 + '%' },555);
     $('#km').animate({left: 100 + '%' },555).fadeOut(1);
     $('#ty').animate({left: 100 + '%' },555).fadeOut(1);
+    $('#tr').animate({left: 100 + '%' },555).fadeOut(1);
     $('#colorbar').animate({left: 50 + '%' },555);
   }
   
   function hometabof2() {
-$("#opopline").animate({left: 33 + (1 / 3) + '%' },555);
+$("#opopline").animate({left: 25 + '%' },555);
     
     $("#opopa").css("color","#808080");
     $("#opopb").css("color","#333333");
     $("#opopc").css("color","#808080");
+    $("#opopd").css("color","#808080");
     $('#tp').animate({left: -100 + '%' },555).fadeOut(1);
     $('#ty').animate({left: 100 + '%' },555).fadeOut(1);
     $('#km').fadeIn(1).animate({left: 0 + '%' },555);
+    $('#tr').animate({left: 100 + '%' },555).fadeOut(1);
     $('#colorbar').animate({left: 50 + '%' },555);
   }
 
 function hometabof3() {
-$("#opopline").animate({left: 66 + (1 / 3) + '%' },555);
+$("#opopline").animate({left: 50 + '%' },555);
     
     $("#opopa").css("color","#808080");
     $("#opopb").css("color","#808080");
     $("#opopc").css("color","#333333");
+    $("#opopd").css("color","#808080");
     $('#tp').animate({left: -100 + '%' },555).fadeOut(1);
     $('#km').animate({left: 100 + '%' },555).fadeOut(1);
     $('#ty').fadeIn(1).animate({left: 0 + '%' },555);
+    $('#tr').animate({left: 100 + '%' },555).fadeOut(1);
     $('#colorbar').animate({left: 50 + '%' },555);
   }
-
+  
+function hometabof4() {
+$("#opopline").animate({left: 75 + '%' },555);
+    
+    $("#opopa").css("color","#808080");
+    $("#opopb").css("color","#808080");
+    $("#opopc").css("color","#808080");
+    $("#opopd").css("color","#333333");
+    $('#tp').animate({left: -100 + '%' },555).fadeOut(1);
+    $('#km').animate({left: 100 + '%' },555).fadeOut(1);
+    $('#ty').animate({left: 100 + '%' },555).fadeOut(1);
+    $('#tr').fadeIn(1).animate({left: 0 + '%' },555);
+    $('#colorbar').animate({left: 50 + '%' },555);
+  }
 </script>
 <script>
   window.onload = function() {
