@@ -26,7 +26,7 @@
       </div>
 
       <div style="width:33%;height:3px;position: absolute;left:0%;bottom:5px;background:rgba(0, 0, 0, 0);border-radius: 5px;" id="opopline">
-     <div style="width:50px;height:3px;background:#333333;border-radius: 5px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"></div>
+     <div style="width:50px;height:3px;background:#333333;border-radius: 5px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);" id="colorbar"></div>
       
       </div>
       
@@ -76,6 +76,7 @@ function hometabof1() {
     $('#tp').fadeIn(1).animate({left: 0 + '%' },555);
     $('#km').animate({left: 100 + '%' },555).fadeOut(1);
     $('#ty').animate({left: 100 + '%' },555).fadeOut(1);
+    $('#colorbar').animate({left: 50 + '%' },555);
   }
   
   function hometabof2() {
@@ -87,6 +88,7 @@ $("#opopline").animate({left: 33 + '%' },555);
     $('#tp').animate({left: -100 + '%' },555).fadeOut(1);
     $('#ty').animate({left: 100 + '%' },555).fadeOut(1);
     $('#km').fadeIn(1).animate({left: 0 + '%' },555);
+    $('#colorbar').animate({left: 60 + '%' },555);
   }
 
 function hometabof3() {
@@ -98,6 +100,7 @@ $("#opopline").animate({left: 66 + '%' },555);
     $('#tp').animate({left: -100 + '%' },555).fadeOut(1);
     $('#km').animate({left: 100 + '%' },555).fadeOut(1);
     $('#ty').fadeIn(1).animate({left: 0 + '%' },555);
+    $('#colorbar').animate({left: 70 + '%' },555);
   }
 
 </script>
