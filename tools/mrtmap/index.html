@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
-.mapdiv {position:absolute;top:45px;left:0px; width:100%;height:calc(100% - 105px);background:#ffffff;overflow:scroll;}
+.mapdiv {position:absolute;top:45px;left:0px; width:25%;height:calc(100% - 105px);background:#ffffff;overflow:scroll;}
 .bottomdiv {position:fixed;bottom:0px;left:0px;width:100%;height:60px;background:#ffffff; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);}
 
 .hometoptab {width:100%;height:45px;position:fixed;top:0px;left:0px;background:#ffffff; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);z-index:1000;font-family: 'Noto Sans TC', sans-serif;}
@@ -51,22 +51,25 @@
     <div class="hometoptabline"></div>
   </div>
 <div style="position:absolute;top:0px;left:0px;overflow:hidden;width:100%;height:100%;">
+  
+<div id="allmap" style="position:absolute;top:0px;left:0px;width:400%;height:100%;">
 <div class="mapdiv" id="tp">
 <img src="map.svg" style="width:500%;position:absolute;top:0px;left:0px;" id="map">
 </div>
 
-<div class="mapdiv" id="km" style="left:100%;display:none;">
+<div class="mapdiv" id="km" style="left:25%;display:none;">
 <img src="krtmap.svg" style="width:500%;position:absolute;top:0px;left:0px;" id="krtmap">
 </div>
 
-<div class="mapdiv" id="ty" style="left:100%; display:none;">
+<div class="mapdiv" id="ty" style="left:50%; display:none;">
 <img src="tymap.jpg" style="width:500%;position:absolute;top:0px;left:0px;" id="tymap">
 </div>
   
-  <div class="mapdiv" id="tr" style="left:100%; display:none;">
+  <div class="mapdiv" id="tr" style="left:75%; display:none;">
 <img src="trmap.png" style="width:500%;position:absolute;top:0px;left:0px;" id="trmap">
 </div>
   
+  </div>
 </div>
 <div class="bottomdiv">
 <a href="javascript:reduce()" style="width:58px;height:58px;background:#ffffff;border-right: 1px solid #ccc;position:fixed;left:0px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="reduce.svg" style="width:30px;"></span></a>
@@ -103,10 +106,7 @@ function hometabof1() {
     $("#opopb").css("color","#808080");
     $("#opopc").css("color","#808080");
     $("#opopd").css("color","#808080");
-    $('#tp').fadeIn(1).animate({left: 0 + '%' },555);
-    $('#km').animate({left: 100 + '%' },555).fadeOut(1);
-    $('#ty').animate({left: 100 + '%' },555).fadeOut(1);
-    $('#tr').animate({left: 100 + '%' },555).fadeOut(1);
+    $('#allmap').animate({left: 0 + '%' },555);
     $('#colorbar').animate({left: 50 + '%' },555);
   }
   
@@ -117,10 +117,7 @@ $("#opopline").animate({left: 25 + '%' },555);
     $("#opopb").css("color","#333333");
     $("#opopc").css("color","#808080");
     $("#opopd").css("color","#808080");
-    $('#tp').animate({left: -100 + '%' },555).fadeOut(1);
-    $('#ty').animate({left: 100 + '%' },555).fadeOut(1);
-    $('#km').fadeIn(1).animate({left: 0 + '%' },555);
-    $('#tr').animate({left: 100 + '%' },555).fadeOut(1);
+    $('#allmap').animate({left: 25 + '%' },555);
     $('#colorbar').animate({left: 50 + '%' },555);
   }
 
@@ -131,10 +128,7 @@ $("#opopline").animate({left: 50 + '%' },555);
     $("#opopb").css("color","#808080");
     $("#opopc").css("color","#333333");
     $("#opopd").css("color","#808080");
-    $('#tp').animate({left: -100 + '%' },555).fadeOut(1);
-    $('#km').animate({left: 100 + '%' },555).fadeOut(1);
-    $('#ty').fadeIn(1).animate({left: 0 + '%' },555);
-    $('#tr').animate({left: 100 + '%' },555).fadeOut(1);
+    $('#allmap').animate({left: 50 + '%' },555);
     $('#colorbar').animate({left: 50 + '%' },555);
   }
   
@@ -145,10 +139,7 @@ $("#opopline").animate({left: 75 + '%' },555);
     $("#opopb").css("color","#808080");
     $("#opopc").css("color","#808080");
     $("#opopd").css("color","#333333");
-    $('#tp').animate({left: -100 + '%' },555).fadeOut(1);
-    $('#km').animate({left: 100 + '%' },555).fadeOut(1);
-    $('#ty').animate({left: 100 + '%' },555).fadeOut(1);
-    $('#tr').fadeIn(1).animate({left: 0 + '%' },555);
+    $('#allmap').animate({left: 75 + '%' },555);
     $('#colorbar').animate({left: 50 + '%' },555);
   } 
     $('.loadbg').delay(3800).fadeOut(888);
