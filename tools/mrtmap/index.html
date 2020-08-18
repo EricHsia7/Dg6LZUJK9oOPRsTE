@@ -147,6 +147,16 @@ $("#opopline").animate({left: 75 + '%' },555);
     $('#allmap,.mapdiv,body').animate({background :"#ffffff"}, 555);
   } 
     $('.loadbg').delay(3800).fadeOut(888);
+    
+  var getUrlString = location.href;
+var url = new URL(getUrlString);
+  var lang = url.searchParams.get('lang') ;
+  if (lang = 'en_US') {
+   $("#opopa").html('TPE');
+   $("#opopb").html('KHH');
+   $("#opopc").html('TTIA');
+   $("#opopd").html('DLR');
+  }
 </script>
 <script>
   window.onload = function() {
