@@ -25,7 +25,7 @@
   .langdiv {
     position:fixed;bottom:-200px;left:0px;width:100%;height:200px;background:#f2f2f2;
   }
-  .langb {text-align:center;font-family: 'Noto Sans TC', sans-serif;text-decoration:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);width:100%;height:50px;background:#f2f2f2;border-top: 1px solid #ccc;margin-top:0px;color:#333333;font-size:35px;padding:3px 0px;position:absolute;top:0px;left:0px;}
+  .langb {text-align:center;font-family: 'Noto Sans TC', sans-serif;text-decoration:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);width:100%;height:50px;background:#f2f2f2;border-top: 1px solid #ccc;margin-top:0px;color:#333333;font-size:25px;padding:3px 0px;position:absolute;top:0px;left:0px;}
 </style>
 <body>
 <div class="hometoptab">
@@ -167,9 +167,18 @@ var url = new URL(getUrlString);
    $("title").html('Metro route map');
    ttiawid = 55 ;
   }
+  var ni = 2 ;
   function langs() {
-    $('.bottomdiv').animate({bottom: 200 + 'px' },555);
+  if (ni >"1") {
+$('.bottomdiv').animate({bottom: 200 + 'px' },555);
     $('.langdiv').animate({bottom: 0 + 'px' },555);
+    
+   ni -=2 ;
+   } 
+else {
+$('.bottomdiv').animate({bottom: 0 + 'px' },555);
+    $('.langdiv').animate({bottom: -200 + 'px' },555);
+    ni +=2 ;   
   }
 </script>
 <script>
