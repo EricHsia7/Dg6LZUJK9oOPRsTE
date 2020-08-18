@@ -91,11 +91,10 @@
   <i class="fa fa-cloud-upload"></i><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="lang.svg" style="width:30px;"></span>
 </label>
 
-<select id="sepp" class="select">
+<select id="sepp" class="select" onChange="location = this.options[this.selectedIndex].value;>
   <optgroup label="語言(lang)">
-    　<option value="1">中文</option>
-    　<option value="2">英文</option>
-    　<option value="3">...</option>
+    　<option value="?lang=zh_TW">中文</option>
+    　<option value="?lang=en_US">英文</option>
   </optgroup>
 </select>
   
