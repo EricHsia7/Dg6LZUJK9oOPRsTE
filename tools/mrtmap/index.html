@@ -100,7 +100,6 @@
 </div>
   <a href="javascript:addhomeout()" id="addhome"><img src="iphone_add_to_home_screen_2.png" style="position:fixed;left:0px;bottom:0px;width:100%;" class="addhome"></a>
 <script>
-  location.href= '?lang=zh_TW' ;
 var p = 500 ;
 function reduce() {
 if (p >100) {
@@ -204,6 +203,7 @@ var url = new URL(getUrlString);
   else
   {
     $('#addhome,.addhome').fadeOut(1);
+    location.href= '?lang=zh_TW' ;
   }
   var ni = 2 ;
   function langs() {
