@@ -12,7 +12,7 @@
 <style>
   
   .darkmode-layer, .darkmode-toggle {
-    z-index: 99999999; }
+    z-index: 99999999; display:none;}
   
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 .mapdiv {position:absolute;top:45px;left:0px; width:25%;height:calc(100% - 105px);background:#ffffff;overflow:scroll;}
@@ -168,7 +168,7 @@ $("#opopline").animate({left: 75 + '%' },555);
     $('#allmap,.mapdiv,body').animate({background :"#ffffff"}, 555);
   } 
     $('.loadbg').delay(3800).fadeOut(888);
-    
+    $('.darkmode-layer, .darkmode-toggle').delay(3800).fadeIn(888);
   var getUrlString = location.href;
 var url = new URL(getUrlString);
   var lll = 0 ;
