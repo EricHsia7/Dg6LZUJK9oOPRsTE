@@ -23,7 +23,6 @@
     .icon {width:30%;}
   }
 </style>
-<body>
 <div class="hometoptab">
     
       
@@ -108,7 +107,7 @@ function hometabof1() {
     $("#opopd").css("color","#808080");
     $('#allmap').animate({left: 0 + '%' },555);
     $('#colorbar').animate({left: 50 + '%' },555);
-    $('body').animate({background :"#fafafa"}, 555);
+    $('#allmap,.mapdiv').animate({background :"#fafafa"}, 555);
   }
   
   function hometabof2() {
@@ -120,7 +119,7 @@ $("#opopline").animate({left: 25 + '%' },555);
     $("#opopd").css("color","#808080");
     $('#allmap').animate({left: -100 + '%' },555);
     $('#colorbar').animate({left: 50 + '%' },555);
-    $('body').animate({background :"#e9e9e9"}, 555);
+    $('#allmap,.mapdiv').animate({background :"#e9e9e9"}, 555);
   }
 
 function hometabof3() {
@@ -132,7 +131,7 @@ $("#opopline").animate({left: 50 + '%' },555);
     $("#opopd").css("color","#808080");
     $('#allmap').animate({left: -200 + '%' },555);
     $('#colorbar').animate({left: 50 + '%' },555);
-    $('body').animate({background :"#eef0ef"}, 555);
+    $('#allmap,.mapdiv').animate({background :"#eef0ef"}, 555);
   }
   
 function hometabof4() {
@@ -144,7 +143,7 @@ $("#opopline").animate({left: 75 + '%' },555);
     $("#opopd").css("color","#333333");
     $('#allmap').animate({left: -300 + '%' },555);
     $('#colorbar').animate({left: 50 + '%' },555);
-    $('.mapdiv').animate({background :"#ffffff"}, 555);
+    $('#allmap,.mapdiv').animate({background :"#ffffff"}, 555);
   } 
     $('body').delay(3800).fadeOut(888);
 </script>
@@ -171,4 +170,3 @@ $("#opopline").animate({left: 75 + '%' },555);
     });
 }
 </script>
-</body>
