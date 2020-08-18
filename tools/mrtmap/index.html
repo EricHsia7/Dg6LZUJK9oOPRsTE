@@ -88,6 +88,8 @@
   <div class="langdiv">
     <a href="?lang=zh_TW" class="langb">中文</a>
     <a href="?lang=en_US" class="langb" style="top:57px;">English</a>
+    <a href="?lang=JP" class="langb" style="top:115px;">Japanese</a>
+    
   </div>
 <div class="loadbg">
 <img src="metro.svg" style="position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);" class="icon">
@@ -168,6 +170,15 @@ var url = new URL(getUrlString);
    $("title").html('Metro route map');
    ttiawid = 55 ;
   }
+  if (url.searchParams.get('lang') === "JP") {
+   $("#opopa").html('台北');
+   $("#opopb").html('高雄');
+   $("#opopc").html('<font size="10px">ピーチマシン</font>');
+   $("#opopd").html('ダンハイ');
+   $("title").html('MRT路線図');
+   ttiawid = 55 ;
+  }
+  
   var ni = 2 ;
   function langs() {
   if (ni >"1") {
