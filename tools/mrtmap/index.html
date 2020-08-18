@@ -89,8 +89,8 @@
     <a href="?lang=zh_TW" class="langb"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);">中文</span></a>
     <a href="?lang=en_US" class="langb" style="top:57px;"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);">English</span></a>
     <a href="?lang=JP" class="langb" style="top:115px;"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);">日文</span></a>
-    <a href="?lang=Kor" class="langb" style="top:172;"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);">한국어</span></a>
-    
+    <a href="?lang=Kor" class="langb" style="top:172px;"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);">한국어</span></a>
+    <a href="?lang=zh_CN" class="langb" style="top:230px;"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);">简体中文</span></a> 
   </div>
 <div class="loadbg">
 <img src="metro.svg" style="position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);" class="icon">
@@ -186,6 +186,14 @@ var url = new URL(getUrlString);
    $("#opopd").html('<font size="2px">단하이</font>');
    $("title").html('MRT 노선도');
    ttiawid = 52 ;
+  }
+  if (url.searchParams.get('lang') === "zh_CN") {
+      $("#opopa").html('台北');
+   $("#opopb").html('高雄');
+   $("#opopc").html('桃机');
+   $("#opopd").html('淡海');
+   $("title").html('捷运路线图');
+   ttiawid = 50 ;
   }
   
   var ni = 2 ;
