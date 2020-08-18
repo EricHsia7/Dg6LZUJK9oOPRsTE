@@ -98,7 +98,7 @@ p += 100 ;
 }
 $('#map,#krtmap,#tymap,#trmap').animate({width: p + '%' },555);
 }
-
+var ttiawid = 50 ;
 function hometabof1() {
   $("#opopline").animate({left: 0 + '%' },555);
     
@@ -131,7 +131,7 @@ $("#opopline").animate({left: 50 + '%' },555);
     $("#opopc").css("color","#333333");
     $("#opopd").css("color","#808080");
     $('#allmap').animate({left: -200 + '%' },555);
-    $('#colorbar').animate({width: 55 + 'px' },555);
+    $('#colorbar').animate({width: ttiawid + 'px' },555);
     $('#allmap,.mapdiv,body').animate({background :"#eef0ef"}, 555);
   }
   
@@ -157,6 +157,7 @@ var url = new URL(getUrlString);
    $("#opopc").html('TTIA');
    $("#opopd").html('DLR');
    $("title").html('Metro route map');
+   ttiawid = 55 ;
   }
 </script>
 <script>
