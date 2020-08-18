@@ -198,7 +198,12 @@ var url = new URL(getUrlString);
    $("title").html('捷运路线图');
    ttiawid = 50 ;
   }
-  
+  if (url.searchParams.get('lang') === "zh_TW") {
+  }
+  else
+  {
+    $('#addhome,.addhome').fadeOut(1);
+  }
   var ni = 2 ;
   function langs() {
   if (ni >"1") {
