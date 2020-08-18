@@ -88,7 +88,8 @@
   <div class="langdiv">
     <a href="?lang=zh_TW" class="langb">中文</a>
     <a href="?lang=en_US" class="langb" style="top:57px;">English</a>
-    <a href="?lang=JP" class="langb" style="top:115px;">Japanese</a>
+    <a href="?lang=JP" class="langb" style="top:115px;">日文</a>
+    <a href="?lang=Kor" class="langb" style="top:115px;">한국어</a>
     
   </div>
 <div class="loadbg">
@@ -176,6 +177,14 @@ var url = new URL(getUrlString);
    $("#opopc").html('<font size="1px">ピーチマシン</font>');
    $("#opopd").html('<font size="2px">ダンハイ</font>');
    $("title").html('MRT路線図');
+   ttiawid = 55 ;
+  }
+  if (url.searchParams.get('lang') === "Kor") {
+   $("#opopa").html('<font size="5px">타이페이</font>');
+   $("#opopb").html('가오슝');
+   $("#opopc").html('<font size="1px">복숭아 기계</font>');
+   $("#opopd").html('단 하이');
+   $("title").html('MRT 노선도');
    ttiawid = 55 ;
   }
   
