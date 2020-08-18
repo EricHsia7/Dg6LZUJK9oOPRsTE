@@ -166,6 +166,7 @@ $("#opopline").animate({left: 75 + '%' },555);
     
   var getUrlString = location.href;
 var url = new URL(getUrlString);
+  var lll = 0 ;
   if (url.searchParams.get('lang') === "en_US") {
    $("#opopa").html('TPE');
    $("#opopb").html('KHH');
@@ -173,6 +174,7 @@ var url = new URL(getUrlString);
    $("#opopd").html('DLR');
    $("title").html('Metro route map');
    ttiawid = 55 ;
+    lll = 1 ;
   }
   if (url.searchParams.get('lang') === "JP") {
    $("#opopa").html('台北');
@@ -181,6 +183,7 @@ var url = new URL(getUrlString);
    $("#opopd").html('<font size="2px">ダンハイ</font>');
    $("title").html('MRT路線図');
    ttiawid = 55 ;
+    lll = 1 ;
   }
   if (url.searchParams.get('lang') === "Kor") {
    $("#opopa").html('<font size="1px">타이페이</font>');
@@ -189,6 +192,7 @@ var url = new URL(getUrlString);
    $("#opopd").html('<font size="2px">단하이</font>');
    $("title").html('MRT 노선도');
    ttiawid = 52 ;
+    lll = 1 ;
   }
   if (url.searchParams.get('lang') === "zh_CN") {
       $("#opopa").html('台北');
@@ -197,12 +201,15 @@ var url = new URL(getUrlString);
    $("#opopd").html('淡海');
    $("title").html('捷运路线图');
    ttiawid = 50 ;
+    lll = 1 ;
   }
   if (url.searchParams.get('lang') === "zh_TW") {
   }
   else
   {
+    if (lll === '0') {
     $('#addhome,.addhome').fadeOut(1);
+  }
     location.href= '?lang=zh_TW' ;
   }
   var ni = 2 ;
