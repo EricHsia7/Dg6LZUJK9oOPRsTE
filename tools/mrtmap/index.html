@@ -11,7 +11,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 .mapdiv {position:absolute;top:45px;left:0px; width:25%;height:calc(100% - 105px);background:#ffffff;overflow:scroll;}
-.bottomdiv {position:fixed;bottom:0px;left:0px;width:100%;height:60px;background:#ffffff; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);}
+.bottomdiv {position:fixed;bottom:0px;left:0px;width:100%;height:60px;background:#ffffff; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);border-radius: 0 0 0 0;}
 
 .hometoptab {width:100%;height:45px;position:fixed;top:0px;left:0px;background:#ffffff; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);z-index:1000;font-family: 'Noto Sans TC', sans-serif;}
 
@@ -212,14 +212,14 @@ var url = new URL(getUrlString);
   var ni = 2 ;
   function langs() {
   if (ni >"1") {
-$('.bottomdiv').animate({bottom: 200 + 'px' },555);
+$('.bottomdiv').animate({bottom: 200 + 'px' ,border-radius: 15 15 0 0 },555);
     $('.langdiv').animate({bottom: 0 + 'px' },555);
     $('#allmap,.hometoptab').animate({top: -200 + 'px' },555);
     $('#langbgg').fadeIn(555);
    ni -=2 ;
    } 
 else {
-$('.bottomdiv').animate({bottom: 0 + 'px' },555);
+$('.bottomdiv').animate({bottom: 0 + 'px' border-radius: 0 0 0 0 },555);
     $('.langdiv').animate({bottom: -200 + 'px' },555);
   $('#allmap,.hometoptab').animate({top: 0 + 'px' },555);
   $('#langbgg').fadeOut(555);
