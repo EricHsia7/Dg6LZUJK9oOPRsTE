@@ -22,6 +22,16 @@
   @media only screen and (min-width:550px) {
     .icon {width:20%;}
   }
+  #sepp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
 </style>
 <body>
 <div class="hometoptab">
@@ -75,7 +85,19 @@
 <a href="javascript:reduce()" style="width:58px;height:58px;background:#ffffff;border-right: 1px solid #ccc;position:fixed;left:0px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="reduce.svg" style="width:30px;"></span></a>
 
 <a href="javascript:add()" style="width:58px; height:58px;background:#ffffff; border-left: 1px solid #ccc; position:fixed;left:58px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"> <span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="add.svg" style="width:30px;"></span></a>
-<a href="javascript:langse()" style="width:58px; height:58px;background:#ffffff; border-left: 1px solid #ccc; position:fixed;left:116px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"> <span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="lang.svg" style="width:30px;"></span></a>
+<a href="javascript:langse()" style=""> </a>
+ 
+  <label for="sepp" style="width:58px; height:58px;background:#ffffff; border-left: 1px solid #ccc; position:fixed;left:116px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);">
+  <i class="fa fa-cloud-upload"></i><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="lang.svg" style="width:30px;"></span>
+</label>
+
+<select id="sepp" class="select">
+  <optgroup label="語言(lang)">
+    　<option value="1">中文</option>
+    　<option value="2">英文</option>
+    　<option value="3">...</option>
+  </optgroup>
+</select>
   
   <a href="googletpmap.html" target="_blank" style="display:none;width:58px; height:58px;background:#ffffff; border-left: 1px solid #ccc; position:fixed;left:116;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"> <span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="pin.svg" style="width:30px;"></span></a>
   
