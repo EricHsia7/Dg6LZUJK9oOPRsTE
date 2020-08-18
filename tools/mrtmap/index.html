@@ -150,8 +150,7 @@ $("#opopline").animate({left: 75 + '%' },555);
     
   var getUrlString = location.href;
 var url = new URL(getUrlString);
-  var lang = url.searchParams.get('lang') ;
-  if (lang = 'en_US') {
+  if (url.searchParams.get('lang') === "en_US") {
    $("#opopa").html('TPE');
    $("#opopb").html('KHH');
    $("#opopc").html('TTIA');
