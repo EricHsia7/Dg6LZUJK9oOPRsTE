@@ -193,12 +193,14 @@ var url = new URL(getUrlString);
   if (ni >"1") {
 $('.bottomdiv').animate({bottom: 200 + 'px' },555);
     $('.langdiv').animate({bottom: 0 + 'px' },555);
+    $('#allmap,.hometoptab').animate({top: -200 + 'px' },555);
     $('#langbgg').fadeIn(555);
    ni -=2 ;
    } 
 else {
 $('.bottomdiv').animate({bottom: 0 + 'px' },555);
     $('.langdiv').animate({bottom: -200 + 'px' },555);
+  $('#allmap,.hometoptab').animate({top: 0 + 'px' },555);
   $('#langbgg').fadeOut(555);
     ni +=2 ;   
   }
