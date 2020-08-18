@@ -203,11 +203,11 @@ var url = new URL(getUrlString);
    ttiawid = 50 ;
     lll = 1 ;
   }
-  if (url.searchParams.get('lang') === "zh_TW") {
+  if (url.searchParams.get('add') === "false") {
+        $('#addhome,.addhome').fadeOut(1);
   }
   else
   {
-    $('#addhome,.addhome').fadeOut(1);
   }
   var ni = 2 ;
   function langs() {
@@ -231,6 +231,7 @@ $('.bottomdiv').animate({bottom: 0 + 'px' },555);
   }
   function addhomeout() {
     $('#addhome,.addhome').fadeOut(888);
+    location.href= '?add=false' ;
   }
 </script>
 <script>
