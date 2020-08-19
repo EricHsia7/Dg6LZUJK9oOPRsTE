@@ -1,4 +1,5 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/mrtmap/myat.min.js"></script>
 <meta charset="UTF-8">
 <link href="674cb55f-9c25-c09c-3388-873da7741cff-512.png" rel="apple-touch-icon" />
 <link type="image/x-icon" href="674cb55f-9c25-c09c-3388-873da7741cff-512.ico" rel="icon" /> 
@@ -326,7 +327,7 @@ $('.bottomdiv').animate({bottom: 0 + 'px' ,'border-top-right-radius':0 + 'px','b
     }
   }
   function reload() {
-    location.reload();
+    $.myConfirm({message:'確認要重新整理？',callback:function(){location.reload();}});
   }
   function addhomeout() {
     $('#addhome,.addhome').fadeOut(888);
