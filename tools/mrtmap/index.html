@@ -319,6 +319,7 @@ var url = new URL(getUrlString);
   var ni = 2 ;
   var nii = 2 ;
   function langs() {
+    $('.msgdiv').fadeOut(1);
   if (ni >"1") {
     
    if (nii <"1") {
@@ -343,6 +344,7 @@ $('.bottomdiv').animate({bottom: 0 + 'px' ,'border-top-right-radius':0 + 'px','b
   }
   
   function more() {
+    $('.msgdiv').fadeOut(1);
   if (nii >"1") {
     if (ni <"1") {
     $('.langdiv').delay(555).animate({bottom: -200 + 'px' },555);
