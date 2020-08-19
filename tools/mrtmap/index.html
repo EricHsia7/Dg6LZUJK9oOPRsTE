@@ -34,7 +34,11 @@
 
   .topbartextno {color:#808080;}
   .topbartextyes {color:#333333;}
+  .lightimg{display:block;}
+  .darkimg{display:none;}
   @media (prefers-color-scheme: dark) {
+      .lightimg{display:none;}
+  .darkimg{display:block;}
     .topbartextno {color:#808080;}
     .topbartextyes {color:#ffffff;}
     
@@ -102,11 +106,11 @@
 </div>
 <a href="javascript:langs()" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);position:fixed;left:0px;top:0px;width:100%;height:100%;background:rgba(0, 0, 0, 0.6);display:none;" id="langbgg"></a>
 <div class="bottomdiv">
-<a href="javascript:reduce()" style="width:58px;height:58px;background:rgba(0, 0, 0, 0);border-right: 1px solid #ccc;position:absolute;left:0px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);border-top-left-radius:99em;"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="reduce.svg" style="width:30px;" class="bbbimg"></span></a>
+<a href="javascript:reduce()" style="width:58px;height:58px;background:rgba(0, 0, 0, 0);border-right: 1px solid #ccc;position:absolute;left:0px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);border-top-left-radius:99em;"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="reduce.svg" style="width:30px;" class="lightimg"><img src="reduce_dark.svg" style="width:30px;" class="darkimg"></span></a>
 
-<a href="javascript:add()" style="width:58px; height:58px;background:rgba(0, 0, 0, 0); border-left: 1px solid #ccc; position:absolute;left:58px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"> <span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="add.svg" style="width:30px;"class="bbbimg"></span></a>
-<a href="javascript:langs()" style="width:58px; height:58px;background:rgba(0, 0, 0, 0); border-left: 1px solid #ccc; position:absolute;left:116px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="lang.svg" style="width:30px;"class="bbbimg"></span></a> 
-<a href="javascript:reload()" style="width:58px; height:58px;background:rgba(0, 0, 0, 0); border-left: 1px solid #ccc; position:absolute;left:174px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="reload.svg" style="width:30px;"class="bbbimg"></span></a>
+<a href="javascript:add()" style="width:58px; height:58px;background:rgba(0, 0, 0, 0); border-left: 1px solid #ccc; position:absolute;left:58px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"> <span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="add.svg" style="width:30px;"class="lightimg"><img src="add_dark.svg" style="width:30px;"class="darkimg"></span></a>
+<a href="javascript:langs()" style="width:58px; height:58px;background:rgba(0, 0, 0, 0); border-left: 1px solid #ccc; position:absolute;left:116px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="lang.svg" style="width:30px;"class="lightimg"><img src="lang_dark.svg" style="width:30px;"class="darkimg"></span></a> 
+<a href="javascript:reload()" style="width:58px; height:58px;background:rgba(0, 0, 0, 0); border-left: 1px solid #ccc; position:absolute;left:174px;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="reload.svg" style="width:30px;"class="lightimg"><img src="reload_dark.svg" style="width:30px;"class="darkimg"></span></a>
  
   <a href="googletpmap.html" target="_blank" style="display:none;width:58px; height:58px;background:#ffffff; border-left: 1px solid #ccc; position:absolute;left:116;bottom:1px; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"> <span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"><img src="pin.svg" style="width:30px;"class="bbbimg"></span></a>
   
