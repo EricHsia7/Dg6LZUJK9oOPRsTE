@@ -31,13 +31,13 @@
   }
   .langb {text-align:center;font-family: 'Noto Sans TC', sans-serif;text-decoration:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);width:100%;height:50px;background:#ffffff;border-top: 1px solid #ccc;margin-top:0px;color:#333333;font-size:25px;padding:3px 0px;position:absolute;top:0px;left:0px;}
   .colorbarpppppppp {width:50px;height:3px;border-radius: 5px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#333333;}
-  .text-mode:after {
-    content: "light";
-  }
+
+  .topbartextno {color:#808080;}
+  .topbartextyes {color:#333333;}
   @media (prefers-color-scheme: dark) {
-      .text-mode:after {
-    content: "dark";
-  }
+    .topbartextno {color:#808080;}
+    .topbartextyes {color:#ffffff;}
+    
     .hometoptab {width:100%;height:45px;position:fixed;top:0px;left:0px;background:#333333; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);z-index:1000;font-family: 'Noto Sans TC', sans-serif;}
      .colorbarpppppppp {width:50px;height:3px;border-radius: 5px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#ffffff;}
     .bottomdiv {position:fixed;bottom:0px;left:0px;width:100%;height:60px;background:#333; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);border-top-right-radius:0px;border-top-left-radius:0px;}
@@ -52,23 +52,23 @@
 
 </style>
 <body>
-  <span class="text-mode"></span>
+
 <div class="hometoptab">
     
       
     <div style="position: absolute;left:50%;top:40%; transform:translate(-50%,-50%); width:100%;height:100%;">
       
       <div style="position: absolute;left:0%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">       
-<a href="javascript:hometabof1()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop1"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#333333;font-size:18px;" id="opopa">台北</span></a>     
+<a href="javascript:hometabof1()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop1"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;" id="opopa" class="topbartextyes">台北</span></a>     
 </div>    
       <div style="position: absolute;left:25%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">
-<a href="javascript:hometabof2()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop2"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#808080;font-size:18px;" id="opopb">高雄</span></a>  
+<a href="javascript:hometabof2()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop2"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;" id="opopb" class="topbartextno">高雄</span></a>  
       </div>
 <div style="position: absolute;left:50%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">
-<a href="javascript:hometabof3()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop3"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#808080;font-size:18px;" id="opopc">桃機</span></a>  
+<a href="javascript:hometabof3()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop3"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;" id="opopc" class="topbartextno">桃機</span></a>  
       </div>
 <div style="position: absolute;left:75%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">
-<a href="javascript:hometabof4()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop4"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#808080;font-size:18px;" id="opopd">淡海</span></a>  
+<a href="javascript:hometabof4()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop4"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;" id="opopd" class="topbartextno">淡海</span></a>  
       </div>
       
       <div style="width:25%;height:3px;position: absolute;left:0%;bottom:5px;background:rgba(0, 0, 0, 0);border-radius: 5px;" id="opopline">
@@ -154,10 +154,10 @@ var ttiawid = 50 ;
 function hometabof1() {
   $("#opopline").animate({left: 0 + '%' },555);
     
-    $("#opopa").css("color",cbarc);
-    $("#opopb").css("color","#808080");
-    $("#opopc").css("color","#808080");
-    $("#opopd").css("color","#808080");
+    $("#opopa").attr('class', 'topbartextyes');
+    $("#opopb").attr('class', 'topbartextno');
+    $("#opopc").attr('class', 'topbartextno');
+    $("#opopd").attr('class', 'topbartextno');
     $('#allmap').animate({left: 0 + '%' },555);
     $('#colorbar').animate({width: 50 + 'px' },555);
     $('#allmap,.mapdiv,body').animate({background :"#fafafa"}, 555);
@@ -166,10 +166,10 @@ function hometabof1() {
   function hometabof2() {
 $("#opopline").animate({left: 25 + '%' },555);
     
-    $("#opopa").css("color","#808080");
-    $("#opopb").css("color",cbarc);
-    $("#opopc").css("color","#808080");
-    $("#opopd").css("color","#808080");
+    $("#opopa").attr('class', 'topbartextno');
+    $("#opopb").attr('class', 'topbartextyes');
+    $("#opopc").attr('class', 'topbartextno');
+    $("#opopd").attr('class', 'topbartextno');
     $('#allmap').animate({left: -100 + '%' },555);
     $('#colorbar').animate({width: 50 + 'px' },555);
     $('#allmap,.mapdiv,body').animate({background :"#e9e9e9"}, 555);
@@ -178,10 +178,10 @@ $("#opopline").animate({left: 25 + '%' },555);
 function hometabof3() {
 $("#opopline").animate({left: 50 + '%' },555);
     
-    $("#opopa").css("color","#808080");
-    $("#opopb").css("color","#808080");
-    $("#opopc").css("color",cbarc);
-    $("#opopd").css("color","#808080");
+    $("#opopa").attr('class', 'topbartextno');
+    $("#opopb").attr('class', 'topbartextno');
+    $("#opopc").attr('class', 'topbartextyes');
+    $("#opopd").attr('class', 'topbartextno');
     $('#allmap').animate({left: -200 + '%' },555);
     $('#colorbar').animate({width: ttiawid + 'px' },555);
     $('#allmap,.mapdiv,body').animate({background :"#eef0ef"}, 555);
@@ -190,10 +190,10 @@ $("#opopline").animate({left: 50 + '%' },555);
 function hometabof4() {
 $("#opopline").animate({left: 75 + '%' },555);
     
-    $("#opopa").css("color","#808080");
-    $("#opopb").css("color","#808080");
-    $("#opopc").css("color","#808080");
-    $("#opopd").css("color",cbarc);
+    $("#opopa").attr('class', 'topbartextno');
+    $("#opopb").attr('class', 'topbartextno');
+    $("#opopc").attr('class', 'topbartextno');
+    $("#opopd").attr('class', 'topbartextyes');
     $('#allmap').animate({left: -300 + '%' },555);
     $('#colorbar').animate({width: 50 + 'px' },555);
     $('#allmap,.mapdiv,body').animate({background :"#ffffff"}, 555);
