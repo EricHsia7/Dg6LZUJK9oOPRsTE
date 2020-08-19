@@ -53,6 +53,7 @@ display:none;position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);wid
   
  
   @media (prefers-color-scheme: dark) {
+    .mapdiv {position:absolute;top:45px;left:0px; width:25%;height:calc(100% - 105px);background:#333333;overflow:scroll;}
     
     .msgdiv {
 display:none;position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:300px;height:170px;background:#333333;border-radius:20px;color:#fff;z-index:1000010;
@@ -217,7 +218,6 @@ function hometabof1() {
     $("#opopd").attr('class', 'topbartextno');
     $('#allmap').animate({left: 0 + '%' },555);
     $('#colorbar').animate({width: 50 + 'px' },555);
-    $('#allmap,.mapdiv,body').animate({background :"#fafafa"}, 555);
   }
   
   function hometabof2() {
@@ -229,8 +229,7 @@ $("#opopline").animate({left: 25 + '%' },555);
     $("#opopd").attr('class', 'topbartextno');
     $('#allmap').animate({left: -100 + '%' },555);
     $('#colorbar').animate({width: 50 + 'px' },555);
-    $('#allmap,.mapdiv,body').animate({background :"#e9e9e9"}, 555);
-  }
+}
 
 function hometabof3() {
 $("#opopline").animate({left: 50 + '%' },555);
@@ -241,8 +240,7 @@ $("#opopline").animate({left: 50 + '%' },555);
     $("#opopd").attr('class', 'topbartextno');
     $('#allmap').animate({left: -200 + '%' },555);
     $('#colorbar').animate({width: ttiawid + 'px' },555);
-    $('#allmap,.mapdiv,body').animate({background :"#eef0ef"}, 555);
-  }
+}
   
 function hometabof4() {
 $("#opopline").animate({left: 75 + '%' },555);
@@ -253,8 +251,7 @@ $("#opopline").animate({left: 75 + '%' },555);
     $("#opopd").attr('class', 'topbartextyes');
     $('#allmap').animate({left: -300 + '%' },555);
     $('#colorbar').animate({width: 50 + 'px' },555);
-    $('#allmap,.mapdiv,body').animate({background :"#ffffff"}, 555);
-  } 
+} 
     $('.loadbg').delay(3800).fadeOut(888);
     $('.darkmode-layer, .darkmode-toggle').delay(3800).fadeIn(888);
   var getUrlString = location.href;
