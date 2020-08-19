@@ -116,6 +116,47 @@
 </div>
   <a href="javascript:addhomeout()" id="addhome"><img src="iphone_add_to_home_screen_2.png" style="position:fixed;left:0px;bottom:0px;width:100%;display:none;" class="addhome"></a>
 <script>
+  
+  var cbarc = '#333333' ;
+  window.onload = function () {
+
+  function dark() {
+    // 深色模式
+    cbarc = '#ffffff'
+  }
+
+  function light() {
+    // 淺色模式
+    cbarc = '#333333'
+  }
+
+  // 首次載入現在的模式
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    dark();
+  } else {
+    light();
+  }
+
+  // 監聽模式的變更
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      const newColorScheme = e.matches ? "dark" : "light";
+      if (newColorScheme == "dark") {
+        dark();
+      } else if (newColorScheme == "light") {
+        light();
+      }
+    });
+};
+  
+  
+  
+  
+  
 var p = 500 ;
 function reduce() {
 if (p >100) {
@@ -134,7 +175,7 @@ var ttiawid = 50 ;
 function hometabof1() {
   $("#opopline").animate({left: 0 + '%' },555);
     
-    $("#opopa").css("color","#333333");
+    $("#opopa").css("color",cbarc);
     $("#opopb").css("color","#808080");
     $("#opopc").css("color","#808080");
     $("#opopd").css("color","#808080");
@@ -147,7 +188,7 @@ function hometabof1() {
 $("#opopline").animate({left: 25 + '%' },555);
     
     $("#opopa").css("color","#808080");
-    $("#opopb").css("color","#333333");
+    $("#opopb").css("color",cbarc);
     $("#opopc").css("color","#808080");
     $("#opopd").css("color","#808080");
     $('#allmap').animate({left: -100 + '%' },555);
@@ -160,7 +201,7 @@ $("#opopline").animate({left: 50 + '%' },555);
     
     $("#opopa").css("color","#808080");
     $("#opopb").css("color","#808080");
-    $("#opopc").css("color","#333333");
+    $("#opopc").css("color",cbarc);
     $("#opopd").css("color","#808080");
     $('#allmap').animate({left: -200 + '%' },555);
     $('#colorbar').animate({width: ttiawid + 'px' },555);
@@ -173,7 +214,7 @@ $("#opopline").animate({left: 75 + '%' },555);
     $("#opopa").css("color","#808080");
     $("#opopb").css("color","#808080");
     $("#opopc").css("color","#808080");
-    $("#opopd").css("color","#333333");
+    $("#opopd").css("color",cbarc);
     $('#allmap').animate({left: -300 + '%' },555);
     $('#colorbar').animate({width: 50 + 'px' },555);
     $('#allmap,.mapdiv,body').animate({background :"#ffffff"}, 555);
