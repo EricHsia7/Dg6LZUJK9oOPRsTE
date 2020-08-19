@@ -17,7 +17,7 @@
 
 .hometoptab {width:100%;height:45px;position:fixed;top:0px;left:0px;background:#ffffff; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);z-index:1000;font-family: 'Noto Sans TC', sans-serif;}
 
-  .loadbg {width:100%;height:100%;position:fixed;top:0px;left:0px;-webkit-backdrop-filter: blur(15px);backdrop-filter: blur(15px);background: rgba(255, 255, 255, 0.3);z-index:1001;}
+  .loadbg {width:100%;height:100%;position:fixed;top:0px;left:0px;background: #ffffff;z-index:1001;}
   @media only screen and (max-width:550px) {
     .icon {width:60%;}
     .addhome {display:block;}
@@ -37,6 +37,7 @@
   .lightimg{display:block;}
   .darkimg{display:none;}
   @media (prefers-color-scheme: dark) {
+    .loadbg {width:100%;height:100%;position:fixed;top:0px;left:0px;background: #333333;z-index:1001;}
       .lightimg{display:none;}
   .darkimg{display:block;}
     .topbartextno {color:#808080;}
@@ -123,7 +124,8 @@
     <a href="?lang=zh_CN" class="langb" style="top:228px;"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);">简体中文</span></a> 
   </div>
 <div class="loadbg">
-<img src="metro.svg" style="position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);" class="icon">
+<span class="lightimg"><img src="metro.svg" style="position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);" class="icon"></span>
+  <span class="darkimg"><img src="metro_dark.svg" style="position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);" class="icon"></span>
 </div>
   <a href="javascript:addhomeout()" id="addhome"><img src="iphone_add_to_home_screen_2.png" style="position:fixed;left:0px;bottom:0px;width:100%;display:none;" class="addhome"></a>
 <script>
