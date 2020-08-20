@@ -3,6 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #eee;
+  min-height:100%;
 }
 
 .calculator {
