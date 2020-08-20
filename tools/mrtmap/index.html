@@ -54,7 +54,78 @@ display:none;position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);wid
 .msgno {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);position: absolute;right:0px;bottom:0px;width:50%;height:45px;background:#f2f2f2;border-radius:0px 0px 20px 0px; border-left:1px #ccc solid; border-top:1px #ccc solid;color:#333;}
   body {background:#ffffff;}
  
+  
+  
+  .webdiv {
+position:fixed;
+bottom:-100%;
+left:0px;
+width:100%;
+height:100%;
+background:#f2f2f2;
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+}
+.webtitle {
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+position:absolute;
+top:0px;
+left:0px;
+width:100%;
+height:50px;
+background:#fff;
+color:#333;
+}
+.web {
+position: absolute;
+bottom: 0px;
+left:0px;
+width:100%;
+height: calc(100% - 50px);
+border:none;
+}
+  
+  
+  
+  
+  
   @media (prefers-color-scheme: dark) {
+    
+    
+    .webdiv {
+position:fixed;
+bottom:-100%;
+left:0px;
+width:100%;
+height:100%;
+background:#f2f2f2;
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+}
+.webtitle {
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+position:absolute;
+top:0px;
+left:0px;
+width:100%;
+height:50px;
+background:#333;
+color:#fff;
+}
+.web {
+position: absolute;
+bottom: 0px;
+left:0px;
+width:100%;
+height: calc(100% - 50px);
+border:none;
+}
+    
+    
+    
+    
     body {background:#333333;}
     .mapdiv {position:absolute;top:45px;left:0px; width:25%;height:calc(100% - 105px);background:#333333;overflow:scroll;}
     
@@ -184,8 +255,33 @@ p {color:#fff;}
   <span class="darkimg"><img src="metro_dark.svg" style="position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);" class="icon"></span>
 </div>
   <a href="javascript:addhomeout()" id="addhome"><img src="iphone_add_to_home_screen_2.png" style="position:fixed;left:0px;bottom:0px;width:100%;display:none;" class="addhome"></a>
-<script>
+<div class="webdiv">
+<div class="webtitle">
+<a href="javascript:webclose()">
+<span style="position: absolute;left:8px;top:50%; transform:translate(-0%,-50%);"
+<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDM0MS4zMzMgMzQxLjMzMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzQxLjMzMyAzNDEuMzMzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij48Zz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iMzQxLjMzMywxNDkuMzMzIDgxLjcwNywxNDkuMzMzIDIwMC44NTMsMzAuMTg3IDE3MC42NjcsMCAwLDE3MC42NjcgMTcwLjY2NywzNDEuMzMzIDIwMC44NTMsMzExLjE0NyA4MS43MDcsMTkyICAgICAzNDEuMzMzLDE5MiAgICIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4K" style="width:20px;" class="lightimg">
+<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzQxLjMzMyAzNDEuMzMzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNDEuMzMzIDM0MS4zMzM7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cG9seWdvbiBwb2ludHM9IjM0MS4zMzMsMTQ5LjMzMyA4MS43MDcsMTQ5LjMzMyAyMDAuODUzLDMwLjE4NyAxNzAuNjY3LDAgMCwxNzAuNjY3IDE3MC42NjcsMzQxLjMzMyAyMDAuODUzLDMxMS4xNDcgODEuNzA3LDE5MiANCgkJCTM0MS4zMzMsMTkyIAkJIi8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" style="width:20px;" class="darkimg">
+</span>
+</a>
+<span style="position: absolute;left:50%;top:50%; transform:translate(-50%,-50%);" id="webtitletext">標題</span>
+</div>
+<span id="weburl">
+<iframe src="" class="web"></iframe>
+</span>
+</div>
+  <script>
   
+    function web(url,title) {
+$('.webdiv').animate({bottom: 0 + '%'},555);
+$('.webdiv,.webtitle').animate({'border-top-right-radius': 0 + 'px' , 'border-top-left-radius': 0 + 'px'},555);
+$('#webtitletext').html(title);
+$('#weburl').html('<iframe src="' + url + '" class="web"></iframe>');
+}
+function webclose() {
+$('.webdiv').animate({bottom: -100 + '%'},555);
+$('.webdiv,.webtitle').animate({'border-top-right-radius': 30 + 'px' , 'border-top-left-radius': 30 + 'px'},555);
+}
+    
   var cbarc = '#333333' ;
   
   function darkorlight() {
