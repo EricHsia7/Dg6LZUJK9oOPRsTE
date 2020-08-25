@@ -68,8 +68,8 @@ iii();
 
 function iii() {
 r += 1 ;
-$('#ii').append('<div class="ig" id="' + r + '"><img src="https://source.unsplash.com/random/512x512,' + r + '" class="i"/><img src="like.jpg" class="l"><p>' + (parseInt(Math.random()*(999.1))+1) + '萬 個讚</p><br><p class="date">' + (parseInt(Math.random()*(23))+1) + ' 小時前</p><br></div>');
-
+$('#ii').append('<div class="ig"><img id="' + r + '" src="https://source.unsplash.com/random/512x512' + r + '" class="i"/><img src="like.jpg" class="l"><p>' + (parseInt(Math.random()*(999.1))+1) + '萬 個讚</p><br><p class="date">' + (parseInt(Math.random()*(23))+1) + ' 小時前</p><br></div>');
+  
 $('#' + r).height($('#' + r).width());
 $('p').css({"font-size": $('.l').height()/3 });
 $('.date').css({"font-size": $('.l').height()/4 });
