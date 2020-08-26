@@ -1,1 +1,163 @@
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');body {margin:6px;background:#ffffff;}img {width:calc(33% - 6px);height:auto;object-fit:cover;margin:3px;border-radius:8px;-webkit-Filter:blur(20px);opacity:0.1;}#start {padding:8px 20px;font-size:35px;font-family: 'Roboto', sans-serif;background:#333;color:#fff;border-radius:99em;}</style><body><center><span id="ii"></span></center><script>var max = 100 ;r = 1 ;function iii() {r += 1 ;$('#ii').append('<img id="' + r + '" src="https://source.unsplash.com/random/512x512' + r + '" alt="載入中"class="i"/>');$('#' + r).height($('#' + r).width());$('p').css({"font-size": $('.l').height()/3 });$('.date').css({"font-size": $('.l').height()/4 });blurElement('img', 0);}$('img').delay(1000).ready(function() {        blurElement('img', 0);    });function blurElement(element, size) {    var filterVal = 'blur(' + size + 'px)';    $(element).delay(15000).css({        'filter':filterVal,        'webkitFilter':filterVal,        'mozFilter':filterVal,        'oFilter':filterVal,        'msFilter':filterVal,        'transition':'all 5s ease-out',        '-webkit-transition':'all 5s ease-out',        '-moz-transition':'all 5s ease-out',        '-o-transition':'all 5s ease-out',       'opacity':'1',        'width':'calc(33% - 6px)',        'height':$('img').width()    });}$(window).scroll(function(){　　var scrollTop = $(this).scrollTop();　　var scrollHeight = $(document).height();　　var windowHeight = $(this).height();　　if(scrollTop + windowHeight >= scrollHeight && scrollTop + windowHeight/30 <= scrollHeight ){　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　}});iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();　　　　iii();</script></body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<meta charset="UTF-8">
+<title>圖片</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+margin:6px;
+background:#ffffff;
+}
+
+img {
+width:calc(33% - 6px);
+height:auto;
+object-fit:cover;
+margin:3px;
+border-radius:8px;
+-webkit-Filter:blur(20px);
+opacity:0.1;
+}
+
+
+
+#start {
+padding:8px 20px;
+font-size:35px;
+font-family: 'Roboto', sans-serif;
+background:#333;
+color:#fff;
+border-radius:99em;
+}
+</style>
+<body>
+<center>
+<span id="ii">
+</span>
+</center>
+<script>
+var max = 100 ;
+r = 1 ;
+
+function iii() {
+r += 1 ;
+$('#ii').append('<img id="' + r + '" src="https://source.unsplash.com/random/512x512' + r + '" alt="載入中"class="i"/>');
+
+$('#' + r).height($('#' + r).width());
+$('p').css({"font-size": $('.l').height()/3 });
+$('.date').css({"font-size": $('.l').height()/4 });
+
+blurElement('img', 0);
+
+}
+
+
+$('img').delay(1000).ready(function() {
+        blurElement('img', 0);
+    });
+
+
+function blurElement(element, size) {
+    var filterVal = 'blur(' + size + 'px)';
+    $(element).delay(15000).css({
+        'filter':filterVal,
+        'webkitFilter':filterVal,
+        'mozFilter':filterVal,
+        'oFilter':filterVal,
+        'msFilter':filterVal,
+        'transition':'all 5s ease-out',
+        '-webkit-transition':'all 5s ease-out',
+        '-moz-transition':'all 5s ease-out',
+        '-o-transition':'all 5s ease-out',
+       'opacity':'1',
+        'width':'calc(33% - 6px)',
+        'height':$('img').width()
+    });
+}
+
+
+$(window).scroll(function(){
+　　var scrollTop = $(this).scrollTop();
+　　var scrollHeight = $(document).height();
+　　var windowHeight = $(this).height();
+　　if(scrollTop + windowHeight >= scrollHeight && scrollTop + windowHeight/30 <= scrollHeight ){
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　}
+});
+
+
+
+iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+
+iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+
+iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+
+iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+　　　　iii();
+
+</script>
+</body>
