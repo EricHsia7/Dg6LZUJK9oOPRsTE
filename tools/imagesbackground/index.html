@@ -15,7 +15,7 @@ function of() {
 r += 1 ;
         $('#i').append('<img src="https://source.unsplash.com/random/2048x2048,' + r + '" id="' + r + '" class="img">');
 
-$('#' + r).css({'-webkit-Filter':'blur(' + url.searchParams.get('blur') + 'px)',top: parseInt(Math.random()*(100)) + '%', left: parseInt(Math.random()*(100)) + '%', opacity: (parseInt(Math.random()*(5))+5)*0.1 ,height: parseInt(Math.random()*(100))+80 + 'px' , width: parseInt(Math.random()*(100))+80 + 'px' });
+$('#' + r).css({'webkitFilter':'blur(' + url.searchParams.get('blur') + 'px)',top: parseInt(Math.random()*(100)) + '%', left: parseInt(Math.random()*(100)) + '%', opacity: (parseInt(Math.random()*(5))+5)*0.1 ,height: parseInt(Math.random()*(100))+80 + 'px' , width: parseInt(Math.random()*(100))+80 + 'px' });
 if(r >= url.searchParams.get('i') ) {
 
 window.clearInterval(off);
