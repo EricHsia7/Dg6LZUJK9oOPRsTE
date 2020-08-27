@@ -26,9 +26,14 @@ window.clearInterval(off);
 
 var off = window.setInterval(of,88) ;
 
- $("p").hover(function(){
+ $("img").hover(function(){
+  var cqq1 = $(this).css('webkitFilter') ;
+   var cqq2= $(this).css('top') ;
+   var cqq3 = $(this).css('left') ;
+   var cqq4 = $(this).css('height') ;
+   var cqq5 = $(this).css('width') ;
     $(this).css({'webkitFilter':'blur(' + 0 + 'px)',top: '10%' , left: '10%',height: '50vw',width:'50vw'});
     },function(){
-    $(this).css({'webkitFilter':'blur(' + 0 + 'px)',top: 'auto' , left: 'auto',height: 'auto',width:'auto'});
+    $(this).css({'webkitFilter':cqq1,'top':cqq2,left:cqq3,height:cqq4,width:cqq5});
   });
 </script>
