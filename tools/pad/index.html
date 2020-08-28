@@ -1,0 +1,88 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<meta charset="UTF-8">
+<title>輸入密碼</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+body {background-image:url('https://source.unsplash.com/2048x2048/?nature,water');background-size: cover;}
+
+* {-webkit-transition:0.8s;transition:0.8s;}
+
+
+.blur {-webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px); position:fixed;top:50%;left:50%;width:340px;height:450px; transform:translate(-50%,-50%);border-radius:2rem;background:rgba(0, 0, 0, 0.3)}
+
+.blurbg {-webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); position:fixed;top:0%;left:0%;width:100%;height:100%;}
+
+@media only screen and (min-width:600px) { 
+#errortext {color:#fff;font-size:32px; font-family: 'Noto Sans JP', sans-serif; display:none;background:rgba(0, 0, 0, 0.6);width:100%;height:100%;}
+
+h1 {color:#fff;position:absolute;top:20px;left:50%;font-size:32px; transform:translate(-50%,-0%); font-family: 'Noto Sans JP', sans-serif;}
+
+.blur {-webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px); position:fixed;top:50%;left:50%;width:320px;height:430px; transform:translate(-50%,-50%);border-radius:2rem;background:rgba(0, 0, 0, 0.3);}
+
+.put {position:fixed;top:50%;left:50%;width:75%;height:45px; transform:translate(-50%,-50%);border-radius:99em; -webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); border:2px #ffffff solid; background:rgba(0, 0, 0, 0); color:#fff;font-size:26px; caret-color:#fff; font-family: 'Noto Sans JP', sans-serif;}
+
+
+.ok {position:fixed;bottom:50px;left:50%;width:45%;height:48px; transform:translate(-50%,-0%);border-radius:99em; -webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); border:2px #ffffff solid;background:rgba(0, 0, 0, 0);color:#fff; font-size:27px; font-family: 'Noto Sans JP', sans-serif;}
+
+.ok:hover {position:fixed;bottom:50px;left:50%;width:45%;height:48px; transform:translate(-50%,-0%);border-radius:99em; -webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); border:2px #ffffff solid;background:rgba(255, 255, 255, 1);color:#333; font-size:27px; font-family: 'Noto Sans JP', sans-serif;}
+
+.center {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%); font-family: 'Noto Sans JP', sans-serif;}
+
+}
+
+@media only screen and (max-width:600px) { 
+
+#errortext {color:#fff;font-size:32px; font-family: 'Noto Sans JP', sans-serif; display:none;background:rgba(0, 0, 0, 0.6);width:100%;height:100%;}
+
+h1 {color:#fff;position:absolute;top:10px;left:50%;font-size:30px; transform:translate(-50%,-0%); font-family: 'Noto Sans JP', sans-serif;}
+
+.blur {-webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); position:fixed;top:50%;left:50%;width:calc(100% - 0px);height:calc(100% - 0px); transform:translate(-50%,-50%);border-radius:0px;background:rgba(0, 0, 0, 0.6); font-family: 'Noto Sans JP', sans-serif;}
+
+.put {position:fixed;top:50%;left:50%;width:75%;height:58px; transform:translate(-50%,-50%);border-radius:99em; -webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); border:2px #ffffff solid;background:rgba(0, 0, 0, 0);color:#fff; font-size:30px; caret-color:#fff; font-family: 'Noto Sans JP', sans-serif;}
+
+
+.ok {position:fixed;bottom:50px;left:50%;width:45%;height:58px; transform:translate(-50%,-0%);border-radius:99em; -webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); border:2px #ffffff solid;background:rgba(0, 0, 0, 0);color:#fff; font-size:30px; font-family: 'Noto Sans JP', sans-serif;}
+
+.ok:hover {position:fixed;bottom:50px;left:50%;width:45%;height:58px; transform:translate(-50%,-0%);border-radius:99em; -webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); border:2px #ffffff solid;background:rgba(255, 255, 255, 1);color:#333;font-size:30px; font-family: 'Noto Sans JP', sans-serif;}
+
+.center {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%); font-family: 'Noto Sans JP', sans-serif;}
+}
+</style>
+<body></body>
+<div class="blurbg"></div>
+<div class="blur">
+<h1>輸入密碼</h1>
+<input type="password" class="put" id="pwde" placeholder="輸入密碼">
+<a class="ok"><span class="center">確認</span></a>
+</div>
+<span class="center" id="errortext"><center class="center">密碼錯誤</center></span>
+<script>
+
+var getUrlString = location.href ;
+var url = new URL(getUrlString) ;
+var error = 0 ;
+$(function(){
+	$('.ok').click(function(){ 
+var pwd= document.getElementById('pwde').value ;
+
+var data = atob(url.searchParams.get('d')) ;
+var decoded = data.split(",") ;
+if(pwd===  decoded[0] )
+{
+location.href= decoded[1] ;
+}
+else {
+document.getElementById('pwde').value = '';
+$('#errortext').fadeIn(888).delay(1200).fadeOut(888);
+error += 1 ;
+if(error >= 3 ) {
+location.href= '?error=true' ;
+}
+}
+});
+});
+
+</script>
