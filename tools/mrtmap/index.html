@@ -216,9 +216,8 @@ p {color:#fff;}
     <img src="trmap_dark.png" style="width:500%;position:absolute;top:0px;left:0px;" id="trmap2"class="darkimg">
 </div>
   
-  <div class="mapdiv" id="tr" style="left:80%;">
-<img src="trmap.png" style="width:500%;position:absolute;top:0px;left:0px;" id="trmap"class="lightimg">
-    <img src="trmap_dark.png" style="width:500%;position:absolute;top:0px;left:0px;" id="trmap2"class="darkimg">
+  <div class="mapdiv" id="tg" style="left:80%;">
+    <center><p id="tgdepp">開發中</p></center>
 </div> 
   
   </div>
@@ -361,6 +360,22 @@ $("#opopline").animate({left: 60 + '%' },555);
     $('#allmap').animate({left: -300 + '%' },555);
     $('#colorbar').animate({width: 50 + 'px' },555);
 } 
+    
+    
+    function hometabof5() {
+$("#opopline").animate({left: 60 + '%' },555);
+    
+    $("#opopa").attr('class', 'topbartextno');
+    $("#opopb").attr('class', 'topbartextno');
+    $("#opopc").attr('class', 'topbartextno');
+    $("#opopd").attr('class', 'topbartextyes');
+    $('#allmap').animate({left: -400 + '%' },555);
+    $('#colorbar').animate({width: 50 + 'px' },555);
+} 
+    
+    
+    
+    
     $('.loadbg').delay(3800).fadeOut(888);
     $('.darkmode-layer, .darkmode-toggle').delay(3800).fadeIn(888);
   var getUrlString = location.href;
