@@ -376,10 +376,11 @@ var url = new URL(getUrlString);
     lll = 1 ;
   }
   if (url.searchParams.get('lang') === "JP") {
-   $("#opopa").html('台北');
-   $("#opopb").html('高雄');
+   $("#opopa").html('<font size="2px">台北</font>');
+   $("#opopb").html('<font size="2px">高雄</font>');
    $("#opopc").html('<font size="1px">ピーチマシン</font>');
-   $("#opopd").html('<font size="2px">ダンハイ</font>');
+   $("#opopd").html('<font size="1px">ダンハイ</font>');
+    $("#opope").html('<font size="2px">台中</font>');
    $("title").html('MRT路線図');
     $("#moredivtxtat").html('現在、これ以上の機能はありません');
     $("#msginnertext").html('リロードしてもよろしいですか？');
