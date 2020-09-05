@@ -188,7 +188,7 @@ display:none;
   
 .msg {z-index:99999999999998;background:rgba(0, 0, 0, 0.7);width:auto;height:auto;padding:5px 15px;position:fixed;top:-80px;left:50%;transform:translate(-50%,-0%);border-radius:25px;color:#ffffff;}  
  
-  .bottommsg {width:100vw;height:45px;background:#e3e3e3;position:fixed;bottom:55px;left:0px;display:block;}
+  .bottommsg {color:#fff;width:100vw;height:45px;background:rgba(51, 51, 51, 0.5);position:fixed;bottom:55px;left:0px;display:block;}
   
   
   
@@ -215,7 +215,7 @@ background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, 
   </span>
 <div class="addworkdiv"><input type="text" class="addworkput" id="addworkput" placeholder="輸入文字"><a href="javascript:addwork()" class="addworkbtn"><center class="addtexticon">新增</center><img src="https://image.flaticon.com/icons/svg/1828/1828919.svg" class="addicon" style="left:50%;top:50%;transform:translate(-50%,-50%); position:absolute;"></a></div>
 
-  <div class="bottommsg"></div> 
+  <div class="bottommsg"><span style="left:50%;top:50%;transform:translate(-50%,-50%); position:absolute;">輸入逗號「,」來一次新增多個項目！</span></div> 
 
 <div class="barbg"><div class="barbox"><div class="bar"></div></div></div>
 <div id="msg" class="msg">已新增內容！</div>
@@ -302,6 +302,7 @@ if (url.searchParams.get('end') === 'true') {
 $('.addworkdiv').fadeOut(1);
 $('#brs').fadeOut(1);
 $('#brs2').fadeIn(1);
+$('.bottommsg').fadeIn(1);
 }
 var interval = setInterval(appendss,1);
 var interval2 = setInterval(titless,6120);
