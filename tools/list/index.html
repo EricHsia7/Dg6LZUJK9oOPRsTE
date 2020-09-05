@@ -301,7 +301,7 @@ function startwork() {
 location.href = '?f=1&s=1&q=' + url.searchParams.get('q') ;
 }
   function closebmsg() {
-  location.href = '?f=1&s=1&bm=1&q=' + url.searchParams.get('q') ;
+  location.href = '?f=1&s=1&bm=1&edit=' + document.getElementById("addworkput").value + '&q=' + url.searchParams.get('q') ;
   }
 if (url.searchParams.get('end') === 'true') {
 $('.addworkdiv').fadeOut(1);
@@ -310,6 +310,7 @@ $('#brs2').fadeIn(1);
 $('.bottommsg').fadeOut(1);
 }
  if (url.searchParams.get('bm') === '1') {
+   document.getElementById("addworkput").value = url.searchParams.get('edit') ;
    $('.bottommsg').fadeOut(1);
  }
 var interval = setInterval(appendss,1);
