@@ -281,7 +281,10 @@ function endwork() {
 location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee ;
 }
   
-
+function startwork() {
+location.href = '?f=1&q=' + url.searchParams.get('q') ;
+}
+  
 if (url.searchParams.get('end') === 'true') {
 $('.addworkdiv').fadeOut(1);
 $('#brs').fadeOut(1);
