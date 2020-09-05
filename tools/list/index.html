@@ -262,6 +262,7 @@ location.href = '?f=1&q=' + addmsgvue ;
 }
   if(url.searchParams.get('f') === '1' && url.searchParams.get('end')	!= 'true' ) {
      $('#msg').delay(555).animate({top: 50 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
+     $('body,html').animate({scrollTop: $('body,html').height() }, 555,'easeOutExpo')
   }
 
 function endwork() {
