@@ -228,11 +228,11 @@ $('.barbox,.barbg').animate({width: 110 + '%'},888).delay(0).fadeOut(888);
 <script>
 var day_list = ['日', '一', '二', '三', '四', '五', '六'];
 var today=new Date()
-var yy = today.getFullYear()-1911 ;
+var yy = today.getFullYear() ;
 var mm = today.getMonth()+1 ;
 var dd = today.getDate() ;
 var dds = day_list[today.getDay()] ;
-var datee = '聯絡簿 - 民國' + yy + '年' + mm + '月' + dd + '日 週' + dds ;
+var datee = '清單 - ' + yy + '年' + mm + '月' + dd + '日 週' + dds ;
 
 
 var getUrlString = location.href ;
@@ -264,12 +264,16 @@ location.href = '?f=1&q=' + addmsgvue ;
 }
   if(url.searchParams.get('f') === '1' && url.searchParams.get('end')	!= 'true' ) {
      $('#msg').delay(555).animate({top: 50 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
+    $('title,.title').append('清單 - 編輯中');
+  }
+  else {
+    $('title,.title').append(url.searchParams.get('d'));
   }
 
 function endwork() {
 location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee ;
 }
-  $('title,.title').append(url.searchParams.get('d'));
+  
 
 if (url.searchParams.get('end') === 'true') {
 $('.addworkdiv').fadeOut(1);
