@@ -206,7 +206,7 @@ $('title,.title').append(datee);
 var getUrlString = location.href ;
 var url = new URL(getUrlString) ;
 var a = url.searchParams.get('q') ;
-var b = a.split("[]") ;
+var b = a.split(",") ;
 var l = b.length ;
 var j = 0 ;
 function appendss() {
@@ -222,7 +222,7 @@ $('.title').animate({scrollTop: 60 }, 555,'easeOutExpo').delay(2000).animate({sc
 function addwork() {
 var addmsgvue = document.getElementById("addworkput").value ;
 if (url.searchParams.get('f') === '1') {
-location.href = '?f=1&q=' + url.searchParams.get('q') + '[]' + addmsgvue ;
+location.href = '?f=1&q=' + url.searchParams.get('q') + ',' + addmsgvue ;
 }
 else {
 location.href = '?f=1&q=' + addmsgvue ;
