@@ -194,6 +194,7 @@ display:none;
 .bar {background: rgb(255,26,97);
 background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, rgba(0,180,255,1) 72%, rgba(0,255,169,1) 100%);width:100vw;height:2px;position:absolute;top:0px;left:0px;}
 </style>
+<body>
 <div class="titlebg"></div>
 <div class="title"><div class="titlebox"></div><div class="titleboxbottom"></div></div>
 <ol class="custom-counter" style="margin-top:70px;">
@@ -262,7 +263,7 @@ location.href = '?f=1&q=' + addmsgvue ;
 }
   if(url.searchParams.get('f') === '1' && url.searchParams.get('end')	!= 'true' ) {
      $('#msg').delay(555).animate({top: 50 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
-     $('body,html').animate({scrollTop: $('.custom-counter').height() }, 555,'easeOutExpo')
+     $('body,html').animate({scrollTop: $('body,html').height() }, 555,'easeOutExpo')
   }
 
 function endwork() {
@@ -277,3 +278,4 @@ $('#brs').fadeOut(1);
 var interval = setInterval(appendss,1);
 var interval2 = setInterval(titless,6120);
 </script>
+</body>
