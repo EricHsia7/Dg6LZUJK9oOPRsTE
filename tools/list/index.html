@@ -270,8 +270,12 @@ location.href = '?f=1&q=' + addmsgvue ;
 
 }
   if(url.searchParams.get('f') === '1' && url.searchParams.get('end')	!= 'true' ) {
+    if(url.searchParams.get('s') === '1') {
+    }
+    else {
      $('#msg').delay(555).animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
-    $('title,.title').append('清單 - 編輯中');
+    }
+      $('title,.title').append('清單 - 編輯中');
     scrollautotobuttomfn = 't' ;
   }
   else {
@@ -283,7 +287,7 @@ location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee ;
 }
   
 function startwork() {
-location.href = '?f=1&q=' + url.searchParams.get('q') ;
+location.href = '?f=1&s=1&q=' + url.searchParams.get('q') ;
 }
   
 if (url.searchParams.get('end') === 'true') {
