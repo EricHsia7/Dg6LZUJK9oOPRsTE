@@ -270,10 +270,10 @@ $('.title').animate({scrollTop: 70 }, 555,'easeOutExpo').delay(2000).animate({sc
 function addwork() {
 var addmsgvue = document.getElementById("addworkput").value ;
 if (url.searchParams.get('f') === '1') {
-location.href = '?f=1&q=' + url.searchParams.get('q') + ',' + addmsgvue ;
+location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue ;
 }
 else {
-location.href = '?f=1&q=' + addmsgvue ;
+location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
 }
 
 }
