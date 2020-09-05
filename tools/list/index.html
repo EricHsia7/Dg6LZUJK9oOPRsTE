@@ -203,6 +203,9 @@ background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, 
   <center><a href="javascript:endwork()" class="endbtn">輸入完成</a></center>
 <br><br><br><br><br>
 </span>
+  <span id="brs2" style="display:none;">
+    <center><a href="javascript:startwork()" class="btn">再次編輯</a></center>   
+  </span>
 <div class="addworkdiv"><input type="text" class="addworkput" id="addworkput" placeholder="輸入文字"><a href="javascript:addwork()" class="addworkbtn"><center class="addtexticon">新增</center><img src="https://image.flaticon.com/icons/svg/1828/1828919.svg" class="addicon" style="left:50%;top:50%;transform:translate(-50%,-50%); position:absolute;"></a></div>
 
 <div class="barbg"><div class="barbox"><div class="bar"></div></div></div>
@@ -282,6 +285,7 @@ location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee ;
 if (url.searchParams.get('end') === 'true') {
 $('.addworkdiv').fadeOut(1);
 $('#brs').fadeOut(1);
+$('#brs2').fadeIn(1);
 }
 var interval = setInterval(appendss,1);
 var interval2 = setInterval(titless,6120);
