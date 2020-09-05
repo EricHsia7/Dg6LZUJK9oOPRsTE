@@ -202,7 +202,7 @@ var dd = today.getDate() ;
 var dds = day_list[today.getDay()] ;
 var datee = '聯絡簿 - 民國' + yy + '年' + mm + '月' + dd + '日 週' + dds ;
 
-$('title,.title').append(datee);
+$('title,.title').append(url.searchParams.get('date'));
 var getUrlString = location.href ;
 var url = new URL(getUrlString) ;
 var a = url.searchParams.get('q') ;
@@ -231,7 +231,7 @@ location.href = '?f=1&q=' + addmsgvue ;
 }
 
 function endwork() {
-location.href = '?f=1&end=true&q=' + url.searchParams.get('q') ;
+location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&date=' + datee ;
 }
 
 if (url.searchParams.get('end') === 'true') {
