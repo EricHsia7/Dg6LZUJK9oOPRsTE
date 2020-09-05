@@ -194,7 +194,13 @@ display:none;
 </span>
 <div class="addworkdiv"><input type="text" class="addworkput" id="addworkput" placeholder="輸入文字"><a href="javascript:addwork()" class="addworkbtn"><center class="addtexticon">新增</center><img src="https://image.flaticon.com/icons/svg/1828/1828919.svg" class="addicon" style="left:50%;top:50%;transform:translate(-50%,-50%); position:absolute;"></a></div>
 <script>
-
+var day_list = ['日', '一', '二', '三', '四', '五', '六'];
+var today=new Date()
+var yy = today.getFullYear()-1911 ;
+var mm = today.getMonth()+1 ;
+var dd = today.getDate() ;
+var dds = day_list[today.getDay()] ;
+var datee = '聯絡簿 - 民國' + yy + '年' + mm + '月' + dd + '日 週' + dds ;
 
 
 var getUrlString = location.href ;
@@ -224,13 +230,7 @@ location.href = '?f=1&q=' + addmsgvue ;
 
 }
   
-var day_list = ['日', '一', '二', '三', '四', '五', '六'];
-var today=new Date()
-var yy = today.getFullYear()-1911 ;
-var mm = today.getMonth()+1 ;
-var dd = today.getDate() ;
-var dds = day_list[today.getDay()] ;
-var datee = '聯絡簿 - 民國' + yy + '年' + mm + '月' + dd + '日 週' + dds ;
+
 function endwork() {
 location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee ;
 }
