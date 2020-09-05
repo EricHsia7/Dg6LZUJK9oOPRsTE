@@ -226,7 +226,7 @@ $('.barbox,.barbg').animate({width: 110 + '%'},888).delay(0).fadeOut(888);
 
 </script>
 <script>
-  var scrollautotobuttomfn = 0 ;
+  var scrollautotobuttomfn = 'f' ;
 var day_list = ['日', '一', '二', '三', '四', '五', '六'];
 var today=new Date()
 var yy = today.getFullYear() ;
@@ -247,7 +247,9 @@ $('.custom-counter').append('<li>' + b[j] + '</li>');
 j += 1 ;
 if (j > (l-1)) {
 clearInterval(interval);
+  if (scrollautotobuttomfn === 't' ) {
 $('body,html').animate({scrollTop: $('body,html').height() }, 555,'easeOutExpo');
+  }
 }
 }
 function titless() {
@@ -266,12 +268,10 @@ location.href = '?f=1&q=' + addmsgvue ;
   if(url.searchParams.get('f') === '1' && url.searchParams.get('end')	!= 'true' ) {
      $('#msg').delay(555).animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
     $('title,.title').append('清單 - 編輯中');
-    scrollautotobuttomfn = 1 ;
+    scrollautotobuttomfn = 't' ;
   }
   else {
-    if (scrollautotobuttomfn = 1 ) {
     $('title,.title').append(url.searchParams.get('d'));
-    }
   }
 
 function endwork() {
