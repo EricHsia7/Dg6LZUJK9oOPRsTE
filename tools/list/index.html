@@ -272,7 +272,7 @@ location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
     scrollautotobuttomfn = 't' ;
   }
   else {
-    $('title,.title').append(url.searchParams.get('d'));
+    $('title,.title').html(url.searchParams.get('d'));
   }
 
 function endwork() {
