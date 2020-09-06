@@ -6,11 +6,6 @@
 <style>
     
     
-      .barbg {position:fixed;top:0px;left:0px;width:100%;height:3px;background:#e3e3e3;z-index:99999999999999;}
-.barbox {position:fixed;top:0px;left:0px;width:0%;height:3px; overflow:hidden; border-radius:0px 8px 8px 0px; z-index:999999999999999;}
-
-.bar {background: rgb(255,26,97);
-background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, rgba(0,180,255,1) 72%, rgba(0,255,169,1) 100%);width:100vw;height:3px;position:absolute;top:0px;left:0px;z-index:9999999999999999;}
 
 
     
@@ -57,7 +52,7 @@ left:0px;
 width:100vw;
 height:55px;
 background:rgba(0, 0, 0, 0);
-z-index:100000;
+z-index:999;
 }
 .title {
 position:fixed;
@@ -72,7 +67,7 @@ color:#333;
 font-size:40px;
 font-family: 'Noto Sans TC', sans-serif;
 overflow: scroll;
-z-index:1000000;
+z-index:1000;
 }
 
 .endbtn {
@@ -247,7 +242,7 @@ left:0px;
 width:100vw;
 height:55px;
 background:rgba(0, 0, 0, 0);
-z-index:100000;
+z-index:999;
 }
 .title {
 position:fixed;
@@ -262,7 +257,7 @@ color:#fff;
 font-size:40px;
 font-family: 'Noto Sans TC', sans-serif;
 overflow: scroll;
-z-index:1000000;
+z-index:1000;
 }
 
 .endbtn {
@@ -386,6 +381,17 @@ display:none;
   .bottommsg {color:#fff;width:100vw;height:45px;background:rgba(90, 90, 90, 0.5);position:fixed;bottom:55px;left:0px;display:block;}
   
 }
+    
+    
+    
+    
+    
+          .barbg {position:fixed;top:0px;left:0px;width:100%;height:3px;background:#e3e3e3;z-index:99999999999999;}
+.barbox {position:fixed;top:0px;left:0px;width:0%;height:3px; overflow:hidden; border-radius:0px 8px 8px 0px; z-index:999999999999999;}
+
+.bar {background: rgb(255,26,97);
+background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, rgba(0,180,255,1) 72%, rgba(0,255,169,1) 100%);width:100vw;height:3px;position:absolute;top:0px;left:0px;z-index:9999999999999999;}
+
 </style>
 <body>
 <div class="titlebg"></div>
@@ -406,8 +412,10 @@ display:none;
 </a></div>
 
   <div class="bottommsg"><span style="left:5px;top:50%;transform:translate(-0%,-50%); position:absolute;width:calc(99%);">輸入逗號「,」來一次新增多個項目！</span><a href="javascript:closebmsg()"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDMyOS4yNjkzMyAzMjkiIHdpZHRoPSI1MTIiPjxnPjxwYXRoIGQ9Im0xOTQuODAwNzgxIDE2NC43Njk1MzEgMTI4LjIxMDkzOC0xMjguMjE0ODQzYzguMzQzNzUtOC4zMzk4NDQgOC4zNDM3NS0yMS44MjQyMTkgMC0zMC4xNjQwNjMtOC4zMzk4NDQtOC4zMzk4NDQtMjEuODI0MjE5LTguMzM5ODQ0LTMwLjE2NDA2MyAwbC0xMjguMjE0ODQ0IDEyOC4yMTQ4NDQtMTI4LjIxMDkzNy0xMjguMjE0ODQ0Yy04LjM0Mzc1LTguMzM5ODQ0LTIxLjgyNDIxOS04LjMzOTg0NC0zMC4xNjQwNjMgMC04LjM0Mzc1IDguMzM5ODQ0LTguMzQzNzUgMjEuODI0MjE5IDAgMzAuMTY0MDYzbDEyOC4yMTA5MzggMTI4LjIxNDg0My0xMjguMjEwOTM4IDEyOC4yMTQ4NDRjLTguMzQzNzUgOC4zMzk4NDQtOC4zNDM3NSAyMS44MjQyMTkgMCAzMC4xNjQwNjMgNC4xNTYyNSA0LjE2MDE1NiA5LjYyMTA5NCA2LjI1IDE1LjA4MjAzMiA2LjI1IDUuNDYwOTM3IDAgMTAuOTIxODc1LTIuMDg5ODQ0IDE1LjA4MjAzMS02LjI1bDEyOC4yMTA5MzctMTI4LjIxNDg0NCAxMjguMjE0ODQ0IDEyOC4yMTQ4NDRjNC4xNjAxNTYgNC4xNjAxNTYgOS42MjEwOTQgNi4yNSAxNS4wODIwMzIgNi4yNSA1LjQ2MDkzNyAwIDEwLjkyMTg3NC0yLjA4OTg0NCAxNS4wODIwMzEtNi4yNSA4LjM0Mzc1LTguMzM5ODQ0IDguMzQzNzUtMjEuODI0MjE5IDAtMzAuMTY0MDYzem0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiLz48L2c+IDwvc3ZnPgo=" style="right:5px;top:50%;transform:translate(-0%,-50%); position:absolute;height:25px;">
-<div class="barbg"><div class="barbox"><div class="bar"></div></div></div>
 <div id="msg" class="msg">已新增內容！</div>
+      
+      
+      <div class="barbg"><div class="barbox"><div class="bar"></div></div></div>
 <script>
 var r=0;ref=setInterval(function(){r<98?($(".barbox").animate({width:r+"%"},33*Math.random()+400,"easeInOutQuad"),r+=5*Math.random()+25):clearInterval(ref)},500),$(window).ready(function(){$(".barbox,.barbg").animate({width:"110%"},888).delay(0).fadeOut(888)});
 </script>
