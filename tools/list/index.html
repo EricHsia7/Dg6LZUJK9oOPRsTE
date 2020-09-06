@@ -4,8 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>清單中 - 編輯中</title>
 <style>
-    .light {display:block;}
-  .dark {display:none;}
+    .light {opacity:1;}
+  .dark {display:0;}
   
   
   body {background:#fff;}
@@ -198,8 +198,8 @@ background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, 
 
 
 @media (prefers-color-scheme: dark) {
-  .light {display:none;}
-  .dark {display:block;}
+  .light {opacity:0;}
+  .dark {opacity:1;}
   
   
   
