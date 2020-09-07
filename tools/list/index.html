@@ -2,7 +2,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>清單中 - 編輯中</title>
+<title>清單 - 編輯中</title>
 <style>
    .openicon {height:calc(((80vw / 20) + 80px) - 24px);margin-top:18px;margin-left:12px;transform:translate(-0%,9px) scale(0.5);}
    
@@ -465,6 +465,8 @@ $('body,html').animate({scrollTop: $('body,html').height() }, 11,'easeOutExpo');
 
 function titless() {
 $('.title').animate({scrollTop: 70 }, 555,'easeOutExpo').delay(2000).animate({scrollTop: 0 }, 555,'easeOutExpo');
+$('#botmsgsp').html('輸入「:url: + 網址」來插入連結！').delay(2000).html('輸入「:img: + 圖片網址」來插入圖片！');
+
 }
 function addwork() {
 var addmsgvue = document.getElementById("addworkput").value ;
