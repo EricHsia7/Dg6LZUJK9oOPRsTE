@@ -423,11 +423,9 @@ background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, 
 var r=0;ref=setInterval(function(){r<98?($(".barbox").animate({width:r+"%"},33*Math.random()+400,"easeInOutQuad"),r+=5*Math.random()+25):clearInterval(ref)},500),$(window).ready(function(){$(".barbox,.barbg").animate({width:"110%"},888).delay(10).fadeOut(888)});
 </script>
 <script>
-   
-   $('img').click(function() {
-  $('.imgbigbg').fadeIn(333).html('<img src="' + $(this).attr('src') + '" width="100vw">');
-  
-});
+  function bigimgin(url) {
+  $('.imgbigbg').fadeIn(333).html('<img src="' + url + '" width="100vw">');
+   }
    
    
   var scrollautotobuttomfn = 'f' ;
@@ -450,7 +448,7 @@ var bjjj ;
 function appendss() {
    bjjj = b[j] ;
 if(bjjj.indexOf(':img:') != -1) {
-   $('.custom-counter').append('<li><img src="' + bjjj.replace(':img:','') + '" class="img"></li>');
+   $('.custom-counter').append('<li><a href="javascript:bigimgin("' + bjjj.replace(':img:','') + '")" target="_blank" ><img src="' + bjjj.replace(':img:','') + '" class="img"></a></li>');
 }
    else {
 if(bjjj.indexOf(':url:') != -1) {
