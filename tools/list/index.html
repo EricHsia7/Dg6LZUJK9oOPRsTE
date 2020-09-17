@@ -424,7 +424,7 @@ var r=0;ref=setInterval(function(){r<98?($(".barbox").animate({width:r+"%"},33*M
 </script>
 <script>
   function bigimgin(url) {
-  $('.imgbigbg').fadeIn(333).html('<img src="' + url + '" width="100vw">');
+  $('.imgbigbg').fadeIn(333).html('<img src="' + $('#' + url).attr('src') + '" width="100vw">');
    }
    
    
@@ -448,7 +448,7 @@ var bjjj ;
 function appendss() {
    bjjj = b[j] ;
 if(bjjj.indexOf(':img:') != -1) {
-   $('.custom-counter').append('<li><a href="javascript:bigimgin('' + bjjj.replace(':img:','') + '')" target="_blank" ><img src="' + bjjj.replace(':img:','') + '" class="img"></a></li>');
+   $('.custom-counter').append('<li><a href="javascript:bigimgin(' + j + ')" target="_blank" ><img src="' + bjjj.replace(':img:','') + '" class="img" id="' + j + '"></a></li>');
 }
    else {
 if(bjjj.indexOf(':url:') != -1) {
