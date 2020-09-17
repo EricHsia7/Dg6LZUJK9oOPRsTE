@@ -423,16 +423,13 @@ background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, 
 var r=0;ref=setInterval(function(){r<98?($(".barbox").animate({width:r+"%"},33*Math.random()+400,"easeInOutQuad"),r+=5*Math.random()+25):clearInterval(ref)},500),$(window).ready(function(){$(".barbox,.barbg").animate({width:"110%"},888).delay(10).fadeOut(888)});
 </script>
 <script>
-   var bigimgsctop = 0 ;
    
   function bigimgin(url) {
-     bigimgsctop = $('body,html').scrollTop() ;
   $('.imgbigbg').fadeIn(333);
      $('#imgbigbg').html('<img src="' + $('#' + url).attr('src') + '" style="width: auto;height: auto;max-width: 100%;max-height: 100%;left:50%;top:50%;transform:translate(-50%,-50%); position:absolute;">');
    }
    function closebigimg() {
   $('.imgbigbg').fadeOut(333);
-      $('body,html').scrollTop(bigimgsctop + 'px');
 }
    
   var scrollautotobuttomfn = 'f' ;
