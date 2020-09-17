@@ -416,10 +416,20 @@ background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, 
      
    <div id="msg" class="msg">已新增內容！</div>
       <div class="barbg"><div class="barbox"><div class="bar"></div></div></div>
+   
+   
+   <div class="imgbigbg"></div>
 <script>
 var r=0;ref=setInterval(function(){r<98?($(".barbox").animate({width:r+"%"},33*Math.random()+400,"easeInOutQuad"),r+=5*Math.random()+25):clearInterval(ref)},500),$(window).ready(function(){$(".barbox,.barbg").animate({width:"110%"},888).delay(10).fadeOut(888)});
 </script>
 <script>
+   
+   $('img').click(function() {
+  $('.imgbigbg').fadeIn(333).html('<img src="' + $(this).attr('src') + '" width="100vw">');
+  
+});
+   
+   
   var scrollautotobuttomfn = 'f' ;
 var day_list = ['日', '一', '二', '三', '四', '五', '六'];
 var today=new Date()
