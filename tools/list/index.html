@@ -425,7 +425,7 @@ var r=0;ref=setInterval(function(){r<98?($(".barbox").animate({width:r+"%"},33*M
 <script>
   function bigimgin(url) {
   $('.imgbigbg').fadeIn(333);
-     $('#imgbigbg').html('<img src="' + $('#' + url).attr('src') + '" style="width: auto;height: auto;max-width: 100%;max-height: 100%;">');
+     $('#imgbigbg').html('<img src="' + $('#' + url).attr('src') + '" style="width: auto;height: auto;max-width: 100%;max-height: 100%;left:50%;top:50%;transform:translate(-50%,-50%); position:absolute;">');
    }
    $('.imgbigbg').click(function() {
   $('.imgbigbg').fadeOut(333);
