@@ -400,7 +400,7 @@ background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, 
 </ol>
 <span id="brs">
   <br>
-  <center><a href="javascript:endwork()" class="endbtn">完成</a></center>
+  <center><div class="endbtn"><input type="text" id="setname" placeholder="輸入名稱"></div><a href="javascript:endwork()" class="endbtn">完成</a></center>
 <br><br><br><br><br>
 </span>
   <span id="brs2" style="display:none;">
@@ -439,8 +439,10 @@ var yy = today.getFullYear() ;
 var mm = today.getMonth()+1 ;
 var dd = today.getDate() ;
 var dds = day_list[today.getDay()] ;
-var datee = '清單 - ' + yy + '年' + mm + '月' + dd + '日 週' + dds ;
+var name = url.searchParams.get('name');
+var datee = name + ' - ' + yy + '年' + mm + '月' + dd + '日 週' + dds ;
 
+   $('#setname').val('清單');
 
 var getUrlString = location.href ;
 var url = new URL(getUrlString) ;
@@ -449,6 +451,7 @@ var b = a.split(",") ;
 var l = b.length ;
 var j = 0 ;
 var bjjj ;
+   
 function appendss() {
    bjjj = b[j] ;
 if(bjjj.indexOf(':img:') != -1) {
@@ -468,6 +471,7 @@ if (j > (l-1)) {
 clearInterval(interval);
   if (scrollautotobuttomfn === 't' ) {
 $('body,html').animate({scrollTop: $('body,html').height() }, 11,'easeOutExpo');
+     $('#setname').val(name);
   }
 }
 }
@@ -481,10 +485,10 @@ $('.title').animate({scrollTop: 70 }, 555,'easeOutExpo').delay(2000).animate({sc
 function addwork() {
 var addmsgvue = document.getElementById("addworkput").value ;
 if (url.searchParams.get('f') === '1') {
-location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue ;
+location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue + '&name=' + $('#setname').val() ;
 }
 else {
-location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
+location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue + '&name=' + $('#setname').val() ;
 }
 
 }
@@ -494,7 +498,7 @@ location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
     else {
      $('#msg').delay(555).animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
     }
-      $('title,.title').html('清單 - 編輯中');
+      $('title,.title').html($('#setname').val() + ' - 編輯中');
     scrollautotobuttomfn = 't' ;
   }
   else {
@@ -502,14 +506,14 @@ location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
   }
 
 function endwork() {
-location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee ;
+location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee + '&name=' + $('#setname').val() ;
 }
   
 function startwork() {
-location.href = '?f=1&s=1&q=' + url.searchParams.get('q') ;
+location.href = '?f=1&s=1&q=' + url.searchParams.get('q') + '&name=' + $('#setname').val() ;
 }
   function closebmsg() {
-  location.href = '?f=1&s=1&bm=1&edit=' + document.getElementById("addworkput").value + '&q=' + url.searchParams.get('q') ;
+  location.href = '?f=1&s=1&bm=1&edit=' + document.getElementById("addworkput").value + '&q=' + url.searchParams.get('q') + '&name=' + $('#setname').val() ;
   }
    function copythispagelink() {
      location.href = 'https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/copy/?text=' + encodeURI(location.href) ;
