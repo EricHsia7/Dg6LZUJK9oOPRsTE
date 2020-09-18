@@ -442,7 +442,7 @@ var dds = day_list[today.getDay()] ;
 var name = url.searchParams.get('name');
 var datee = name + ' - ' + yy + '年' + mm + '月' + dd + '日 週' + dds ;
 
-   $('#setname').val('清單');
+   document.getElementById("setname").value = '清單' ;
 
 var getUrlString = location.href ;
 var url = new URL(getUrlString) ;
@@ -471,7 +471,7 @@ if (j > (l-1)) {
 clearInterval(interval);
   if (scrollautotobuttomfn === 't' ) {
 $('body,html').animate({scrollTop: $('body,html').height() }, 11,'easeOutExpo');
-     $('#setname').val(name);
+     document.getElementById("setname").value = name ;
   }
 }
 }
@@ -485,10 +485,10 @@ $('.title').animate({scrollTop: 70 }, 555,'easeOutExpo').delay(2000).animate({sc
 function addwork() {
 var addmsgvue = document.getElementById("addworkput").value ;
 if (url.searchParams.get('f') === '1') {
-location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue + '&name=' + $('#setname').val() ;
+location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue + '&name=' + document.getElementById("setname").value ;
 }
 else {
-location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue + '&name=' + $('#setname').val() ;
+location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue + '&name=' + document.getElementById("setname").value ;
 }
 
 }
@@ -498,7 +498,7 @@ location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue + '&n
     else {
      $('#msg').delay(555).animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
     }
-      $('title,.title').html($('#setname').val() + ' - 編輯中');
+      $('title,.title').html(document.getElementById("setname").value + ' - 編輯中');
     scrollautotobuttomfn = 't' ;
   }
   else {
@@ -506,14 +506,14 @@ location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue + '&n
   }
 
 function endwork() {
-location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee + '&name=' + $('#setname').val() ;
+location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee + '&name=' + document.getElementById("setname").value ;
 }
   
 function startwork() {
-location.href = '?f=1&s=1&q=' + url.searchParams.get('q') + '&name=' + $('#setname').val() ;
+location.href = '?f=1&s=1&q=' + url.searchParams.get('q') + '&name=' + document.getElementById("setname").value ;
 }
   function closebmsg() {
-  location.href = '?f=1&s=1&bm=1&edit=' + document.getElementById("addworkput").value + '&q=' + url.searchParams.get('q') + '&name=' + $('#setname').val() ;
+  location.href = '?f=1&s=1&bm=1&edit=' + document.getElementById("addworkput").value + '&q=' + url.searchParams.get('q') + '&name=' + document.getElementById("setname").value ;
   }
    function copythispagelink() {
      location.href = 'https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/copy/?text=' + encodeURI(location.href) ;
