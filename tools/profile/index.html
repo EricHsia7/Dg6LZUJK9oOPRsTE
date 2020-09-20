@@ -153,8 +153,8 @@ var getUrlString = location.href ;
 var url = new URL(getUrlString) ;
 
 var data = decodeURI(atob(url.searchParams.get('d'))).split(',') ;
-var m = url.searchParams.get('m').split(',') ;
-var t = url.searchParams.get('t').split(',') ;
+var mssss = url.searchParams.get('m').split(',') ;
+var tssss = url.searchParams.get('t').split(',') ;
 $('title').html(data[0] + ' - 個人檔案')
 $('.profileimg').attr('src',data[1]);
 $('#int').html(data[2]);
@@ -165,8 +165,8 @@ $('#bartxt4').html(data[9]);
 $('#contactform').attr('src',data[12]);
 
 	
-for (i = 0; i < m.length; i++) {
-  $('#medialink').append(<a href="' + m[i] + '" class="button" target="_blank">' + t[i] + '</a>');
+for (iss = 0; iss < mssss.length; iss++) {
+  $('#medialink').append(<a href="' + mssss[iss] + '" class="button" target="_blank">' + tssss[iss] + '</a>');
 }
 
 
