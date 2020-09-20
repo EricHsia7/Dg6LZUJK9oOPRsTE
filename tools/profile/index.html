@@ -155,7 +155,7 @@ var url = new URL(getUrlString) ;
 var data = decodeURI(atob(url.searchParams.get('d'))).split(',') ;
 var mssss = url.searchParams.get('m').split(',') ;
 var tssss = url.searchParams.get('t').split(',') ;
-$('title').html(data[0] + ' - 個人檔案')
+$('title').html(data[0] + ' - 個人檔案');
 $('.profileimg').attr('src',data[1]);
 $('#int').html(data[2]);
 $('#bartxt1').html(data[3]);
