@@ -90,13 +90,13 @@ ul a {color:#000; text-decoration:none;}
 
 <div id="things" class="div">
 <h1>項目</h1>
-<div class="barbg"><div class="barbox"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt1"></span></div></div>
+<div class="barbg"><div class="barbox" id="barbox1"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt1"></span></div></div>
 
-<div class="barbg"><div class="barbox"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt2"></span></div></div>
+<div class="barbg"><div class="barbox" id="barbox2"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt2"></span></div></div>
 
-<div class="barbg"><div class="barbox"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt3"></span></div></div>
+<div class="barbg"><div class="barbox" id="barbox3"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt3"></span></div></div>
 
-<div class="barbg"><div class="barbox"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif; " id="bartxt4"></span></div></div>
+<div class="barbg"><div class="barbox" id="barbox4"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt4"></span></div></div>
 
 </div>
 
@@ -231,10 +231,10 @@ var sec = 1888 ;
 $(function(){
 	$(window).scroll(function() {
 		if ( $(this).scrollTop() > $('#things').offset().top-100 ){
-			$('.barbox').eq(0).animate({width: data[4] + '%'}, sec , 'easeInOutQuad');
- $('.barbox').eq(1).delay(111*2).animate({width: data[6] + '%'}, sec , 'easeInOutQuad');
- $('.barbox').eq(2).delay(111*3).animate({width: data[8] + '%'}, sec , 'easeInOutQuad');
- $('.barbox').eq(3).delay(111*4).animate({width: data[10] + '%'}, sec , 'easeInOutQuad');
+			$('#barbox1').eq(0).animate({width: data[4] + '%'}, sec , 'easeInOutQuad');
+ $('#barbox2').eq(1).delay(111*2).animate({width: data[6] + '%'}, sec , 'easeInOutQuad');
+ $('#barbox3').eq(2).delay(111*3).animate({width: data[8] + '%'}, sec , 'easeInOutQuad');
+ $('#barbox4').eq(3).delay(111*4).animate({width: data[10] + '%'}, sec , 'easeInOutQuad');
 		} else {
 		}
 	}).scroll();
