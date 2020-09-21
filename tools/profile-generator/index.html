@@ -77,16 +77,26 @@ display:none;
 
 <div id="msg" class="msg"></div>
 <script>
-$(function(){
-	$(window).scroll(function() {
-		if ( $(this).scrollTop() > 100 ){
-			$('#top2').stop().animate({top: -100 }, 111 );
-		} else {
-			$('#top2').stop().animate({top: 0 }, 111 );
-		}
-	}).scroll();
+$(window).scroll(function(){
+var before = $(window).scrollTop();
+$(window).scroll(function() {
+var after = $(window).scrollTop();
+if (before<after) {
+$('#top2').stop().animate({top: 0 }, 111 );
+	//up
+before = after;
+};
+if (before>after) {
+$('#top2').stop().animate({top: -100 }, 111 );
+	//down
+before = after;
+};
 });
-</script>
+});
+
+	</script>
+
+
 <script>
 var placeholder = ['姓名','頭貼照片網址','簡介','項目1','項目1數值','項目2','項目2數值','項目3','項目3數值','項目4','項目4數值','聯絡表單連結','logo圖片網址']
 for(i = 0; i < placeholder.length; i++) {
