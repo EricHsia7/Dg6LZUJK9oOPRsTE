@@ -52,8 +52,6 @@ left:0px;
 top:0px;
 display:none;
 }
-#bar {background:#333;top:0px;left:0px;position:fixed;width:0%;height:5px;}
-#barbg {background:#e3e3e3;top:0px;left:0px;position:fixed;width:100%;height:5px;}
 #input {width:100%;height:calc(100vw * 12);background:#fff;position:absolute;left:0px;top:0px;}
 
 .msg {z-index:99999999999998;background:rgba(51, 51, 51, 0.8);width:auto;height:auto;padding:5px 15px;position:fixed;top:-80px;left:50%;transform:translate(-50%,-0%);border-radius:25px;color:#ffffff;}  
@@ -72,8 +70,7 @@ display:none;
    <a href="javascript:undo99()" class="undo" style="margin-left:12px;">上一步</a>
 </div>
 <div class="topbar" id="top2"><center style="font-size:20px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%); font-family: 'M PLUS Rounded 1c', sans-serif;">個人檔案產生器</center></div>
-<div id="barbg"></div>
-<div id="bar"></div>
+
 
 <div id="msg" class="msg"></div>
 <script>
@@ -83,13 +80,11 @@ $(window).scroll(function() {
 var after = $(window).scrollTop();
 if (before<after) {
 $('#top2').stop().animate({top: -100 }, 111 );
-$('#bar,#barbg').animate({height: 5 + 'px'},1);
 	//up
 before = after;
 };
 if (before>after) {
 $('#top2').stop().animate({top: 0 }, 111 );
-$('#bar,#barbg').animate({height: 2 + 'px'},1);
 	//down
 before = after;
 };
@@ -114,27 +109,22 @@ function goto(id) {
 if(id < 1) {
 
 $('html,body').animate({scrollTop:0 },888);
-$('#bar').animate({width: 0 + '%'},888);
 }
 else {
 if(id > 13) {
 $('#loading').fadeIn(222);
-$('#bar').animate({width: 100 + '%'},888);
 okay();
 }
 else {
 $('html,body').animate({scrollTop: $('#' + id).offset().top },888);
-$('#bar').animate({width: (100/13) * id  + '%'},888);
 }
 }
 }
    function undo99() {
       $('#loading').fadeOut(222);
-      $('#bar,#barbg').fadeIn(111);
    }
 
 function okay() {
-$('#bar,#barbg').fadeOut(111);
 var data = $('input').eq(0).val() + ',' + $('input').eq(1).val() + ',' + $('input').eq(2).val() + ',' + $('input').eq(3).val() + ',' + $('input').eq(4).val() + ',' + $('input').eq(5).val() + ',' + $('input').eq(6).val() + ',' + $('input').eq(7).val() + ',' + $('input').eq(8).val() + ',' + $('input').eq(9).val() + ',' + $('input').eq(10).val() + ',' + $('input').eq(11).val() + ',' + $('input').eq(12).val() ;
 var ms = $('input').eq(13).val() ;
 var ts = $('input').eq(14).val() ;
