@@ -82,12 +82,12 @@ var before = $(window).scrollTop();
 $(window).scroll(function() {
 var after = $(window).scrollTop();
 if (before<after) {
-$('#top2').stop().animate({top: 0 }, 111 );
+$('#top2').stop().animate({top: -100 }, 111 );
 	//up
 before = after;
 };
 if (before>after) {
-$('#top2').stop().animate({top: -100 }, 111 );
+$('#top2').stop().animate({top: 0 }, 111 );
 	//down
 before = after;
 };
