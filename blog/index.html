@@ -174,21 +174,21 @@ function tabhome() {
 $('.icon').eq(0).css("opacity","1");
 $('.icon').eq(1).css("opacity","0.3");
 $('.icon').eq(2).css("opacity","0.3");
-location.replace('?id=home');
+location.replace('?id=home&' + password);
 }
 
 function tabsearch() {
 $('.icon').eq(0).css("opacity","0.3");
 $('.icon').eq(1).css("opacity","1");
 $('.icon').eq(2).css("opacity","0.3");
-location.replace('?id=search');
+location.replace('?id=search&' + password);
 }
 
 function tabmore() {
 $('.icon').eq(0).css("opacity","0.3");
 $('.icon').eq(1).css("opacity","0.3");
 $('.icon').eq(2).css("opacity","1");
-location.replace('?id=more');
+location.replace('?id=more&' + password);
 }
 
 var aaa = '' ;
