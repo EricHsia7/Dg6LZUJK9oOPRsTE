@@ -117,8 +117,10 @@ password += chars.substring(randomNumber, randomNumber+1);
 
 var homeaaa = '' ;
 for(j = 0; j < homefff.length; j++) { 
+if(j<30) {
 homeddd = fff[j].split('[:]') ;
 homeaaa += '<a href="?id=' + homeddd[1] + '"><div class="searchdiv" id="' + j + '">' + homeddd[0] + '</div></a>' ;
+}
 }
 $('.webfullbage').html(homeaaa);
 
