@@ -75,6 +75,9 @@ position:fixed;top:0px;left:0px;width:100%;height:100%;background:#fff; overflow
 .bottombarbutton {position:absolute;top:0px;left:0px;width:calc(100% / 3);height:52px;}
 a {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
     text-decoration:none;}
+ul {list-style-type: none;position:absolute;top:20px;left:0px;}
+li {background:#fff;width:100vw;height:50px;font-size:40px;margin-top:5px;margin-left:-40px; border-bottom:1px #e3e3e3 solid;padding-bottom:8px;}
+ul a {color:#000; text-decoration:none;}
 </style>
 <div class="webfullbages">
 <center>
@@ -123,6 +126,8 @@ var searchputhtmljs = '<input type="text" class="searchput" placeholder="搜尋"
 
 var searchdefhtml = '<center style="color:#ccc;font-size:30px;"><img src="icons.png" class="icon searchbutton" style="object-position: 0px -190px;width:190px;height:190px; position: static;transform:translate(-0%,-0%);opacity:0.2;" id="icon-search-def-html-img"><br>輸入關鍵字並按下放大鏡開始搜尋！</center>' ;
 
+var moreppphtml = '<ul><a href="https://line.me/R/ti/p/@304xnbsy"><li><center>官方LINE</center></li></a>';
+
 
 var passwordLength = 64 ;
 var char = ["0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ","45678abcdefghijklmnopqrstuvwxyzABCDEFG90123HIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstHIJKLMNOPQRSTUVWXYuvwxyzABCDEFGZ","6789abcdefghijklmnopqrstHIJKLMNOPQRSTUVWXYuvwxyzABCDEFGZ012345","KLMNOPQRSTUVWXYuvwxyz6789abcdefghijklmnopqrstHIJEFGZ012345ABCD","ABCDhijklmnopqrstuvwxyzEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefg"];
@@ -166,7 +171,7 @@ if(id === 'more') {
 $('.icon').eq(0).css("opacity","0.3");
 $('.icon').eq(1).css("opacity","0.3");
 $('.icon').eq(2).css("opacity","1");
-$('.webfullbage').html('<center style="color:#ccc;font-size:30px;">目前沒有更多功能</center>');
+$('.webfullbage').html(moreppphtml);
 }
 else {
 $('.webfullbage').load('https://erichsia7.github.io/6df09188-7b25-3dc4-6745-96071c95bd7a/doc/' + url.searchParams.get('id') + '.text?' + password);
