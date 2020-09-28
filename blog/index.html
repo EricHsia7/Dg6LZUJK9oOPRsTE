@@ -176,7 +176,9 @@ $('.icon').eq(2).css("opacity","1");
 $('.webfullbage').html(moreppphtml);
 }
 else {
+if(url.searchParams.get('id').length > 15) {
 $('#reportbtnimg').fadeIn(11);
+}
 $('.webfullbage').load('https://erichsia7.github.io/6df09188-7b25-3dc4-6745-96071c95bd7a/doc/' + url.searchParams.get('id') + '.text?' + password);
 }
 }
