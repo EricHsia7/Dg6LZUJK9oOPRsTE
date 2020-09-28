@@ -95,7 +95,7 @@ var t=0;setInterval(function(){t>6&&(t=-1),t+=1,f=0-60*t,$(".loadingimgpng").att
 </div>
 </div>
 
-<div class="topbar" id="top2"><center style="font-size:20px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%); font-family: 'M PLUS Rounded 1c', sans-serif;">每日一誌</center><img src="flags.png" style="height:48px;position:absolute;top:2px;right:2px;transform:scale(0.6);"></div>
+<div class="topbar" id="top2"><center style="font-size:20px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%); font-family: 'M PLUS Rounded 1c', sans-serif;">每日一誌</center><a href="javascript:report()" id="reprtbtn"><img src="flags.png" style="height:48px;position:absolute;top:2px;right:2px;transform:scale(0.6);opacity:0.7;"></a></div>
 
 
 
@@ -211,6 +211,10 @@ $('.icon').eq(0).css("opacity","0.3");
 $('.icon').eq(1).css("opacity","0.3");
 $('.icon').eq(2).css("opacity","1");
 location.replace('?id=more&' + password);
+}
+
+function report() {
+location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeLc-FGHgQIktRbGqKfNVniGTuft_R-YGsv0eel6xqxig9hXg/viewform?usp=pp_url&entry.194761638=' + url.searchParams.get('id') ;
 }
 
 var aaa = '' ;
