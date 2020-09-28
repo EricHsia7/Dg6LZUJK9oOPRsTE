@@ -95,7 +95,7 @@ var t=0;setInterval(function(){t>6&&(t=-1),t+=1,f=0-60*t,$(".loadingimgpng").att
 </div>
 </div>
 
-<div class="topbar" id="top2"><center style="font-size:20px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%); font-family: 'M PLUS Rounded 1c', sans-serif;">每日一誌</center><a href="javascript:report()" id="reportbtn"><img src="flags.png" style="height:48px;position:absolute;top:2px;right:2px;transform:scale(0.6);opacity:0.4;display:none;" id="reportbtnimg"></a></div>
+<div class="topbar" id="top2"><center style="font-size:20px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%); font-family: 'M PLUS Rounded 1c', sans-serif;">每日一誌</center><a href="javascript:report()" id="reportbtn"><img src="flags.png" style="height:48px;position:absolute;top:2px;right:2px;transform:scale(0.6);opacity:0.4;display:block;" id="reportbtnimg"></a></div>
 
 
 
@@ -151,7 +151,7 @@ $('.webfullbage').html(homeaaa);
 
 var id = url.searchParams.get('id') ;
 if(id === 'home') {
-
+$('#reportbtnimg').fadeOut(11);
 $('.icon').eq(0).css("opacity","1");
 $('.icon').eq(1).css("opacity","0.3");
 $('.icon').eq(2).css("opacity","0.3");
@@ -160,7 +160,7 @@ $('.webfullbage').html(homeaaa);
 }
 else {
 if(id === 'search') {
-
+$('#reportbtnimg').fadeOut(11);
 $('.icon').eq(0).css("opacity","0.3");
 $('.icon').eq(1).css("opacity","1");
 $('.icon').eq(2).css("opacity","0.3");
@@ -170,15 +170,13 @@ $('#top2').html(searchputhtmljs);
 }
 else {
 if(id === 'more') {
+$('#reportbtnimg').fadeOut(11);
 $('.icon').eq(0).css("opacity","0.3");
 $('.icon').eq(1).css("opacity","0.3");
 $('.icon').eq(2).css("opacity","1");
 $('.webfullbage').html(moreppphtml);
 }
 else {
-if(id.length > 15) {
-$('#reportbtnimg').fadeIn(11);
-}
 $('.webfullbage').load('https://erichsia7.github.io/6df09188-7b25-3dc4-6745-96071c95bd7a/doc/' + url.searchParams.get('id') + '.text?' + password);
 }
 }
