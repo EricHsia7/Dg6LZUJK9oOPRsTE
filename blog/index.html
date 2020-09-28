@@ -7,7 +7,16 @@
 <meta charset="UTF-8">
 <title>每日一誌</title>
 <style>
-	
+.topbarsss {width: 100%;height: 52px;color: #212121;font-size: 25px;opacity:1.0; position:absolute;left:0px;top:0px; -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); background: rgba(255, 255, 255, 1);box-shadow:0 0 6px 1px rgba(0,0,0,0.2);}
+#reportformfullpageviewdiv {
+width:100%;
+height:100%;
+position:fixed;
+right:0%;
+top:0px;
+background:#fff;
+overflow:hidden;
+}	
 .code {
 -webkit-appearance:none;
 outline:none;
@@ -106,7 +115,11 @@ var t=0;setInterval(function(){t>6&&(t=-1),t+=1,f=0-60*t,$(".loadingimgpng").att
 <div class="bottombarbutton" style="left:calc((100% / 3) * 2);"><a href="javascript:tabmore()"><img src="icons.png" class="icon" style="object-position: 0px -96px;opacity:0.3;" id="icon-more"></a></div>
 </div>
 
-
+<div id="reportformfullpageviewdiv">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLc-FGHgQIktRbGqKfNVniGTuft_R-YGsv0eel6xqxig9hXg/viewform? embedded=true&usp=pp_url&entry.194761638=Ppppppppppppppp" frameborder="0" marginheight="0" marginwidth="0" style="height:calc(100% - 52px);width:100%;position:absolute;left:0px;bottom:0px;" id="reportformfullpageviewiframe">載入中…</iframe>
+<div class="topbarsss"><center style="font-size:20px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%); font-family: 'M PLUS Rounded 1c', sans-serif;">檢舉</center>
+<a href="javascript:closereport()" id="closereportbtn"><img src="previous.png" style="height:48px;position:absolute;top:2px;left:0px;transform:scale(0.6);opacity:0.9;display:block;" id="closereportbtnimg"></a></div>
+</div>
 
 <script>
 var getUrlString = location.href;
@@ -213,8 +226,16 @@ $('.icon').eq(2).css("opacity","1");
 location.replace('?id=more&' + password);
 }
 
+function closereport() {
+$('#reportformfullpageviewdiv').animate({right: -100 + '%' }, 555 );
+}
+
+	
+
 function report() {
-window.open('https://docs.google.com/forms/d/e/1FAIpQLSeLc-FGHgQIktRbGqKfNVniGTuft_R-YGsv0eel6xqxig9hXg/viewform?usp=pp_url&entry.194761638=' + url.searchParams.get('id'));
+$('#reportformfullpageviewdiv').animate({right: 0 + '%' }, 555 );
+var uuuuuurl = 'https://docs.google.com/forms/d/e/1FAIpQLSeLc-FGHgQIktRbGqKfNVniGTuft_R-YGsv0eel6xqxig9hXg/viewform?embedded=true&usp=pp_url&entry.194761638=' + url.searchParams.get('id') ;
+$('#reportformfullpageviewiframe').attr('src',uuuuuurl);
 }
 
 var aaa = '' ;
