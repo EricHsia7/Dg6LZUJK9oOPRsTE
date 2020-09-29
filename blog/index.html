@@ -18,17 +18,7 @@ bottom:57px;
 border-radius:99em;
 background:#f2f2f2;
 }
-.fontsizebigdiv {
-height:52px;
-width:52px;
-position:fixed;
-right:5px;
-bottom:57px;
-border-radius:25px;
-background:#fff;
-box-shadow:0 0 6px 1px rgba(0,0,0,0.08);
-opacity:0;
-}
+
 
 .fontsizerange {
     -webkit-appearance: none;
@@ -170,6 +160,38 @@ a {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
 ul {list-style-type: none;position:absolute;top:-55px;left:0px;}
 li {font-family: 'Roboto', sans-serif;background:#fff;width:100vw;height:50px;font-size:40px;margin-top:5px;margin-left:-40px; border-bottom:1px #e3e3e3 solid;padding-bottom:8px;}
 ul a {color:#000; text-decoration:none;}
+	
+	
+	
+@media only screen and (min-width:350px) { 
+.fontsizebigdiv {
+height:52px;
+width:52px;
+position:fixed;
+right:5px;
+bottom:57px;
+border-radius:25px;
+background:#fff;
+box-shadow:0 0 6px 1px rgba(0,0,0,0.08);
+opacity:0;
+}
+}
+
+@media only screen and (max-width:350px) { 
+.fontsizebigdiv {
+height:52px;
+width:52px;
+position:fixed;
+right:5px;
+bottom:57px;
+border-radius:25px;
+background:rgba(255, 255, 255, 0.6);
+box-shadow:0 0 6px 1px rgba(0,0,0,0.05);
+opacity:0;
+-webkit-backdrop-filter: blur(15px);
+backdrop-filter: blur(15px);
+}
+}
 </style>
 <div class="webfullbages">
 <center>
