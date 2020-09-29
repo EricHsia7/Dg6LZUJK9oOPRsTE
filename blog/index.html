@@ -7,6 +7,87 @@
 <meta charset="UTF-8">
 <title>每日一誌</title>
 <style>
+	
+	
+.fontsizebtn {
+height:52px;
+width:52px;
+position:fixed;
+right:5px;
+bottom:57px;
+border-radius:99em;
+background:#f2f2f2;
+}
+.fontsizebigdiv {
+height:52px;
+width:52px;
+position:fixed;
+right:5px;
+bottom:57px;
+border-radius:25px;
+background:#fff;
+box-shadow:0 0 6px 1px rgba(0,0,0,0.08);
+opacity:0;
+}
+
+.fontsizerange {
+    -webkit-appearance: none;
+    width: 230px;
+    height: 3px;
+    border-radius: 3px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.9;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+   margin:10px;
+   -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.fontsizerange:hover {
+    opacity: 1;
+   -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.fontsizerange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007AFF;
+    cursor: pointer;
+
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+
+}
+
+.fontsizerange::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007AFF;
+    cursor: pointer;
+
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+
+}
+.fontsizemunber {
+width:100px;
+height:45px;
+background:#e3e3e3;
+border-radius:13px;
+margin-top:10px;
+font-size:35px;
+color:#333;
+}
+	
+	
+	
+	
+	
+	
+	
 .topbarsss {width: 100%;height: 52px;color: #212121;font-size: 25px;opacity:1.0; position:absolute;left:0px;top:0px; -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); background: rgba(255, 255, 255, 1);box-shadow:0 0 6px 1px rgba(0,0,0,0.2);}
 #reportformfullpageviewdiv {
 width:100%;
@@ -115,6 +196,17 @@ var t=0;setInterval(function(){t>6&&(t=-1),t+=1,f=0-60*t,$(".loadingimgpng").att
 <div class="bottombarbutton" style="left:calc(100% / 3);"><a href="javascript:tabsearch()"><img src="icons.png" class="icon" style="object-position: 0px -48px; opacity:0.3;" id="icon-search"></a></div>
 <div class="bottombarbutton" style="left:calc((100% / 3) * 2);"><a href="javascript:tabmore()"><img src="icons.png" class="icon" style="object-position: 0px -96px;opacity:0.3;" id="icon-more"></a></div>
 </div>
+
+<div class="fontsizebigdiv">
+<center>
+<span style="font-size:35px;">文字大小</span>
+<div class="fontsizemunber">50</div>
+<input type="range" value="50" min="10" max="100" class="fontsizerange">
+</center>
+</div>
+<a href="javascript: fontsizeopen()" class="fontsizebtn"><img src="font-size.png" style="width:52px; transform:scale(0.5);"></a>
+
+
 
 <div id="reportformfullpageviewdiv">
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLc-FGHgQIktRbGqKfNVniGTuft_R-YGsv0eel6xqxig9hXg/viewform?embedded=true&usp=pp_url&entry.194761638=default" frameborder="0" marginheight="0" marginwidth="0" style="height:calc(100% - 52px);width:100%;position:absolute;left:0px;bottom:0px;" id="reportformfullpageviewiframe">載入中…</iframe>
@@ -246,7 +338,35 @@ aaa += '<a href="?id=' + ddd[1] + '"><div class="searchdiv" data-index="' + ddd[
 }
 var ffffgg = aaa ;
 
+var nieee = 2 ;
 
+function fontsizeopen() {
+if(window.innerWidth > 350) {
+eewidth = 250 ;
+eeheight = 200 ;
+var scsize = 10 ;
+}
+else {
+eewidth = window.innerWidth-10 ;
+eeheight = 200 ;
+var scsize = 0 ;
+}
+if(nieee > "1") {
+$('.fontsizebigdiv').animate({width: eewidth+scsize + 'px' ,height: eeheight+scsize + 'px',opacity:1}, 333 ).animate({width: eewidth + 'px' ,height: eeheight + 'px'}, 222 );
+   nieee -=2 ;
+   } 
+else {
+$('.fontsizebigdiv').animate({width: eewidth+scsize + 'px' ,height: eeheight+scsize + 'px'}, 222 ).animate({width: 52 + 'px' ,height: 52 + 'px',opacity:0}, 333 );
+    nieee +=2 ;
+}
+}
+function getfontsizevalue() {
+$('.fontsizemunber').html($('.fontsizerange').val());
+$('.webfullbage').animate({'font-size': $('.fontsizerange').val() + 'px'}, 33 );
+
+}
+
+var timeoutIDeee = setInterval(getfontsizevalue, 100);
 
 function searching() {
 $('#icon-search-top-bar').animate({opacity: 0.3 }, 333 ).delay(111).animate({opacity: 1 }, 333 );
