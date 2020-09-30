@@ -8,6 +8,37 @@
 <title>每日一誌</title>
 <style>
 	
+	.sharebtn {
+height:52px;
+width:52px;
+position:fixed;
+right:5px;
+bottom:114px;
+border-radius:99em;
+background:#f2f2f2;
+}
+.sharediv {
+height:300px;
+width:100%;
+position:fixed;
+left:0px;
+bottom:-330px;
+border-radius:25px 25px 0px 0px;
+background:#fff;
+box-shadow:0 0 6px 1px rgba(0,0,0,0.2);
+opacity:1;
+}
+.shareiconimg {
+width:60px;
+border-radius:99em;
+margin:5px;
+
+}
+	
+	
+	
+	
+	
 	
 .fontsizebtn {
 height:52px;
@@ -239,6 +270,56 @@ var t=0;setInterval(function(){t>6&&(t=-1),t+=1,f=0-60*t,$(".loadingimgpng").att
 </center>
 </div>
 <a href="javascript: fontsizeopen()" class="fontsizebtn"><img src="font-size.png" style="width:52px; transform:scale(0.5);"></a>
+
+
+
+<a href="javascript: sharedivopen()" class="sharebtn"> <img src="share.png" style="width:52px; transform:scale(0.5);position:absolute;top:0px;right:0px;"></a>
+
+<div class="sharediv">
+<div style="height:52px;width:100%;background:#fafafa;position:absolute;top:0px;left:0px; border-radius:25px 25px 0px 0px;">
+<center style="font-size:25px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%); font-family: 'M PLUS Rounded 1c', sans-serif;">分享</center>
+</div>
+
+<a href="javascript: sharedivopen()" class=""><img src="cancel.png" style="width:52px; transform:scale(0.5);position:absolute;top:0px;right:0px;"></a>
+
+<div style="margin-top:52px;width:100%;height:calc(100% - 52px);position:absolute;left:0px;bottom:0px; overflow:scroll;">
+<center>
+<a href="https://line.me/R/msg/text/?url" id="linesharebtn"><img src="line.png" class="shareiconimg"></a>
+
+<a href="https://www.facebook.com/sharer/sharer.php?u=" id="fbsharebtn"><img src="facebook.png" class="shareiconimg"></a>
+
+<a href="https://t.me/share/url?url=" id="tgsharebtn"><img src="telegram.png" class="shareiconimg"></a>
+
+<a href="https://wa.me/?text=" id="washarebtn"><img src="whatsapp.png" class="shareiconimg"></a>
+</center>
+</div>
+</div>
+
+<script>
+$('#linesharebtn').attr('href', 'https://line.me/R/msg/text/?' + location.href);
+
+$('#fbsharebtn').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + location.href);
+
+$('#tgsharebtn').attr('href', 'https://t.me/share/url?url=' + location.href);
+
+$('#washarebtn').attr('href', 'https://wa.me/?text=' + location.href);
+
+var niees = 2 ;
+function sharedivopen() {
+
+
+if(niees > "1") {
+$('.sharediv').animate({'bottom': 0 + 'px',height: 310 + 'px' }, 555 ).animate({height: 300 + 'px' }, 222 );
+   niees -=2 ;
+   } 
+else {
+$('.sharediv').animate({'bottom': 0 + 'px',height: 310 }, 222 ).animate({height: 300 + 'px' ,bottom: -330 + 'px'}, 555 );
+    niees +=2 ;
+}
+}
+</script>
+
+
 
 
 
