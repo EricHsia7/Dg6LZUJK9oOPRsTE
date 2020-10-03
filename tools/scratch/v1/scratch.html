@@ -19,10 +19,8 @@ h2{
 }
 canvas{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left:-150px;
-  margin-top: -150px;
+  top: 52px;
+  left: 0px;
   cursor: pointer;
 }
 #btn{
@@ -64,7 +62,7 @@ var useNumber=0,
     luckNumber=[],
     mousedown,
     w = window.innerWidth,
-    h = window.innerHeight;
+    h = window.innerHeight-52 ;
 var bottomCanvas = document.querySelector("#bottom");
 var topCanvas = document.querySelector('#top');
 topCanvas.width = bottomCanvas.width = w;
