@@ -50,6 +50,7 @@ img{
 </style>
 
 <font face="Hiragino Maru Gothic ProN">
+<img src="scrppp.png" id="scrppp">
 <div style="width: 100%;height: 52px;color: #212121;font-size: 25px;opacity:1.0; position:fixed;z-index:1000;left:0px;top:0px; -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); background: rgba(255, 255, 255, 1);box-shadow:0 0 6px 1px rgba(0,0,0,0.2);z-index:100;" id="top1"><center style="font-size:20px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%); font-family: 'M PLUS Rounded 1c', sans-serif;">刮刮樂</center></div>
 <canvas id="bottom"></canvas>
 <canvas id="top"></canvas>
@@ -88,10 +89,11 @@ function random(){
 
 drawBot();
 drawTop();  
-
+var img = document.getElementById("scrppp");
 function drawTop(){
     ctxTop.canvas.style.opacity = 1;
     ctxTop.fillStyle = '#f2f2f2';
+    ctxTop.drawImage(img, 0, 0);
     ctxTop.fillRect(0, 0, w, h);
 
     if(ctxTop.globalCompositeOperation != 'destination-out'){
