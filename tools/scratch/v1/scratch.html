@@ -92,7 +92,7 @@ function drawTop(){
     ctxTop.canvas.style.opacity = 1;
     ctxTop.fillStyle = '#fafafa';
     ctxTop.fillRect(0, 0, w, h);
-
+    ctxTop.fillText( '刮刮樂',150,150);
     if(ctxTop.globalCompositeOperation != 'destination-out'){
         ctxTop.globalCompositeOperation = 'destination-out';
     }else{
