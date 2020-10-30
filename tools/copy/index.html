@@ -1,1 +1,46 @@
- <meta charset="UTF-8"><font face="Hiragino Maru Gothic ProN">  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script><title>複製</title><style>  .bg {position:fixed;bottom:0px;left:0px;width:100%;height:100%;background:#ffffff;z-index:100;}  .bg2 {position:fixed;bottom:0%;left:0px;width:100%;height:300%;background:#ffffff;z-index:90;}  .msg {background:rgba(0, 0, 0, 0.7);width:auto;height:auto;padding:5px 15px;position:fixed;top:-80px;left:50%;transform:translate(-50%,-0%);border-radius:25px;color:#ffffff;}  .b {text-decoration: none;color:#ffffff;border-radius: 35px;background:#333333;border:none;font-size:40px;width:auto;height:80px;padding:5px 12px;}  .b:hover {text-decoration: none;color:#ffffff;border-radius: 35px;background:#333333;border:none;font-size:40px;width:auto;height:80px;padding:5px 12px;}  .txt {width:90%;height:150px; border:1px solid #8c8c8c; background-color:#ffffff;font-size:20px; border-radius: 12px;margin-top:20px;-webkit-appearance:none;caret-color:rgba(0, 0, 0, 0.01);color:#212121;}  @media (prefers-color-scheme: dark) {      .bg {position:fixed;bottom:0px;left:0px;width:100%;height:100%;background:#212121;z-index:100;}    .bg2 {position:fixed;bottom:0%;left:0px;width:100%;height:300%;background:#212121;z-index:90;}  .msg {background:rgba(250, 250, 250, 0.7);width:auto;height:auto;padding:5px 15px;position:fixed;top:-80px;left:50%;transform:translate(-50%,-0%);border-radius:25px;color:#212121;}  .b {text-decoration: none;color:#212121;border-radius: 35px;background:#ffffff;border:none;font-size:40px;width:auto;height:80px;padding:5px 12px;}  .b:hover {text-decoration: none;color:#212121;border-radius: 35px;background:#ffffff;border:none;font-size:40px;width:auto;height:80px;padding:5px 12px;}  .txt {width:90%;height:150px; border:1px solid #ffffff; background-color:#212121;font-size:20px; border-radius: 12px;margin-top:20px;-webkit-appearance:none;caret-color:rgba(255, 255, 255, 0.01);color:#ffffff;}  }</style>  <div class="bg2"></div>  <div class="bg"><center><textarea class="txt" id="text" placeholder="內容"></textarea>  <br>  <a href="javascript:copy()" class="b">複製內容</a><script>var getUrlString = location.href;var url = new URL(getUrlString);document.getElementById("text").value= url.searchParams.get('text') ;    function copy() {var copys=document.getElementById("text");copys.select();document.execCommand("Copy");setTimeout("document.activeElement.blur(); ",800);    $('#msg').animate({top: 50 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);}</script>  <div id="msg" class="msg">已複製內容</div>    </center>  </div>
+ <meta charset="UTF-8">
+<font face="Hiragino Maru Gothic ProN">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<title>複製</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  .bg {position:fixed;bottom:0px;left:0px;width:100%;height:100%;background:#ffffff;z-index:100;}
+  .bg2 {position:fixed;bottom:0%;left:0px;width:100%;height:300%;background:#ffffff;z-index:90;}
+  .msg {background:rgba(0, 0, 0, 0.7);width:auto;height:auto;padding:5px 15px;position:fixed;top:-80px;left:50%;transform:translate(-50%,-0%);border-radius:25px;color:#ffffff;}
+  .b {text-decoration: none;color:#ffffff;border-radius: 35px;background:#333333;border:none;font-size:40px;width:auto;height:80px;padding:5px 12px;}
+  .b:hover {text-decoration: none;color:#ffffff;border-radius: 35px;background:#333333;border:none;font-size:40px;width:auto;height:80px;padding:5px 12px;}
+  .txt {width:90%;height:150px; border:1px solid #8c8c8c; background-color:#ffffff;font-size:20px; border-radius: 12px;margin-top:20px;-webkit-appearance:none;caret-color:rgba(0, 0, 0, 0.01);color:#212121;}
+  @media (prefers-color-scheme: dark) {
+      .bg {position:fixed;bottom:0px;left:0px;width:100%;height:100%;background:#212121;z-index:100;}
+    .bg2 {position:fixed;bottom:0%;left:0px;width:100%;height:300%;background:#212121;z-index:90;}
+  .msg {background:rgba(250, 250, 250, 0.7);width:auto;height:auto;padding:5px 15px;position:fixed;top:-80px;left:50%;transform:translate(-50%,-0%);border-radius:25px;color:#212121;}
+  .b {text-decoration: none;color:#212121;border-radius: 35px;background:#ffffff;border:none;font-size:40px;width:auto;height:80px;padding:5px 12px;}
+  .b:hover {text-decoration: none;color:#212121;border-radius: 35px;background:#ffffff;border:none;font-size:40px;width:auto;height:80px;padding:5px 12px;}
+  .txt {width:90%;height:150px; border:1px solid #ffffff; background-color:#212121;font-size:20px; border-radius: 12px;margin-top:20px;-webkit-appearance:none;caret-color:rgba(255, 255, 255, 0.01);color:#ffffff;}
+  }
+</style>
+  <div class="bg2"></div>
+  <div class="bg">
+<center>
+<textarea class="txt" id="text" placeholder="內容"></textarea>
+  <br>
+  <a href="javascript:copy()" class="b">複製內容</a>
+<script>
+var getUrlString = location.href;
+var url = new URL(getUrlString);
+
+document.getElementById("text").value= url.searchParams.get('text') ;
+  
+  function copy() {
+var copys=document.getElementById("text");
+copys.select();
+document.execCommand("Copy");
+setTimeout("document.activeElement.blur(); ",800);
+    $('#msg').animate({top: 50 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
+}
+</script>
+  <div id="msg" class="msg">已複製內容</div>
+    </center>
+  </div>
