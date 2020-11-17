@@ -57,7 +57,7 @@ size = (Math.round(((document.body.clientWidth-10)/xtime.length))) ;
 $('#txttimepp').animate({fontSize: size + 'px' },333);
   
   
-  if (parseInt(d1 - d2) < 0.1) {
+  if (parseInt(d1 - d2) <= 0) {
         tss = setTimeout( document.getElementById("txttimepp").innerHTML = "倒數已結束!" , 800);
 
         clearTimeout(t);
