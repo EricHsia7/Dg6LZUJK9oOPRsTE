@@ -45,7 +45,7 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
     d2 = new Date(today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate() + " " + h + ":" + m + ":" + s);
-    xtime = titlex + Math.floor(parseInt(d1 - d2) / 1000 / 60 / 60 / 24) + "天" + (Math.floor(parseInt(d1 - d2) / 1000 / 60 / 60) % 24) + "小時" + ((Math.floor(parseInt(d1 - d2) / 1000 / 60) % 60) + 1) + "分" + (Math.floor(parseInt(d1 - d2) / 1000) % 60) + "秒";
+    xtime = titlex + Math.floor(parseInt(d1 - d2) / 1000 / 60 / 60 / 24) + "天" + (Math.floor(parseInt(d1 - d2) / 1000 / 60 / 60) % 24) + "小時" + ((Math.floor(parseInt(d1 - d2) / 1000 / 60) % 60) + 0) + "分" + (Math.floor(parseInt(d1 - d2) / 1000) % 60) + "秒";
     document.getElementById("txttimepp").innerHTML = "<center>" + xtime + "</center>";
 
     size = 45 ;
