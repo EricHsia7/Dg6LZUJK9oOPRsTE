@@ -16,7 +16,7 @@
   background-color: #ffffff;
   color: #171717;
 }
-            .bar {background:#333;position:fixed;bottom:0px;left:0px;height:5px;}
+            .bar {background:#333;position:fixed;bottom:0px;left:0px;height:5px;width:0%;}
 .text-mode:after {
   content: "light";
 }
@@ -25,7 +25,7 @@
     background-color: #171717;
     color: #ffffff;
   }
-            .bar {background:#fff;position:fixed;bottom:0px;left:0px;height:5px;}}
+            .bar {background:#fff;position:fixed;bottom:0px;left:0px;height:5px;width:0%;}
   .text-mode:after {
     content: "dark";
   }
@@ -46,7 +46,8 @@ else {
 titlex = url.searchParams.get('title') ;
 }
 var xtime =0 ;
-$('.bar').animate({width: '100%'}, parseInt(d1 - d2));
+$('.bar').animate({'width': '100%'}, parseInt(d1 - d2));
+
 function startTime()
 {
 var today=new Date()
