@@ -54,7 +54,7 @@ s=checkTime(s)
 d2 = new Date( today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + ' ' + h+":"+m+":"+s );
 xtime = titlex + Math.floor((parseInt(d1 - d2) / 1000 / 60 / 60 / 24)) + '天' + ((Math.floor((parseInt(d1 - d2) / 1000 / 60 / 60 )))%24) + '小時' + (((Math.floor((parseInt(d1 - d2) / 1000 / 60 )))%60)+0) + '分' + ((Math.floor((parseInt(d1 - d2) / 1000)))%60) + '秒' ;
 document.getElementById('txttimepp').innerHTML= xtime ;
-size = (Math.round(((document.body.clientWidth-10)/xtime.length))) ;
+size = document.body.clientWidth/20 ;
 $('#txttimepp').animate({fontSize: size + 'px' },333);
   
   
