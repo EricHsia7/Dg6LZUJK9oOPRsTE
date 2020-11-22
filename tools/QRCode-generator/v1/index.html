@@ -60,7 +60,7 @@ function QRCode(){
 var put999 = document.getElementById('put999').value ;
 var msg8 = document.getElementById('content');
 var imgSrc = 'https://chart.apis.google.com/chart?cht=qr&chl=' + put999 + '&chs=300x300' ;
-msg8.innerHTML = '<img src="' + imgSrc + '" alt="" width="90%" height="auto" title="qrcode" style="border-radius: 8px;" /><br> <font size="60%">QRCODE 網址</font><input type="text" id="urlpp" value="' + imgSrc + '" style="font-size:80%; width:100%; border:1px solid #8c8c8c; border-radius: 8px;" />';
+msg8.innerHTML = '<img src="' + imgSrc + '" alt="" title="qrcode" style="border-radius: 8px;width:auto;height:auto;max-width:100%;max-height:100%;" /><br> <font size="60%">QRCODE 網址</font><input type="text" id="urlpp" value="' + imgSrc + '" style="font-size:80%; width:100%; border:1px solid #8c8c8c; border-radius: 8px;" />';
                    this.disabled=true;	
 }
 </script>
