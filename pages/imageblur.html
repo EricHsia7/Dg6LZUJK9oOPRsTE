@@ -50,6 +50,7 @@ font-size:20px;
 var getUrlString = location.href;
 var url = new URL(getUrlString);
 $('#img').attr('src',url.searchParams.get('u'));
+$('body,html').animate({'scrollTop': 10 }, 11 ).animate({'scrollTop': 0 }, 11 );
 var height = 5000 ;
 function set() {
 $('#img').css({'-webkit-filter' : 'blur(' + (15-($( window ).scrollTop()/height*20)) + 'px)' , 'filter' : 'blur(' + (15-($( window ).scrollTop()/height*20)) + 'px)','max-width': (100-($( window ).scrollTop()/height*20)) + '%', 'max-height': (100-($( window ).scrollTop()/height*20)) + '%'});
