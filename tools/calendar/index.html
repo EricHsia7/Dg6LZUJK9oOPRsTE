@@ -58,7 +58,61 @@ color:#888;
 font-weight:500;
 max-width:80%;
 }
+  @media (prefers-color-scheme: dark) {
+    body {background:#212121;}
+.claendar {
+position:absolute;
+top:0px;
+left:0px;
+width:100%;
+height:auto;
+background:#212121;
+text-align:center;
+overflow:hidden;
+padding:0px;
+font-family: 'Noto Sans TC', sans-serif;
+}
 
+.claendar #monthName {
+position:relative;
+top:0px;
+left:0px;
+padding:5px 0px;
+background:#ff6331;
+color:#fff;
+font-size:30px;
+width:100%;
+font-weight:700;
+}
+
+.claendar #dayName {
+margin-top:20px;
+font-size:20px;
+color:#999;
+font-weight:500;
+}
+
+.claendar #dayNumber {
+margin-top:20px;
+font-size:80px;
+color:#fff;
+font-weight:900;
+}
+
+.claendar #year {
+margin-top:20px;
+font-size:20px;
+color:#999;
+font-weight:700;
+}
+.claendar #txt {
+margin-bottom:20px;
+font-size:25px;
+color:#888;
+font-weight:500;
+max-width:80%;
+}
+  }
 </style>
 <body>
 <div class="claendar">
