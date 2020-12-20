@@ -1,0 +1,416 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<meta charset="UTF-8">
+<title>XTools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<style>
+.div img {border-radius:15px;width:100%;}
+:root {
+--div-color:#fff;
+}
+#search-input {
+width:calc(85% + 10px);
+height:50px;
+border-radius: 99em;
+background:#ffffff;
+margin-top:24px;
+margin-bottom:24px;
+-webkit-appearance:none;
+outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
+font-size:25px;
+background:#ffffff;
+color:#333333;
+border: 5px #212020 solid;
+}
+
+.button {
+    background-color: #ffffff;
+    border: 5px #212020 solid;
+    color: #212121;
+    padding: 20px 3px;
+    border-radius: 99em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 10px 10px;
+    cursor: pointer;
+    width:86%;
+
+outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
+
+}
+
+  .buttonaadiv {
+    position: absolute;left:0px;top:0px;width:100%;height:100%;background:rgba(0, 0, 0, 0.6);display:none;
+  }
+  
+.mapdiv {position:absolute;top:45px;left:0px; width:25%;height:calc(100% - 45px);background:#ffffff;overflow:scroll;}
+.bottomdiv {position:fixed;bottom:0px;left:0px;width:100%;height:60px;background:#ffffff; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);border-top-right-radius:0px;border-top-left-radius:0px;}
+
+.hometoptab {width:100%;height:45px;position:fixed;top:0px;left:0px;background:#ffffff; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);z-index:1000;font-family: 'Noto Sans TC', sans-serif;}
+
+  .loadbg {width:100%;height:100%;position:fixed;top:0px;left:0px;background: #ffffff;z-index:1001;}
+  .msgdiv {position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:300px;height:250px;background:#ffffff;border-radius:20px;}
+  @media only screen and (max-width:550px) {
+    .icon {width:60%;}
+
+.div {
+width:calc(50vw - 20px);
+height: calc(50vw - 20px);
+margin:5px;
+float: left;
+border-radius:15px;
+box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.08);
+background:var(--div-color);
+}
+
+  }
+  @media only screen and (min-width:550px) {
+    .icon {width:20%;}
+   .div {
+width:calc(25vw - 15px);
+height: calc(25vw - 15px);
+margin:5px;
+float: left;
+border-radius:15px;
+box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.08);
+background:var(--div-color);
+}
+  }
+
+  .langb {text-align:center;font-family: 'Noto Sans TC', sans-serif;text-decoration:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);width:100%;height:50px;background:#ffffff;border-top: 1px solid #ccc;margin-top:0px;color:#333333;font-size:25px;padding:3px 0px;position:absolute;top:0px;left:0px;}
+  .colorbarpppppppp {width:50px;height:3px;border-radius: 5px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#333333;}
+
+  .topbartextno {color:#808080;}
+  .topbartextyes {color:#333333;}
+  .lightimg {display:block;opacity:1;}
+  .darkimg {display:none;opacity:0;}
+  p {color:#333;}
+  
+  
+  
+  .msgdiv {
+display:none;position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:300px;height:170px;background:#f2f2f2;border-radius:20px;color:#333;z-index:1000010;
+}
+.msgyes {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);position: absolute;left:0px;bottom:0px;width:50%;height:45px;background:#f2f2f2;border-radius:0px 0px 0px 20px; border-top:1px #ccc solid;color:#333;}
+
+.msgno {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);position: absolute;right:0px;bottom:0px;width:50%;height:45px;background:#f2f2f2;border-radius:0px 0px 20px 0px; border-left:1px #ccc solid; border-top:1px #ccc solid;color:#333;}
+  body {background:#ffffff;}
+ 
+  
+  
+  .webdiv {
+position:fixed;
+bottom:-100%;
+left:0px;
+width:100%;
+height:100%;
+background:#f2f2f2;
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+}
+.webtitle {
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+position:absolute;
+top:0px;
+left:0px;
+width:100%;
+height:50px;
+background:#fff;
+color:#333;
+}
+.web {
+position: absolute;
+bottom: 0px;
+left:0px;
+width:100%;
+height: calc(100% - 50px);
+border:none;
+}
+  
+  
+  
+  
+  
+  @media (prefers-color-scheme: dark) {
+
+.div img {border-radius:10px;width:100%; filter: invert(100%);}
+
+    :root {
+    --div-color:#333;
+    }
+    #search-input {
+width:calc(85% + 10px);
+height:50px;
+border-radius: 99em;
+background:#ffffff;
+margin-top:24px;
+margin-bottom:24px;
+-webkit-appearance:none;
+outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
+font-size:25px;
+background:#333333;
+color:#ffffff;
+border: 5px #ffffff solid;
+}
+
+.button {
+    background-color: #333333;
+    border: 5px #ffffff solid;
+    color: #ffffff;
+    padding: 20px 3px;
+    border-radius: 99em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 10px 10px;
+    cursor: pointer;
+    width:86%;
+outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
+
+}
+    
+    .webdiv {
+position:fixed;
+bottom:-100%;
+left:0px;
+width:100%;
+height:100%;
+background:#f2f2f2;
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+}
+.webtitle {
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+position:absolute;
+top:0px;
+left:0px;
+width:100%;
+height:50px;
+background:#333;
+color:#fff;
+}
+.web {
+position: absolute;
+bottom: 0px;
+left:0px;
+width:100%;
+height: calc(100% - 50px);
+border:none;
+}
+    
+    
+    
+    
+    body {background:#333333;}
+    .mapdiv {position:absolute;top:45px;left:0px; width:25%;height:calc(100% - 45px);background:#333333;overflow:scroll;}
+    
+    .msgdiv {
+display:none;position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:300px;height:170px;background:#333333;border-radius:20px;color:#fff;z-index:1000010;
+}
+.msgyes {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);position: absolute;left:0px;bottom:0px;width:50%;height:45px;background:#333333;border-radius:0px 0px 0px 20px; border-top:1px #ccc solid;color:#fff;}
+
+.msgno {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);position: absolute;right:0px;bottom:0px;width:50%;height:45px;background:#333333;border-radius:0px 0px 20px 0px; border-left:1px #ccc solid; border-top:1px #ccc solid;color:#fff;}
+    
+    
+    
+p {color:#fff;}
+     
+    .loadbg {width:100%;height:100%;position:fixed;top:0px;left:0px;background: #333333;z-index:1001;}
+      .lightimg {display:none;opacity:0;}
+  .darkimg {display:block;opacity:1;}
+    .topbartextno {color:#808080;}
+    .topbartextyes {color:#ffffff;}
+    
+    .hometoptab {width:100%;height:45px;position:fixed;top:0px;left:0px;background:#333333; box-shadow:0 0 6px 1px rgba(0,0,0,0.2);font-family: 'Noto Sans TC', sans-serif;}
+     .colorbarpppppppp {width:50px;height:3px;border-radius: 5px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#ffffff;}
+  .langb {text-align:center;font-family: 'Noto Sans TC', sans-serif;text-decoration:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);width:100%;height:50px;background:#333;border-top: 1px solid #ccc;margin-top:0px;color:#fff;font-size:25px;padding:3px 0px;position:absolute;top:0px;left:0px;}
+  
+  }
+
+
+
+</style>
+<body>
+
+<div class="hometoptab">
+    
+      
+    <div style="position: absolute;left:50%;top:40%; transform:translate(-50%,-50%); width:100%;height:100%;">
+      <div style="position: absolute;left:0%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">       
+<a href="javascript:hometabof1()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop1"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;" id="opopa" class="topbartextyes">App</span></a>
+</div>    
+      <div style="position: absolute;left:25%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">
+<a href="javascript:hometabof2()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop2"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;" id="opopb" class="topbartextno">工具</span></a>  
+      </div>
+<div style="position: absolute;left:50%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">
+<a href="javascript:hometabof3()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop3"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;" id="opopc" class="topbartextno">遊戲</span></a>  
+      </div>
+<div style="position: absolute;left:75%;top:0%;width:25%;height:100%;background:rga(0, 0, 0, 0);">
+<a href="javascript:hometabof4()" style="width:93%;height:40px;background:rgba(0, 0, 0, 0);position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);" id="opop4"><span style="position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;" id="opopd" class="topbartextno">更多</span></a>  
+      </div>
+      
+      <div style="width:25%;height:3px;position: absolute;left:0%;bottom:5px;background:rgba(0, 0, 0, 0);border-radius: 5px;" id="opopline">
+     <div style="width:60px;height:3px;border-radius: 5px;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);" class="colorbarpppppppp" id="colorbar"></div>
+      </div>
+      
+    </div> 
+    <div class="hometoptabline"></div>
+  </div>
+<div style="position:fixed;top:0px;left:0px;overflow:hidden;width:100%;height:100%;">
+  
+<div id="allmap" style="position:fixed;top:0px;left:0%;width:400%;height:100%;background:rgba(0, 0, 0, 0);">
+<div class="mapdiv" id="tp">
+
+<center>
+
+<a href="https://erichsia7.github.io/password.gen/" class="div"> <img src="img/05.png" style="filter: invert(0%);"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/mrtmap/" class="div"> <img src="img/19.png"> </a>
+
+</center>
+
+
+  </div>
+
+<div class="mapdiv" id="km" style="left:25%;">
+
+
+
+<center style="margin-left:8px;">
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/select-answer-generator/" class="div"><img src="img/01.png"></a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/body-temperature-generator/" class="div"> <img src="img/02.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/profile-generator/" class="div"> <img src="img/03.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/list/" class="div"> <img src="img/04.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/randomtxt/" class="div"> <img src="img/06.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/ParticleText-generator/" class="div"> <img src="img/07.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/TextEdit/v3" class="div"> <img src="img/08.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/countdownday-generator/v7" class="div"> <img src="img/09.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/color/v13/" class="div"> <img src="img/10.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/QRCode-generator/v1" class="div"> <img src="img/11.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/Timer/v7/index.html#300" class="div"> <img src="img/12.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/clock/v8/" class="div"> <img src="img/13.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/fullscreentext/v2" class="div"> <img src="img/14.png"> </a>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/random-number/v1" class="div"> <img src="img/15.png"> </a>
+
+</center>
+
+
+
+</div>
+
+
+<div class="mapdiv" id="ty" style="left:50%;">
+
+<center>
+
+<a href="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/co48/v2/" class="div"> <img src="img/17.png" style="filter: invert(0%);"> </a>
+
+<a href="https://erichsia7.github.io/mpncfbdzlZvIThYo/game/" class="div"> <img src="img/16.png"> </a>
+
+<a href="https://erichsia7.github.io/YACWDIgVTyKcs0fn/game/" class="div"> <img src="img/18.png" style="filter: invert(0%);"> </a>
+
+
+
+</center>
+ </div>
+
+  <div class="mapdiv" id="tr" style="left:75%;">
+<center>
+<p>本站小工具及App由@Erichsia7開發。<br> <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Erichsia7" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Follow @Erichsia7 on GitHub">Follow @Erichsia7</a> </p>
+</center>
+  </div>
+</div>
+  <script>
+function hometabof1() {
+  $("#opopline").animate({left: 0 + '%' },555);
+    
+    $("#opopa").attr('class', 'topbartextyes');
+    $("#opopb").attr('class', 'topbartextno');
+    $("#opopc").attr('class', 'topbartextno');
+    $("#opopd").attr('class', 'topbartextno');
+    $('#allmap').animate({left: 0 + '%' },555);
+    $('#colorbar').animate({width: 50 + 'px' },555);
+    $('#search-input').val('');
+  }
+  
+  function hometabof2() {
+$("#opopline").animate({left: 25 + '%' },555);
+    
+    $("#opopa").attr('class', 'topbartextno');
+    $("#opopb").attr('class', 'topbartextyes');
+    $("#opopc").attr('class', 'topbartextno');
+    $("#opopd").attr('class', 'topbartextno');
+    $('#allmap').animate({left: -100 + '%' },555);
+    $('#colorbar').animate({width: 50 + 'px' },555);
+      $('#search-input').val('');
+}
+
+function hometabof3() {
+$("#opopline").animate({left: 50 + '%' },555);
+    
+    $("#opopa").attr('class', 'topbartextno');
+    $("#opopb").attr('class', 'topbartextno');
+    $("#opopc").attr('class', 'topbartextyes');
+    $("#opopd").attr('class', 'topbartextno');
+    $('#allmap').animate({left: -200 + '%' },555);
+    $('#colorbar').animate({width: 50 + 'px' },555);
+    $('#search-input').val('');
+}
+  
+function hometabof4() {
+$("#opopline").animate({left: 75 + '%' },555);
+    
+    $("#opopa").attr('class', 'topbartextno');
+    $("#opopb").attr('class', 'topbartextno');
+    $("#opopc").attr('class', 'topbartextno');
+    $("#opopd").attr('class', 'topbartextyes');
+    $('#allmap').animate({left: -300 + '%' },555);
+    $('#colorbar').animate({width: 50 + 'px' },555);
+} 
+    
+</script>
+<script>
+  window.onload = function() {
+    // 阻止雙擊放大
+    var lastTouchEnd = 0;
+    document.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    });
+    document.addEventListener('touchend', function(event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+
+    // 阻止雙指放大
+    document.addEventListener('gesturestart', function(event) {
+        event.preventDefault();
+    });
+}
+</script>
+</body>
