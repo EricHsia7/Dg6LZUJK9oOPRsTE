@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
-<title>選擇答案產生器</title>
+<title>UUID產生器</title>
 <style>
   
 :root {
@@ -49,12 +49,13 @@ outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none; ba
 </body>
 <script>
 f = 0 ;
-var char = ['A','B','C','D'];
-function getTep() {
-var chars = char[Math.floor(Math.random() * 4)] + ' ' + char[Math.floor(Math.random() * 4)] + ' ' + char[Math.floor(Math.random() * 4)] + ' ' + char[Math.floor(Math.random() * 4)] + ' ' + char[Math.floor(Math.random() * 4)] ;
+var char = ['A','B','C','D','E','F','1','2','3','4','5','6','7','8'];
+function getUUID() {
+var chars = char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + '-' + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + '-' + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + '-' + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + '-' + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] + char[Math.floor(Math.random() * char.lenght)] ;
+;
 document.getElementById("tep").value = chars + '' ;
 if (f > 0.5) {
-$('#boxmsg').html('已產生新答案！');
+$('#boxmsg').html('已產生新UUID！');
 $('.boxmsg').fadeIn(111).delay(555).fadeOut(111);
 }
 if (f > 10) {
@@ -70,7 +71,7 @@ document.execCommand("Copy");
 $('#boxmsg').html('已複製答案！');
 $('.boxmsg').fadeIn(111).delay(555).fadeOut(111);
 }
-getTep();
+getUUID();
 var o = 100 ;
 function pp() {
 o -= 0.333 ;
@@ -78,7 +79,7 @@ $('.box').css({"background": "linear-gradient(90deg, var(--bar-color-a) 0%, var(
 if (o < 0.333) {
 clearInterval(id);
 o = 100 ;
-getTep();
+getUUID();
 id = setInterval(pp, 10);
 }
 }
