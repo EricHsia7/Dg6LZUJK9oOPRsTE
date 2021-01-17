@@ -1,0 +1,201 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8" />
+<title>Hello</title>
+<style>
+body {
+margin:0;
+}
+.box {
+width:100%;
+height:200vh;
+position: relative;
+margin:0;
+overflow:hidden;
+}
+.box .radius {
+width:300vw;
+height:480vw;
+border-radius:100%;
+background:#009fbf;
+position:absolute;
+left:50%;
+top:20%;
+transform:translateX(-50%);
+}
+.box h1 {
+font-size:5rem;
+font-family: 'Noto Sans TC', sans-serif;
+font-weight:900;
+color:#009fbf;
+position:absolute;
+top:80px;
+left:50%;
+
+transform:translateX(-50%);
+
+}
+#down {
+width:100%;
+position:absolute;
+top:70%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+#int {width:100%;margin-top:100px;}
+.head {
+    width: 100%;
+    height: 52px;
+    color: #212121;
+    font-size: 25px;
+    opacity: 1;
+    position: sticky;
+    left: 0;
+    top: 0;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background: #009fbf;
+}
+p {
+font-family: 'Noto Sans TC', sans-serif;
+font-weight:300;
+font-size:2rem;
+}
+</style>
+<body>
+<div class="box">
+<h1>Hello</h1>
+<div class="radius"></div>
+<img src="down.png" id="down">
+</div>
+<div class="head"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%); font-family: 'Noto Sans TC', sans-serif;font-weight:400;">Hello</span></div>
+
+<p></p>
+
+<img src="int.png" id="int">
+
+<script>
+
+function c() {
+    if($( window ).scrollTop() > $('.head').offset().top-1) {
+    $('.head').css({'background':'rgba(0, 0, 0, 0)','box-shadow':'0 0 15px 1px rgba(0,0,0,0.05)','transition':'.5s','color':'#333'});
+    }
+   else {
+   $('.head').css({'background':'#009fbf','box-shadow':'none','transition':'.5s','color':'#009fbf'});
+   }
+   
+   if($( window ).scrollTop() > $('#int').offset().top-152 && $( window ).scrollTop() < $('#int').offset().top+$('#int').height()+$( window ).height()*0) {
+   $('body').css({'background':'rgba(200, 226, 240)','transition':'.5s'});
+   $('#int').css({'opacity':'1','transition':'.5s'});
+   }
+   else {
+   $('body').css({'background':'#fff','transition':'.5s'});
+   $('#int').css({'opacity':'0','transition':'.5s'});
+   }
+
+if($( window ).scrollTop() > $('#int').offset().top+$('#int').height()) {
+   $('.head').css({'opacity':'0','transition':'.5s'});
+}
+   else {
+   $('.head').css({'opacity':'1','transition':'.5s'});
+   }
+
+}
+
+    setInterval(c, 30);
+    </script>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+  
+  
+<div class="barbg"></div>
+<script src="https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/js/loadingbar.js"></script>
+
+
+</body>
