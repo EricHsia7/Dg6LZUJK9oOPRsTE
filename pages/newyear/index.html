@@ -113,12 +113,12 @@ function c() {
 if($( window ).scrollTop() > $('#int').offset().top+$('#int').height()) {
    $('.head').css({'opacity':'0','transition':'.5s'});
    $('body').css({'background':'#000','transition':'.5s'});
-   $('.fireworkbg').css({'opacity':'1','transition':'.5s'});
+   $('.fireworkbg,.fireworktxt').css({'opacity':'1','transition':'.5s'});
 }
    else {
    $('.head').css({'opacity':'1','transition':'.5s'});
     $('body').css({'background':'#fff','transition':'.5s'});
-       $('.fireworkbg').css({'opacity':'0','transition':'.5s'});
+       $('.fireworkbg,.fireworktxt').css({'opacity':'0','transition':'.5s'});
    }
 
 }
