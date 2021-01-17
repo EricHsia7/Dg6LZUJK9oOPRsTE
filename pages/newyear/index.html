@@ -58,11 +58,21 @@ transform:translate(-50%,-50%);
     backdrop-filter: blur(15px);
     background: #e80707;
 }
-p {
+#int2 {
+font-family: 'Noto Sans TC', sans-serif;
+font-weight:300;
+font-size:2rem;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+#int {
 font-family: 'Noto Sans TC', sans-serif;
 font-weight:300;
 font-size:2rem;
 margin-top:52px;
+opacity:0;
 }
 </style>
 <body>
@@ -74,6 +84,15 @@ margin-top:52px;
 <div class="head"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%); font-family: 'Noto Sans TC', sans-serif;font-weight:400;">新年快樂</span></div>
 <center>
 <p id="int">
+牛臥江天子<br>
+轉有美如人<br>
+乾璿題詩書<br>
+坤昨日月分<br>
+開白玉顏色<br>
+鴻飛入夜深<br>
+運沉到水浮
+</p>
+<p id="int2">
 牛臥江天子<br>
 轉有美如人<br>
 乾璿題詩書<br>
@@ -103,11 +122,11 @@ function c() {
    
    if($( window ).scrollTop() > $('#int').offset().top-100 && $( window ).scrollTop() < $('#int').offset().top+$('#int').height()+$( window ).height()*0) {
    $('body').css({'background':'rgba(200, 226, 240)','transition':'.5s'});
-   $('#int').css({'opacity':'1','transition':'.5s'});
+   $('#int2').css({'opacity':'1','transition':'.5s'});
    }
    else {
    $('body').css({'background':'#fff','transition':'.5s'});
-   $('#int').css({'opacity':'0','transition':'.5s'});
+   $('#int2').css({'opacity':'0','transition':'.5s'});
    }
 
 if($( window ).scrollTop() > $('#int').offset().top+$('#int').height()) {
