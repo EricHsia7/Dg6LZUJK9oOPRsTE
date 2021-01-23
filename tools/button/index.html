@@ -77,7 +77,7 @@ overflow: hidden;
 }
 </style>
 <center>
-    <h1>button</h1>
+    <h1 id="t" style="margin-top:10px;"></h1>
 <div id="b">
 
 </div>
@@ -94,4 +94,5 @@ var url = new URL(getUrlString) ;
   for (var i=0; i<el; i++){
   $('#b').append('<div class="buttonbox"><a href="' + e[i].split("[")[1] + '" class="button">' + e[i].split("[")[0] + '</a></div>');
   }
+  $('#t,title').html(t);
 </script>
