@@ -87,15 +87,11 @@ overflow: hidden;
 
 </center>
 
-
-<div id="bottom" class="bottombar">
-        <div class="bottom-btn-b" style="left: 0%;">
-            <a href="javascript:home()"><img src="icon/home_1_s.png" class="btn-cen" id="hico" /></a>
-        </div>
-        <div class="bottom-btn-b" style="left: 50%; transform: translate(-50%, 0%);">
-            <a href="javascript:bell()"><img src="icon/bell_s.png" class="btn-cen" id="bico" /></a>
-        </div>
-        <div class="bottom-btn-b" style="right: 0%;">
-            <a href="javascript:more()"><img src="icon/more_s.png" class="btn-cen" id="mico" /></a>
-        </div>
-    </div>
+<script>
+  var d = 'google[https://google.com]fb[fb.com' ;
+  var e = d.split("]") ;
+  var el = e.length ;
+  for (var i=0; i<el; i++){
+  $('#b').append('<div class="buttonbox"><a href="' + e[i].split("[")[1] + '" class="button">' + e[i].split("[")[0] + '</a></div>');
+  }
+</script>
