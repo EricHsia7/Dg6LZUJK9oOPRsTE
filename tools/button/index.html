@@ -95,4 +95,7 @@ var url = new URL(getUrlString) ;
   $('#b').append('<div class="buttonbox"><a href="javascript:url(`' + btoa(e[i].split("[")[1]) + '`)" class="button">' + e[i].split("[")[0] + '</a></div>');
   }
   $('#t,title').html(t);
+  function url(ur) {
+      location.replace(atob(ur));
+  }
 </script>
