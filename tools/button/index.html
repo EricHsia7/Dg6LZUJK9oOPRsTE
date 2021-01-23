@@ -92,7 +92,7 @@ var url = new URL(getUrlString) ;
   var e = d.split("]") ;
   var el = e.length ;
   for (var i=0; i<el; i++){
-  $('#b').append('<div class="buttonbox"><a href="javascript:url(`' + btoa(e[i].split("[")[1]) + '`)" class="button">' + e[i].split("[")[0] + '</a></div>');
+  $('#b').append('<div class="buttonbox"><a href="javascript:url('' + btoa(e[i].split("[")[1]) + '')" class="button">' + e[i].split("[")[0] + '</a></div>');
   }
   $('#t,title').html(t);
   function url(ur) {
