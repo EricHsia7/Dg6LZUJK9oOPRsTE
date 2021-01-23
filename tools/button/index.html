@@ -85,7 +85,10 @@ overflow: hidden;
 </center>
 
 <script>
-  var d = 'google[https://google.com]fb[fb.com' ;
+    var getUrlString = location.href ;
+var url = new URL(getUrlString) ;
+  var t = url.searchParams.get('t') ;
+  var d = url.searchParams.get('d') ;
   var e = d.split("]") ;
   var el = e.length ;
   for (var i=0; i<el; i++){
