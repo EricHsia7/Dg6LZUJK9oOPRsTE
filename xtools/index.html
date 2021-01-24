@@ -455,7 +455,7 @@ $("#opopline").css({left: 75 + '%','transition':'0.5s'});
 $("a").hover(function(){
     $(this).append('<iframe src="' + $(this).attr('href') + '"></iframe>');
 },function(){
-    $(this > 'iframe').remove();
+    $(this).remove('iframe');
 });
 </script>
 </body>
