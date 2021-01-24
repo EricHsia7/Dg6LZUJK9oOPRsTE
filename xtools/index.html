@@ -235,36 +235,6 @@ p {color:#fff;}
 
 
 
-</style>
-
-<style>
-a iframe {
-width:0px;
-height:0px;
-border:none;
-border-radius:12px;
-box-shadow:0 0 15px 1px rgba(0,0,0,0.05);
-transition:0.5s;
-opacity:0;
-transform:translate(-50%,-50%);
-    z-index:-1;
-}
-a:hover iframe {
-opacity:1;
-width:80%;
-height:80%;
-border:none;
-border-radius:12px;
-box-shadow:0 0 15px 1px rgba(0,0,0,0.05);
-transition:0.5s;
-position: fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-z-index:100000;
-}
-</style>
-
 <body>
 
 <div class="hometoptab">
@@ -451,11 +421,5 @@ $("#opopline").css({left: 75 + '%','transition':'0.5s'});
     });
 }
 </script>
-    <script>
-$("a").hover(function(){
-    $(this).append('<iframe src="' + $(this).attr('href') + '" class="piframe"></iframe>');
-},function(){
-    $(this).remove(".piframe");
-});
-</script>
+    
 </body>
