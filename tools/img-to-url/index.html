@@ -87,7 +87,13 @@ outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
 outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
     border-radius:0px;
     }
-    
+    .next {
+        padding:10px;
+        background:#e3e3e3;
+        border-radius:99em;
+        color:#333;
+        font-size:25px;
+    }
     
     
     
@@ -162,7 +168,7 @@ outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
             />
         </a>
     </div>
-        
+        <a href="javascript:next()" class="next">轉換下一個</a>
 
     </div>
     
@@ -335,6 +341,9 @@ outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
 }));
     </script>
     <script>
+        function next() {
+            $('.linkdiv').fadeOut(1);
+        }
         function copyssss(idddd) {
 var copys = document.getElementById(idddd);
 copys.select();
