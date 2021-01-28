@@ -12,7 +12,7 @@
 為提供精確的服務，我們會將收集的問卷調查內容進行統計與分析，分析結果之統計數據或說明文字呈現，除供內部研究外，我們會視需要公佈統計數據及說明文字，但不涉及特定個人之資料。
 
 ## 三、資料之保護 
-本網站內容均存放在GitHub、Google，若您需要，您可以查看它們的隱私政策。
+本網站內容均存放在GitHub、Google、Imgur，若您需要，您可以查看它們的隱私政策。
 
 ## 四、網站對外的相關連結 
 本網站的網頁提供其他網站的網路連結，您也可經由本網站所提供的連結，點選進入其他網站。但該連結網站不適用本網站的隱私權保護政策，您必須參考該連結網站中的隱私權保護政策。
@@ -37,3 +37,4 @@
 [Google隱私政策](https://policies.google.com/privacy)
 <br>
 [Github隱私政策](https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement)
+[Imgur隱私政策](https://imgur.com/privacy)
