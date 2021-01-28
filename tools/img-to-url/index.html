@@ -86,13 +86,128 @@ outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
 outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
     border-radius:0px;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .btn {
+    height: calc(60px - 10px);
+    position: relative;
+    top: 5px;
+    right: 5px;
+    transform: translate(8px, 0) scale(0.8);
+}
+.btnbox {
+    height: calc(60px - 10px);
+    position: relative;
+    top: 0;
+    right: 0;
+    transform: translate(8px, 0);
+    -webkit-appearance: none;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+}
+.box {
+    width: 85vw;
+    height: 60px;
+    border: 1px #e3e3e3 solid;
+    padding: 0;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #e3e3e3 0, #e3e3e3 100%, #fcfcfc 100%);
+    transform: translate(-50%, -50%);
+    position: fixed;
+    left: 50%;
+    top: calc(50%);
+}
+
+#password {
+    -webkit-appearance: none;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 12px;
+    height: 60px;
+    width: calc(85vw - 60px);
+    font-size: 35px;
+    padding: 5px;
+    border: none;
+    transform: translate(0, -8px);
+    text-overflow: ellipsis;
+    color: var(--pd-color);
+    caret-color: transparent;
+}
+.msg {
+    z-index: 99999999999998;
+    background: rgba(51, 51, 51, 0.8);
+    width: auto;
+    height: auto;
+    padding: 5px 15px;
+    position: fixed;
+    top: -80px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 25px;
+    color: #fff;
+}
+.loadbg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+}
+.ppgeningclosebtn {
+    color: #333;
+    width: 280px;
+    height: 52px;
+    background: #f2f2f2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 25px 25px;
+}
+.boxmsg {
+    width: 85vw;
+    height: 60px;
+    border: 1px transparent solid;
+    padding: 0;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+    position: fixed;
+    left: 50%;
+    top: calc(50%);
+    display: none;
+    color: #fff;
+}
 </style>
 <body>
 <div class="dropzone">
     選取或拖放圖片在這
     </div>
     <div class="linkdiv">
-<input type="text" id="link">
+        
+        
+        <div class="box">
+        <input type="text" id="link" readonly="readonly">
+        <a href="javascript:copy('password')" class="btnbox">
+            <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iLTQwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJtMjcxIDUxMmgtMTkxYy00NC4xMTMyODEgMC04MC0zNS44ODY3MTktODAtODB2LTI3MWMwLTQ0LjExMzI4MSAzNS44ODY3MTktODAgODAtODBoMTkxYzQ0LjExMzI4MSAwIDgwIDM1Ljg4NjcxOSA4MCA4MHYyNzFjMCA0NC4xMTMyODEtMzUuODg2NzE5IDgwLTgwIDgwem0tMTkxLTM5MWMtMjIuMDU0Njg4IDAtNDAgMTcuOTQ1MzEyLTQwIDQwdjI3MWMwIDIyLjA1NDY4OCAxNy45NDUzMTIgNDAgNDAgNDBoMTkxYzIyLjA1NDY4OCAwIDQwLTE3Ljk0NTMxMiA0MC00MHYtMjcxYzAtMjIuMDU0Njg4LTE3Ljk0NTMxMi00MC00MC00MHptMzUxIDI2MXYtMzAyYzAtNDQuMTEzMjgxLTM1Ljg4NjcxOS04MC04MC04MGgtMjIyYy0xMS4wNDY4NzUgMC0yMCA4Ljk1MzEyNS0yMCAyMHM4Ljk1MzEyNSAyMCAyMCAyMGgyMjJjMjIuMDU0Njg4IDAgNDAgMTcuOTQ1MzEyIDQwIDQwdjMwMmMwIDExLjA0Njg3NSA4Ljk1MzEyNSAyMCAyMCAyMHMyMC04Ljk1MzEyNSAyMC0yMHptMCAwIiBmaWxsPSIjODA4MDgwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+PC9nPjwvc3ZnPg=="
+                class="btn"
+            />
+        </a>
+    </div>
+        
+
     </div>
     
     <script>
