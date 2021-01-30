@@ -190,6 +190,12 @@ padding:0px;
 <a class="btn" id="reset">重置</a>
 </div>
 <script>
+ var getUrlString = location.href;
+var url = new URL(getUrlString);
+var set = url.searchParams.get('s') ;
+var ts = url.searchParams.get('time').split(",");
+var auto = url.searchParams.get('auto'); 
+
 function checkTime(ii)
 {
 if (ii<10) 
@@ -270,5 +276,13 @@ $('#reset').click(function() {
   $('#hour,#min,#sec').val('00');
   bar(100);
 });
-
+ 
+if(set = 1) {
+ $('#hour').val(ts[0]);
+ $('#min').val(ts[1]);
+ $('#sec').val(ts[2]);
+ if(auto = 1) {
+  start();
+ }
+}
 </script>
