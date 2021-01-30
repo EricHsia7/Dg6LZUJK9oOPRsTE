@@ -18,6 +18,7 @@ display: flex;
   justify-content: center;
   align-items: center;
 border:none;
+background:#fff;
 }
 .box {
 width:98%;
@@ -73,6 +74,8 @@ font-size:50px;
 margin:0px;
 padding:1px;
 text-align:center;
+  background:#fff;
+  color:#000;
 }
 center {
 font-size:30px;
@@ -82,7 +85,89 @@ margin:0px;
 .f {
 width:15px;
 padding:0px;
+  background:#fff;
+  color:#000;
 }
+  
+  
+  @media (prefers-color-scheme: dark) {
+    body {
+
+display: flex;
+  justify-content: center;
+  align-items: center;
+border:none;
+      background:#212121
+}
+.box {
+width:98%;
+max-width:400px;
+height:280px;
+background:#212121;
+position: relative;
+border-radius:25px;
+overflow:hidden;
+box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
+padding:0px;
+}
+.barbaclground {
+position:absolute;
+bottom:45px;
+left:0px;
+height:2px;
+width:100%;
+background:#333;
+}
+.bar {
+position:absolute;
+bottom:45px;
+left:0px;
+height:2px;
+width:0%;
+background:#fff;
+}
+.btn {
+position:absolute;
+width:50%;
+height:45px;
+background:#212121;
+bottom:0px;
+display: flex;
+  justify-content: center;
+  align-items: center;
+border:none;
+}
+#start {
+left:0px;
+}
+
+#reset {
+right:0px;
+border-left: 1px #fff solid;
+}
+input {
+width:25%;
+border:none;
+height:235px;
+font-size:50px;
+margin:0px;
+padding:1px;
+text-align:center;
+background:#212121;
+  color:#fff;
+}
+center {
+font-size:30px;
+padding:0px;
+margin:0px;
+}
+.f {
+width:15px;
+padding:0px;
+  background:#212121;
+  color:#fff;
+}
+  }
 </style>
 <div class="box">
 <center>
