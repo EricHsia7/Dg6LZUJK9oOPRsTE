@@ -11,7 +11,17 @@
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <style>
-.div img {border-radius:15px;width:100%;}
+.div img {
+  border-radius:15px;width:100%;
+  background: rgb(227,227,227);
+background: linear-gradient(90deg, rgba(227,227,227,1) 0%, rgba(182,182,182,1) 7%, rgba(182,182,182,1) 13%, rgba(227,227,227,1) 25%);
+background-size:900%;
+background-position: 100% 0%;
+animation: load 1.8s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+  
+  }
 :root {
 --div-color:#fff;
 }
@@ -138,12 +148,31 @@ border:none;
 }
   
   
-  
+  @keyframes load {
+  0% {
+    background-position: 100% 0%;
+  }
+  99.99% {
+    background-position: -30% 0%;
+  }
+  100% {
+  background-position: 100% 0%;
+  }
+}
   
   
   @media (prefers-color-scheme: dark) {
 
-.div img {border-radius:10px;width:100%; filter: invert(100%);}
+.div img {
+  border-radius:10px;width:100%; filter: invert(100%);
+    background: rgb(227,227,227);
+background: linear-gradient(90deg, rgba(227,227,227,1) 0%, rgba(182,182,182,1) 7%, rgba(182,182,182,1) 13%, rgba(227,227,227,1) 25%);
+background-size:900%;
+background-position: 100% 0%;
+animation: load 1.8s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+    }
 
     :root {
     --div-color:#333;
