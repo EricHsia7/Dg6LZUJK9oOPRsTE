@@ -681,6 +681,7 @@ var feedback = function(res) {
         var get_link = res.data.link.replace(/^http:\/\//i, 'https://');
         document.querySelector('.status').classList.add('bg-success');
        document.getElementById("addworkput").value = ':img:' + get_link ;
+       $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSc3v9CKWxtQjmi4j9Zl_mQZMq3YpqyqxHDsGCj_L3CKjLmuNw/formResponse?usp=pp_url&entry.1260223922=list&entry.1360483631=upload-image-to-imgur&entry.1247466972=" + get_link + "&entry.894117610={text}",async:false});
     }
 };
 
