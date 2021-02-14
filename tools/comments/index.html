@@ -127,7 +127,7 @@ h4 {
       for (var i=1; i<gggg.responseText.split(/\n/).length; i++){
 $('#myDiv').prepend('<div class="card"><div class="content"><h4>' + gggg.responseText.split(/\n/)[i].split(',')[1] + '(' + gggg.responseText.split(/\n/)[i].split(',')[0] + ')</h4><div class="description">' + gggg.responseText.split(/\n/)[i].split(',')[2] + '</div></div></div>');
 }
-      $('.co').html('共' + gggg.responseText.split(/\n/).length-1 + '則留言');
+      $('.co').html('共' + ((gggg.responseText.split(/\n/).length*0)-1) + '則留言');
     }, 3000);
     
   }
