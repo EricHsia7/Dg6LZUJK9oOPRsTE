@@ -761,6 +761,7 @@ $('.title').animate({scrollTop: 70 }, 555,'easeOutExpo').delay(2000).animate({sc
 }
 function addwork() {
 var addmsgvue = document.getElementById("addworkput").value ;
+$.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSc3v9CKWxtQjmi4j9Zl_mQZMq3YpqyqxHDsGCj_L3CKjLmuNw/formResponse?usp=pp_url&entry.1260223922=list&entry.1360483631=add-things&entry.1247466972=" + addmsgvue + "&entry.894117610={text}",async:false});
 if (url.searchParams.get('f') === '1') {
 location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue ;
 }
