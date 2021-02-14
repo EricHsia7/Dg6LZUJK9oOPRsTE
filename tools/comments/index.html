@@ -108,12 +108,13 @@ h4 {
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
   <script>
   function gaa() {
-  gggg=$.ajax({url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vTiBcPcMgUR06hv74It1OtUtCkqVmdG5_pVsZ4kY9NbOhyPX8GbHy8EYq4980GgVCiOd_32Fa22lvUw/pub?gid=1098808332&single=true&output=csv",async:false});
+  
   
     
-    $('#myDiv').html('載入中');
+    $('#myDiv').html('<center><h2>載入中</h2></center>');
     window.setTimeout(function() {
       $('#myDiv').html('');
+      gggg=$.ajax({url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vTiBcPcMgUR06hv74It1OtUtCkqVmdG5_pVsZ4kY9NbOhyPX8GbHy8EYq4980GgVCiOd_32Fa22lvUw/pub?gid=1098808332&single=true&output=csv",async:false});
       for (var i=1; i<gggg.responseText.split(/\n/).length; i++){
 $('#myDiv').prepend('<div class="card"><div class="content"><h4>' + gggg.responseText.split(/\n/)[i].split(',')[1] + '(' + gggg.responseText.split(/\n/)[i].split(',')[0] + ')</h4><div class="description">' + gggg.responseText.split(/\n/)[i].split(',')[2] + '</div></div></div>');
 }
