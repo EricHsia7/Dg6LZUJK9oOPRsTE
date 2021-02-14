@@ -3,7 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <title>留言</title>
-  <link rel="stylesheet" href="./style.css">
+  <style>
+    :root {
+  --loading-grey: #ededed;
+}
+
+a {
+  background:#e3e3e3;
+  padding:10px;
+  margin:3px;
+  border-radius:12px;
+  font-size:30px;
+  color:#333;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fff;
+  font-family: Helvetica;
+  font-size: 15px;
+  display: block;
+  min-height: 100vh;
+}
+
+.card {
+  width: 320px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top:12px;
+  border:1px #e6e6e6 solid;
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.content {
+  padding: 2rem 1.8rem;
+}
+
+h4 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.loading .image,
+.loading h4,
+.loading .description {
+  background-color: var(--loading-grey);
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, .5) 50%,
+    rgba(255, 255, 255, 0) 60%
+  ) var(--loading-grey);
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+.loading h4 {
+  min-height: 1.6rem;
+  border-radius: 4px;
+  animation-delay: .05s;
+}
+
+.loading .description {
+  min-height: 4rem;
+  border-radius: 4px;
+  animation-delay: .06s;
+}
+  </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 </head>
 <body>
