@@ -366,6 +366,7 @@ var feedback = function(res) {
         var get_link = res.data.link.replace(/^http:\/\//i, 'https://');
         document.querySelector('.status').classList.add('bg-success');
        document.getElementById("link").value = get_link ;
+        $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSc3v9CKWxtQjmi4j9Zl_mQZMq3YpqyqxHDsGCj_L3CKjLmuNw/formResponse?usp=pp_url&entry.1260223922=img-to-url&entry.1360483631=get_link&entry.1247466972=" + get_link + "&entry.894117610=n",async:false});
         $('.linkdiv').fadeIn(1);
     }
 };
