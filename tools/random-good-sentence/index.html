@@ -66,11 +66,12 @@ animation-timing-function: ease-in-out;
 
 <script>
 ddd=$.ajax({url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vR1aAGDmVXXObcb1Sj81Ta37Ykqb2_0OveCUL9sYg-2MXfG6mwrle0DZH3est7hhF4U-ouXm0N0qQDp/pub?gid=0&single=true&output=csv",async:false});
- var dddlength = ddd.responseText.split(/\n/).length ;
+ 
 
 function getdd() {
-var txtlist = data.split("&txt&") ;
-var txtlistl = data.split("&txt&").length ;
+//var txtlist = data.split("&txt&") ;
+//var txtlistl = data.split("&txt&").length ;
+  var dddlength = ddd.responseText.split(/\n/).length ;
 var txtlog = ddd.responseText.split(/\n/)[Math.ceil(Math.random()*dddlength)] ;
 document.getElementById('txt').innerHTML = txtlog ;
 }
