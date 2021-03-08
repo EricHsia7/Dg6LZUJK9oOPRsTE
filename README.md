@@ -1,2 +1,2 @@
 # 隱私政策
-[查看](https://github.com/EricHsia7/Dg6LZUJK9oOPRsTE/blob/master/xtools/PrivacyPolicy.md)
+[查看](https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/xtools/privacy.html)
