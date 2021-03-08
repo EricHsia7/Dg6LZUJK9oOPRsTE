@@ -1,0 +1,17 @@
+<div class="privacybg">
+    <div class="privacytopbar"><z style="transform:translate(-50%,-50%);position:absolute;top:50%;left:50%;">隱私</z></div>
+    <div id="privacyinner" style="padding:10px;position:absolute;top:52px;left:0px;height:calc(100% - 52px);width:clac(100% - 20px);overflow:scroll;"></div>
+  </div>
+  
+ 
+  <script>
+    $.ajax({
+            type:"get",
+            url:'https://erichsia7.github.io/font_conversion/privacy.md' ,
+            dataType:"html",
+            success:function(res){
+            $('#privacyinner').html(marked(res));
+            }
+        
+  });
+  </script>
