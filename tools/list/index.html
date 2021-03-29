@@ -768,10 +768,12 @@ $('.title').animate({scrollTop: 70 }, 555,'easeOutExpo').delay(2000).animate({sc
 function addwork() {
 var addmsgvue = document.getElementById("addworkput").value ;
 if (url.searchParams.get('f') === '1') {
-location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue ;
+//location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue ;
+history.pushState(null, null,'?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue);
 }
 else {
-location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
+//location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
+   history.pushState(null, null,'?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue);
 }
 
 }
@@ -790,14 +792,17 @@ location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
 
 function endwork() {
 location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee ;
+   history.pushState(null, null,'?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee);
 }
   
 function startwork() {
 location.href = '?f=1&s=1&q=' + url.searchParams.get('q') ;
-}
+history.pushState(null, null,'?f=1&s=1&q=' + url.searchParams.get('q'));
+   }
   function closebmsg() {
   location.href = '?f=1&s=1&bm=1&edit=' + document.getElementById("addworkput").value + '&q=' + url.searchParams.get('q') ;
-  }
+history.pushState(null, null,
+}
    function copy() {
      var copys=document.getElementById("copyel");
 copys.select();
