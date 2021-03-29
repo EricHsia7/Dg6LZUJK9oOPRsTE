@@ -708,9 +708,7 @@ new Imgur({
 var r=0;ref=setInterval(function(){r<98?($(".barbox").animate({width:r+"%"},33*Math.random()+400,"easeInOutQuad"),r+=5*Math.random()+25):clearInterval(ref)},500),$(window).ready(function(){$(".barbox,.barbg").animate({width:"110%"},888).delay(10).fadeOut(888)});
 </script>
 <script>
-   function starte() {
-location.reload()
-}
+
 
 
 
@@ -777,15 +775,13 @@ $('.title').animate({scrollTop: 70 }, 555,'easeOutExpo').delay(2000).animate({sc
 function addwork() {
 var addmsgvue = document.getElementById("addworkput").value ;
 if (url.searchParams.get('f') === '1') {
-//location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue ;
-history.pushState(null, null,'?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue);
-   starte();
+location.href = '?f=1&bm=' + url.searchParams.get('bm') + '&q=' + url.searchParams.get('q') + ',' + addmsgvue ;
+
 
 }
 else {
-//location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
-   history.pushState(null, null,'?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue);
-   starte();
+location.href = '?f=1&bm=' + url.searchParams.get('s') + '&q=' + addmsgvue ;
+   
 }
 
 }
@@ -803,20 +799,17 @@ else {
   }
 
 function endwork() {
-//location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee ;
-   history.pushState(null, null,'?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee);
-starte();
+location.href = '?f=1&end=true&q=' + url.searchParams.get('q') + '&d=' + datee ;
+   
 }
   
 function startwork() {
-//location.href = '?f=1&s=1&q=' + url.searchParams.get('q') ;
-history.pushState(null, null,'?f=1&s=1&q=' + url.searchParams.get('q'));
- starte();
+location.href = '?f=1&s=1&q=' + url.searchParams.get('q') ;
+
 }
   function closebmsg() {
-  //location.href = '?f=1&s=1&bm=1&edit=' + document.getElementById("addworkput").value + '&q=' + url.searchParams.get('q') ;
-history.pushState(null, null,'?f=1&s=1&bm=1&edit=' + document.getElementById("addworkput").value + '&q=' + url.searchParams.get('q'));
-  starte();
+  location.href = '?f=1&s=1&bm=1&edit=' + document.getElementById("addworkput").value + '&q=' + url.searchParams.get('q') ;
+
   }
    function copy() {
      var copys=document.getElementById("copyel");
