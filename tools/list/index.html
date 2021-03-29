@@ -835,6 +835,12 @@ $('.dropzone').fadeOut(1);
 var interval = setInterval(appendss,1);
 //var interval2 = setInterval(titless,6120);
 
-
+document.body.oncopy = e => {
+$('#msg').html('已複製').animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
+}
+// 禁止剪下
+document.body.oncut = e => {
+    $('#msg').html('已剪下').animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
+};
 </script>
 </body>
