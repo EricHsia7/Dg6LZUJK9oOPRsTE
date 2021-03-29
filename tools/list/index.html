@@ -709,26 +709,7 @@ var r=0;ref=setInterval(function(){r<98?($(".barbox").animate({width:r+"%"},33*M
 </script>
 <script>
    function starte() {
-document.getElementById("copyel").value = location.href ;
-var scrollautotobuttomfn = 'f' ;
-var day_list = ['日', '一', '二', '三', '四', '五', '六'];
-var today=new Date()
-var yy = today.getFullYear() ;
-var mm = today.getMonth()+1 ;
-var dd = today.getDate() ;
-var dds = day_list[today.getDay()] ;
-var datee = '清單 - ' + yy + '年' + mm + '月' + dd + '日 週' + dds ;
-
-
-var getUrlString = location.href ;
-var url = new URL(getUrlString) ;
-var a = url.searchParams.get('q') ;
-var b = a.split(",") ;
-var l = b.length ;
-var j = 0 ;
-var bjjj ;
-
-var interval = setInterval(appendss,1);
+location.reload()
 }
 
 
