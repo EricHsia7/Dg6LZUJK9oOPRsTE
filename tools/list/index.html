@@ -756,7 +756,11 @@ if(bjjj.indexOf(':url:') != -1) {
       $('.custom-counter').append('<li>' + bjjj + '</li>');
    }
    }
-   $('body,html').animate({scrollTop: $('body,html').height() }, 1);
+   
+   if (scrollautotobuttomfn === 't' ) {
+$('body,html').animate({scrollTop: $('body,html').height() }, 1);
+  }
+   
 j += 1 ;
 if (j > (l-1)) {
 clearInterval(interval);
