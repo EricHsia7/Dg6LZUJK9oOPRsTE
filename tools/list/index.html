@@ -497,7 +497,7 @@ background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, 
 </span>
   <span id="brs2" style="display:none;">
     <br>
-    <center><a href="javascript:startwork()" class="btn">編輯內容</a><br><br><br><a href="javascript:copy()" class="btn">複製連結</a><br><br><br><input type="text" id="copyel" readonly="readonly">
+    <center><a href="javascript:startwork()" class="btn">編輯內容</a><br><br><br><a href="javascript:copy()" class="btn">複製連結</a><br><br><br><a href="javascript:shareapi()" class="btn">分享</a><br><br><br><input type="text" id="copyel" readonly="readonly">
      </center>
     <br><br>
   </span>
@@ -836,5 +836,19 @@ var interval = setInterval(appendss,1);
 //var interval2 = setInterval(titless,6120);
 
 
+function shareapi() {
+if (navigator.share) { 
+   navigator.share({
+      title: document.title,
+      url: location.href
+    }).then(() => {
+      $('#msg').html('已分享').animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
+    })
+    .catch(console.error);
+    } else {
+        shareDialog.classList.add('is-open');
+       $('#msg').html('不支援').animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
+    }
+    }
 </script>
 </body>
