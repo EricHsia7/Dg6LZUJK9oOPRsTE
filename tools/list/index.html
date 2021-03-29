@@ -757,15 +757,13 @@ if(bjjj.indexOf(':url:') != -1) {
    }
    }
    
-   if (scrollautotobuttomfn === 't' ) {
-$('body,html').animate({scrollTop: $('body,html').height() }, 1);
-  }
+
    
 j += 1 ;
 if (j > (l-1)) {
 clearInterval(interval);
   if (scrollautotobuttomfn === 't' ) {
-$('body,html').animate({scrollTop: $('body,html').height() }, 1);
+$('body,html').animate({scrollTop: $('body,html').height()*1.5 }, 1);
   }
 }
 }
