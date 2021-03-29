@@ -845,6 +845,7 @@ if (navigator.share) {
       $('#msg').html('已分享').animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
     })
     .catch(console.error);
+    $('#msg').html('不支援').animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
     } else {
         shareDialog.classList.add('is-open');
        $('#msg').html('不支援').animate({top: 70 + 'px' },333).delay(1111).animate({top: -80 + 'px' },333);
