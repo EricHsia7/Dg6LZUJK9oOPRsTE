@@ -57,7 +57,7 @@ document.getElementById('put999').value = "";
 }
 
 function QRCode(){
-var put999 = document.getElementById('put999').value ;
+var put999 = encodeURIComponent(document.getElementById('put999').value) ;
 var msg8 = document.getElementById('content');
 var imgSrc = 'https://chart.apis.google.com/chart?cht=qr&chl=' + put999 + '&chs=300x300' ;
 msg8.innerHTML = '<img src="' + imgSrc + '" alt="" title="qrcode" style="border-radius: 8px;width:auto;height:auto;max-width:100vw;max-height:100vh;" /><br> <font size="60%">QRCODE 網址</font><input type="text" id="urlpp" value="' + imgSrc + '" style="font-size:80%; width:100%; border:1px solid #8c8c8c; border-radius: 8px;" />';
