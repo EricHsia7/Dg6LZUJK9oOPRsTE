@@ -193,7 +193,9 @@ padding:0px;
  var getUrlString = location.href;
 var url = new URL(getUrlString);
 var set = url.searchParams.get('s') ;
-var ts = url.searchParams.get('time').split(",");
+ if(url.searchParams.get('time')) {
+var ts = url.searchParams.get('time').split(",") ;
+ }
 var auto = url.searchParams.get('auto'); 
 
 function checkTime(ii)
