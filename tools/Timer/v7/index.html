@@ -243,7 +243,7 @@ $('.bar').css({'width':100-w + '%','transition':'1s','transition-timing-function
 ni = 2;
 function start() {
   if (ni >"1") {
-      time = document.getElementById("hour").value*60*60+document.getElementById("min").value*60+document.getElementById("sec").value*1 ;
+      time = parseInt(document.getElementById("hour").value)*60*60+parseInt(document.getElementById("min").value)*60+parseInt(document.getElementById("sec").value)*1 ;
       times = time ;
       document.getElementById("hour").setAttribute("readOnly",'true');
       document.getElementById("min").setAttribute("readOnly",'true');
