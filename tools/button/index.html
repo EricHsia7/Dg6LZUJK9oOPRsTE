@@ -9,7 +9,7 @@
     width:90%;
     max-width:300px;
     height:60px;
-    border-radius:8px;
+    border-radius:99em;
     background:#0067FF;
     overflow:hidden;
     padding:0px;
@@ -52,7 +52,9 @@ var url = new URL(getUrlString) ;
   }
   $('#t,title').html(t);
   function ur(ur) {
-      location.href = atob(ur) ;
+      setTimeout(function () {
+                location.href = atob(ur) ;
+            }, 1200);
   }
     
     
@@ -75,7 +77,7 @@ var url = new URL(getUrlString) ;
                     yPos +
                     "px;left:" +
                     xPos +
-                    'px;border-radius:99em;transform:scale(0);transition:transform 0.9s,opacity 0.8s;opacity:0.3; overflow:hidden; user-select:none;background:#fff" id="' +
+                    'px;border-radius:99em;transform:scale(0);transition:transform 1.2s,opacity 0.8s;opacity:0.3; overflow:hidden; user-select:none;background:#fff" id="' +
                     ppid +
                     '" class="btn-cc-pp"></div>'
             );
@@ -84,6 +86,6 @@ var url = new URL(getUrlString) ;
             }, 1);
             setTimeout(function () {
                 $("#" + ppid).remove();
-            }, 800);
+            }, 1200);
         });
 </script>
