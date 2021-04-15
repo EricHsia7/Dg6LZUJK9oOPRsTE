@@ -110,7 +110,11 @@ height:40px;
 </div>
 <a href="javascript:addt()"><div class="add"></div></a>
 
-<div class="bs"><span class="ssa"><input type="text" placeholder="標題" id="tit"></span></div>
+<div class="bs">
+ <span class="ssa"><input type="text" placeholder="標題" id="tit"></span>
+ 
+ <span class="ssa"><input type="text" placeholder="主題色彩(HEX 例:888888)" id="colo" ></span>
+ </div>
 
 <a href="javascript:gen()"><div class="gen"></div></a>
 
@@ -130,7 +134,7 @@ var st = '' ;
 for (var i=0; i<document.querySelectorAll(".b").length; i++){
 st += ']' + document.querySelectorAll(".b")[i].querySelectorAll("input")[0].value + '[' + document.querySelectorAll(".b")[i].querySelectorAll("input")[1].value ;
 }
-st = 'https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/button/?d=' + st.substr(1) + '&t=' + document.querySelector("#tit").value ;
+st = 'https://erichsia7.github.io/Dg6LZUJK9oOPRsTE/tools/button/?d=' + st.substr(1) + '&t=' + document.querySelector("#tit").value + '&co=' + document.querySelector("#colo").value;
 document.querySelector("#out").value = encodeURI(st) ;
 
 }
